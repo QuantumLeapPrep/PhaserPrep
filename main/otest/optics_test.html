@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест по Волновой Оптике</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Общие стили */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #E8F5E9;
+            color: #333;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #512da8;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Стили для теста */
+        .question {
+            background-color: #fff;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .question h3 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+
+        .answer {
+            margin-bottom: 10px;
+        }
+
+        .answer label {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px;
+            background-color: #fff;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            border: 1px solid #E0E0E0;
+        }
+
+        .answer label:hover {
+            background-color: #F0F4C3;
+        }
+
+        .answer input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        .correct {
+            color: green;
+            font-weight: bold;
+        }
+
+        .incorrect {
+            color: red;
+            font-weight: bold;
+        }
+
+        .submit-button {
+            background-color: #512da8;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 1rem;
+            display: block;
+            margin: 20px auto;
+        }
+
+        .submit-button:hover {
+            background-color: #512da8;
+        }
+
+        .result {
+            text-align: center;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        /* Футер */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+            margin-top: auto;
+        }
+
+        /* Скрываем радиокнопки после проверки */
+        input[type="radio"]:disabled+label {
+            cursor: default;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Тест по Волновой Оптике</h1>
+
+        <div id="test-container">
+            <!-- Вопросы теста будут добавлены здесь -->
+        </div>
+
+        <button class="submit-button" onclick="checkAnswers()">Завершить тест</button>
+
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        // Массив всех вопросов по Волновой оптике
+        const allQuestions = [
+            {
+                question: "Что такое интерференция света?",
+                answers: [
+                    "Огибание светом препятствий",
+                    "Сложение когерентных световых волн, приводящее к усилению или ослаблению света",
+                    "Разложение света на спектр",
+                    "Поляризация света"
+                ],
+                correctAnswer: 1
+            },
+            {
+                question: "Какие волны называют когерентными?",
+                answers: [
+                    "Волны с одинаковой амплитудой",
+                    "Волны с одинаковой частотой и постоянной разностью фаз",
+                    "Волны с одинаковой длиной волны",
+                    "Волны, распространяющиеся в одном направлении"
+                ],
+                correctAnswer: 1
+            },
+            {
+                question: "Что происходит при интерференции волн в точке, где разность хода равна целому числу длин волн?",
+                answers: [
+                    "Усиление света (максимум)",
+                    "Ослабление света (минимум)",
+                    "Полное гашение света",
+                    "Не происходит изменений"
+                ],
+                correctAnswer: 0
+            },
+            {
+                question: "Что происходит при интерференции волн в точке, где разность хода равна полуцелому числу длин волн?",
+                answers: [
+                    "Усиление света (максимум)",
+                    "Ослабление света (минимум)",
+                    "Полное гашение света",
+                    "Не происходит изменений"
+                ],
+                correctAnswer: 1
+            },
+            {
+                question: "Что такое дифракция света?",
+                answers: [
+                    "Разложение света на спектр",
+                    "Поляризация света",
+                    "Огибание светом препятствий",
+                    "Сложение когерентных световых волн"
+                ],
+                correctAnswer: 2
+            },
+            {
+                question: "От чего зависит угол дифракции?",
+                answers: [
+                    "Только от длины волны света",
+                    "Только от ширины препятствия",
+                    "От длины волны света и ширины препятствия",
+                    "Только от амплитуды волны"
+                ],
+                correctAnswer: 2
+            },
+            {
+                question: "Что такое дифракционная решетка?",
+                answers: [
+                    "Оптический прибор для усиления света",
+                    "Оптический прибор для получения когерентных волн",
+                    "Оптический прибор, представляющий собой множество параллельных щелей",
+                    "Оптический прибор для поляризации света"
+                ],
+                correctAnswer: 2
+            },
+            {
+                question: "Какое условие максимума для дифракционной решетки?",
+                answers: [
+                    "d * sin(φ) = k * λ",
+                    "d * cos(φ) = k * λ",
+                    "d * tan(φ) = k * λ",
+                    "d = k * λ * sin(φ)"
+                ],
+                correctAnswer: 0
+            },
+            {
+                question: "Что такое поляризация света?",
+                answers: [
+                    "Явление, показывающее поперечность световых волн",
+                    "Разложение света на спектр",
+                    "Огибание светом препятствий",
+                    "Усиление света"
+                ],
+                correctAnswer: 0
+            },
+            {
+                question: "Какой свет называют поляризованным?",
+                answers: [
+                    "Свет, в котором колебания происходят во всех направлениях",
+                    "Свет, в котором колебания происходят в определенном направлении",
+                    "Свет с большой интенсивностью",
+                    "Свет с малой интенсивностью"
+                ],
+                correctAnswer: 1
+            },
+            {
+                question: "Какие вещества могут поляризовать свет?",
+                answers: [
+                    "Только металлы",
+                    "Только диэлектрики",
+                    "Анизотропные вещества (например, кристаллы)",
+                    "Любые вещества"
+                ],
+                correctAnswer: 2
+            },
+            {
+                question: "Что такое закон Малюса?",
+                answers: [
+                    "Закон отражения света",
+                    "Закон преломления света",
+                    "Закон, определяющий интенсивность света, прошедшего через поляризатор",
+                    "Закон дифракции"
+                ],
+                correctAnswer: 2
+            },
+            {
+                question: "Как формулируется закон Малюса?",
+                answers: [
+                    "I = I₀ * sin(φ)",
+                    "I = I₀ * cos(φ)",
+                    "I = I₀ * sin²(φ)",
+                    "I = I₀ * cos²(φ)"
+                ],
+                correctAnswer: 3
+            },
+            {
+                question: "Что такое дисперсия света?",
+                answers: [
+                    "Разложение света на спектр",
+                    "Поляризация света",
+                    "Интерференция света",
+                    "Дифракция света"
+                ],
+                correctAnswer: 0
+            },
+            {
+                question: "От чего зависит показатель преломления вещества?",
+                answers: [
+                    "Только от температуры вещества",
+                    "Только от длины волны света",
+                    "От длины волны света и свойств вещества",
+                    "Только от интенсивности света"
+                ],
+                correctAnswer: 2
+            },
+            {
+                question: "Какие цвета лучше преломляются в призме?",
+                answers: [
+                    "Красные",
+                    "Желтые",
+                    "Зеленые",
+                    "Фиолетовые"
+                ],
+                correctAnswer: 3
+            },
+            {
+                question: "Что такое полное внутреннее отражение?",
+                answers: [
+                    "Отражение света от зеркальной поверхности",
+                    "Отражение света от границы раздела двух сред, при котором свет не выходит во вторую среду",
+                    "Преломление света",
+                    "Рассеяние света"
+                ],
+                correctAnswer: 1
+            },
+            {
+                question: "При каком условии наблюдается полное внутреннее отражение?",
+                answers: [
+                    "Свет падает из среды с меньшим показателем преломления в среду с большим показателем преломления",
+                    "Свет падает из среды с большим показателем преломления в среду с меньшим показателем преломления под углом, большем или равном углу полного внутреннего отражения",
+                    "Угол падения равен углу преломления",
+                    "Свет падает перпендикулярно к поверхности раздела сред"
+                ],
+                correctAnswer: 1
+            },
+            {
+                question: "Что такое оптическая разность хода?",
+                answers: [
+                    "Разность длин волн двух когерентных волн",
+                    "Разность частот двух когерентных волн",
+                    "Разность расстояний, пройденных двумя когерентными волнами в среде",
+                    "Разность фаз двух когерентных волн"
+                ],
+                correctAnswer: 2
+            },
+            {
+                question: "В каких единицах измеряется длина волны света?",
+                answers: [
+                    "Метр в секунду",
+                    "Герц",
+                    "Метр",
+                    "Кандела"
+                ],
+                correctAnswer: 2
+            },
+            {
+                question: "Как связаны длина волны, скорость распространения и частота света?",
+                answers: [
+                    "λ = v * ν",
+                    "v = λ * ν",
+                    "ν = λ * v",
+                    "λ = v / ν"
+                ],
+                correctAnswer: 1
+            },
+            {
+                question: "Что такое просветление оптики?",
+                answers: [
+                    "Увеличение яркости изображения",
+                    "Уменьшение отражения света от поверхности линз",
+                    "Увеличение преломления света",
+                    "Устранение дифракции света"
+                ],
+                correctAnswer: 1
+            },
+            {
+                question: "За счет чего достигается просветление оптики?",
+                answers: [
+                    "Нанесения на поверхность линз тонких пленок, создающих интерференцию отраженных волн",
+                    "Использования специальных сортов стекла",
+                    "Увеличения кривизны линз",
+                    "Использования зеркал вместо линз"
+                ],
+                correctAnswer: 0
+            },
+            {
+                question: "Что такое голография?",
+                answers: [
+                    "Получение плоского изображения объекта",
+                    "Получение объемного изображения объекта на основе интерференции волн",
+                    "Разложение света на спектр",
+                    "Усиление света с помощью лазера"
+                ],
+                correctAnswer: 1
+            },
+            {
+                question: "На каком явлении основана голография?",
+                answers: [
+                    "На явлении дифракции",
+                    "На явлении интерференции",
+                    "На явлении поляризации",
+                    "На явлении дисперсии"
+                ],
+                correctAnswer: 1
+            }
+        ];
+
+        let currentQuestions = [];
+        const numberOfQuestions = 10;
+
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+        function generateTest() {
+            let availableQuestions = [...allQuestions];
+            currentQuestions = [];
+
+            for (let i = 0; i < numberOfQuestions; i++) {
+                if (availableQuestions.length > 0) {
+                    const randomIndex = Math.floor(Math.random() * availableQuestions.length);
+                    currentQuestions.push(availableQuestions[randomIndex]);
+                    availableQuestions.splice(randomIndex, 1);
+                } else {
+                    break;
+                }
+            }
+
+            shuffleArray(currentQuestions);
+
+            const testContainer = document.getElementById('test-container');
+            testContainer.innerHTML = '';
+
+            currentQuestions.forEach((question, index) => {
+                const questionDiv = document.createElement('div');
+                questionDiv.classList.add('question');
+
+                const questionHeading = document.createElement('h3');
+                questionHeading.textContent = `Вопрос ${index + 1}: ${question.question}`;
+                questionDiv.appendChild(questionHeading);
+
+                question.answers.forEach((answer, answerIndex) => {
+                    const answerDiv = document.createElement('div');
+                    answerDiv.classList.add('answer');
+
+                    const radioInput = document.createElement('input');
+                    radioInput.type = 'radio';
+                    radioInput.id = `question${index}-answer${answerIndex}`;
+                    radioInput.name = `question${index}`;
+                    radioInput.value = answerIndex;
+
+                    const label = document.createElement('label');
+                    label.htmlFor = `question${index}-answer${answerIndex}`;
+                    label.innerHTML = `${answer} <span></span>`;
+
+                    answerDiv.appendChild(radioInput);
+                    answerDiv.appendChild(label);
+                    questionDiv.appendChild(answerDiv);
+                });
+
+                testContainer.appendChild(questionDiv);
+            });
+        }
+
+        function checkAnswers() {
+            const testContainer = document.getElementById('test-container');
+            const resultDiv = document.getElementById('result');
+            let score = 0;
+
+            const radioButtons = testContainer.querySelectorAll('input[type="radio"]');
+            radioButtons.forEach(radio => {
+                radio.disabled = true;
+            });
+
+            currentQuestions.forEach((question, index) => {
+                const selectedAnswer = document.querySelector(`input[name="question${index}"]:checked`);
+                const answersDiv = testContainer.querySelectorAll(`.question:nth-child(${index + 1}) .answer`);
+
+                if (selectedAnswer) {
+                    const selectedAnswerIndex = parseInt(selectedAnswer.value);
+
+                    answersDiv.forEach((answerDiv, i) => {
+                        const label = answerDiv.querySelector('label');
+                        const iconSpan = label.querySelector('span');
+
+                        if (i === question.correctAnswer) {
+                            iconSpan.innerHTML = '<i class="fas fa-check correct"></i>';
+                        } else if (i === selectedAnswerIndex && selectedAnswerIndex !== question.correctAnswer) {
+                            iconSpan.innerHTML = '<i class="fas fa-times incorrect"></i>';
+                        }
+                    });
+
+                    if (selectedAnswerIndex === question.correctAnswer) {
+                        score++;
+                    }
+                } else {
+                    answersDiv.forEach((answerDiv, i) => {
+                        if (i === question.correctAnswer) {
+                            const label = answerDiv.querySelector('label');
+                            const iconSpan = label.querySelector('span');
+                            iconSpan.innerHTML = '<i class="fas fa-check correct"></i>';
+                        }
+                    });
+                }
+            });
+
+            const resultText = `Вы ответили правильно на ${score} из ${currentQuestions.length} вопросов.`;
+            let motivationText = "";
+
+            if (score === currentQuestions.length) {
+                motivationText = "Отлично! Вы превосходно разбираетесь в волновой оптике!";
+            } else if (score >= currentQuestions.length * 0.75) {
+                motivationText = "Очень хорошо! Продолжайте в том же духе!";
+            } else if (score >= currentQuestions.length * 0.5) {
+                motivationText = "Неплохо! Есть над чем поработать.";
+            } else {
+                motivationText = "Попробуйте еще раз! У вас обязательно получится.";
+            }
+
+            resultDiv.textContent = `${resultText} ${motivationText}`;
+        }
+
+        document.addEventListener('DOMContentLoaded', generateTest);
+    </script>
+
+</body>
+
+</html>

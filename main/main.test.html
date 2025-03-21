@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задачи и тесты по кинематике - PhaserPrep</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Адаптивная сетка */
+            gap: 2em;
+            margin-top: 2em;
+        }
+
+        .resource-card {
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+            padding: 2em;
+            transition: transform 0.2s ease-in-out; /* Плавная анимация */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* Распределение элементов по вертикали */
+        }
+
+        .resource-card:hover {
+            transform: translateY(-5px); /* Приподнимание карточки при наведении */
+        }
+
+        .resource-card h3 {
+            font-size: 1.4em;
+            margin-bottom: 0.5em;
+        }
+
+        .resource-card p {
+            margin-bottom: 1em;
+            color: #555;
+        }
+
+        .resource-link {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #2e7d32;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+            font-weight: 500;
+            text-align: center; /* Центрирование текста в кнопке */
+        }
+        .resource-link1 {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #ef6c00;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+            font-weight: 500;
+            text-align: center; /* Центрирование текста в кнопке */
+        }
+        .resource-link2 {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #0277bd;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+            font-weight: 500;
+            text-align: center; /* Центрирование текста в кнопке */
+        }        .resource-link3 {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #512da8;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+            font-weight: 500;
+            text-align: center; /* Центрирование текста в кнопке */
+        }        .resource-link4 {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #fdd835;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+            font-weight: 500;
+            text-align: center; /* Центрирование текста в кнопке */
+        }
+        .resource-link:hover {
+            background-color: #2e7d32;
+        }
+
+        .topic-tag { /* Стили для тегов тем  */
+            background-color: #e0e0e0;
+            padding: 0.4em 0.7em;
+            border-radius: 5px;
+            font-size: 0.9em;
+            margin-top: 0.8em;
+            display: inline-block;
+            color: #666;
+        }
+
+        .topic-tag.mechanics { background-color: #dcedc8; color: #2e7d32; }
+        .topic-tag.thermodynamics { background-color: #ffcc80; color: #ef6c00; }
+        .topic-tag.electromagnetism { background-color: #b3e5fc; color: #0277bd; }
+        .topic-tag.optics { background-color: #e1bee7; color: #512da8; }
+        .topic-tag.quantumphysics { background-color: #fff59d; color: #fdd835; }
+
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .resource-grid {
+                grid-template-columns: 1fr; /* Одна колонка на маленьких экранах */
+            }
+            .resource-card {
+                padding: 1.5em; /* Уменьшение отступов на маленьких экранах */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1 id="section1"> Задачи и тесты по кинематике</h1>
+
+        <section class="resource-section">
+            <div class="resource-grid">
+                <div class="resource-card">
+                    <h3><i class="fas fa-arrows-alt"></i> Равномерное движение</h3>
+                    <p>Задачи на определение скорости, времени и расстояния при равномерном движении.</p>
+                    <a href="ktest/uniformmovement.html" class="resource-link">Перейти к задачам</a>
+                    <span class="topic-tag mechanics">Механика</span>
+                </div>
+
+                <div class="resource-card">
+                    <h3><i class="fas fa-tachometer-alt"></i> Равноускоренное движение</h3>
+                    <p>Задачи на определение ускорения, скорости и перемещения при равноускоренном движении.</p>
+                    <a href="ktest/equidistantmotion.html" class="resource-link">Перейти к задачам</a>
+                    <span class="topic-tag mechanics">Механика</span>
+                </div>
+
+                <div class="resource-card">
+                    <h3><i class="fas fa-chart-line"></i> Графики движения</h3>
+                    <p>Анализ графиков зависимости скорости от времени и определение ускорения, перемещения и пройденного пути.</p>
+                    <a href="ktest/charts.html" class="resource-link">Перейти к задачам</a>
+                    <span class="topic-tag mechanics">Механика</span>
+                </div>
+
+                <div class="resource-card">
+                    <h3><i class="fas fa-graduation-cap"></i> Тест по теории</h3>
+                    <p>Проверьте свои знания основных понятий и формул кинематики.</p>
+                    <a href="ktest/kinematics_test.html" class="resource-link">Перейти к тесту</a>
+                    <span class="topic-tag mechanics">Механика</span>
+                </div>
+
+                 <div class="resource-card">
+                    <h3><i class="fas fa-star"></i> Задачи повышенной сложности (ОГЭ)</h3>
+                    <p>Решите задачи, требующие комплексного применения знаний кинематики для успешной сдачи ОГЭ.</p>
+                    <a href="ktest/oge_problems.html" class="resource-link">Перейти к задачам</a>
+                    <span class="topic-tag mechanics">Механика</span>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="container">
+        <h1 id="section2">Задачи и тесты по термодинамике</h1>
+
+        <section class="resource-section">
+            <div class="resource-grid">
+                <div class="resource-card">
+                    <h3><i class="fas fa-fire-alt"></i> Расчет количества теплоты</h3>
+                    <p>Задачи на расчет количества теплоты при нагревании, плавлении, парообразовании и сгорании топлива.</p>
+                    <a href="ttest/heat_calculation.html" class="resource-link1">Перейти к задачам</a>
+                    <span class="topic-tag thermodynamics">Термодинамика</span>
+                </div>
+
+                <div class="resource-card">
+                    <h3><i class="fas fa-tint"></i> Влажность воздуха</h3>
+                    <p>Задачи на определение абсолютной и относительной влажности воздуха.</p>
+                    <a href="ttest/humidity.html" class="resource-link1">Перейти к задачам</a>
+                    <span class="topic-tag thermodynamics">Термодинамика</span>
+                </div>
+
+                <div class="resource-card">
+                    <h3><i class="fas fa-graduation-cap"></i> Тест по теории</h3>
+                    <p>Проверьте свои знания основных понятий и формул термодинамики.</p>
+                    <a href="ttest/thermodynamics_test.html" class="resource-link1">Перейти к тесту</a>
+                    <span class="topic-tag thermodynamics">Термодинамика</span>
+                </div>
+
+                <div class="resource-card">
+                    <h3><i class="fas fa-star"></i> Задачи повышенной сложности (ОГЭ)</h3>
+                    <p>Решите задачи, требующие комплексного применения знаний термодинамики для успешной сдачи ОГЭ.</p>
+                    <a href="ttest/oge_problems.html" class="resource-link1">Перейти к задачам</a>
+                    <span class="topic-tag thermodynamics">Термодинамика</span>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="container">
+        <h1 id="section3">Задачи и тесты по электричеству и магнетизму</h1>
+
+        <section class="resource-section">
+            <div class="resource-grid">
+                <div class="resource-card">
+                    <h3><i class="fas fa-bolt"></i> Электрический заряд и закон Кулона</h3>
+                    <p>Задачи на расчет силы взаимодействия между электрическими зарядами.</p>
+                    <a href="etests/coulomb.html" class="resource-link2">Перейти к задачам</a>
+                    <span class="topic-tag electromagnetism">Электромагнетизм</span>
+                </div>
+
+                <div class="resource-card">
+                    <h3><i class="fas fa-battery-half"></i> Закон Ома для участка цепи</h3>
+                    <p>Задачи на применение закона Ома для расчета силы тока, напряжения и сопротивления.</p>
+                    <a href="etests/ohm.html" class="resource-link2">Перейти к задачам</a>
+                    <span class="topic-tag electromagnetism">Электромагнетизм</span>
+                </div>
+
+                <div class="resource-card">
+                    <h3><i class="fas fa-grip-lines-vertical"></i> Последовательное и параллельное соединение</h3>
+                    <p>Задачи на расчет общего сопротивления, силы тока и напряжения в цепях с последовательным и
+                        параллельным соединением проводников.</p>
+                    <a href="etests/series_parallel.html" class="resource-link2">Перейти к задачам</a>
+                    <span class="topic-tag electromagnetism">Электромагнетизм</span>
+                </div>
+
+                <div class="resource-card">
+                    <h3><i class="fas fa-magnet"></i> Магнитное поле и сила Ампера</h3>
+                    <p>Задачи на определение силы, действующей на проводник с током в магнитном поле.</p>
+                    <a href="etests/ampere.html" class="resource-link2">Перейти к задачам</a>
+                    <span class="topic-tag electromagnetism">Электромагнетизм</span>
+                </div>
+
+                <div class="resource-card">
+                    <h3><i class="fas fa-charging-station"></i> Работа и мощность тока</h3>
+                    <p>Задачи на расчет работы и мощности электрического тока.</p>
+                    <a href="etests/power.html" class="resource-link2">Перейти к задачам</a>
+                    <span class="topic-tag electromagnetism">Электромагнетизм</span>
+                </div>
+
+                <div class="resource-card">
+                    <h3><i class="fas fa-graduation-cap"></i> Тест по теории</h3>
+                    <p>Проверьте свои знания основных понятий и формул электричества и магнетизма.</p>
+                    <a href="etests/em_test.html" class="resource-link2">Перейти к тесту</a>
+                    <span class="topic-tag electromagnetism">Электромагнетизм</span>
+                </div>
+
+                <div class="resource-card">
+                    <h3><i class="fas fa-star"></i> Задачи повышенной сложности (ОГЭ)</h3>
+                    <p>Решите задачи, требующие комплексного применения знаний электричества и магнетизма для успешной сдачи
+                        ОГЭ.</p>
+                    <a href="etests/oge_problems.html" class="resource-link2">Перейти к задачам</a>
+                    <span class="topic-tag electromagnetism">Электромагнетизм</span>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="container">
+        <h1 id="section4">Задачи и тесты по волновой и геометрической оптике
+        </h1>
+
+        <section class="resource-section">
+            <div class="resource-grid">
+
+                <div class="resource-card">
+                    <h3><i class="fas fa-wave-square"></i> Интерференция света</h3>
+                    <p>Задачи на расчет интерференционной картины, условия максимумов и минимумов.</p>
+                    <a href="otest/interference.html" class="resource-link3">Перейти к задачам</a>
+                    <span class="topic-tag optics">Оптика</span>
+                </div>
+
+                <div class="resource-card">
+                    <h3><i class="fas fa-equals"></i> Дифракция света</h3>
+                    <p>Задачи на дифракцию света на дифракционной решетке и одиночной щели.</p>
+                    <a href="otest/diffraction.html" class="resource-link3">Перейти к задачам</a>
+                    <span class="topic-tag optics">Оптика</span>
+                </div>
+
+                <div class="resource-card">
+                    <h3><i class="fas fa-tint"></i> Дисперсия света</h3>
+                    <p>Задачи на расчет показателя преломления и угла отклонения света призмой.</p>
+                    <a href="otest/dispersion.html" class="resource-link3">Перейти к задачам</a>
+                    <span class="topic-tag optics">Оптика</span>
+                </div>
+
+                <div class="resource-card">
+                    <h3><i class="fas fa-graduation-cap"></i> Тест по теории (Волновая оптика)</h3>
+                    <p>Проверьте свои знания основных понятий и законов волновой оптики.</p>
+                    <a href="otest/optics_test.html" class="resource-link3">Перейти к тесту</a>
+                    <span class="topic-tag optics">Оптика</span>
+                </div>
+
+                <div class="resource-card">
+                    <h3><i class="fas fa-star"></i> Задачи повышенной сложности (Волновая оптика, ОГЭ)</h3>
+                    <p>Решите задачи, требующие комплексного применения знаний волновой оптики для успешной сдачи ОГЭ.</p>
+                    <a href="otest/oge_problems.html" class="resource-link3">Перейти к задачам</a>
+                    <span class="topic-tag optics">Оптика</span>
+                </div>
+
+
+                <div class="resource-card">
+                    <h3><i class="fas fa-eye"></i> Линзы и оптические приборы</h3>
+                    <p>Задачи на построение изображений, формулу тонкой линзы, увеличение и применение в оптических приборах.</p>
+                    <a href="otest/lenses_all.html" class="resource-link3">Перейти к задачам</a>
+                    <span class="topic-tag optics">Оптика</span>
+                </div>
+
+            </div>
+        </section>
+    </div>
+    <div class="container">
+        <h1 id="section5">Задачи и тесты по основам квантовой физики</h1>
+
+        <section class="resource-section">
+            <div class="resource-grid">
+                <div class="resource-card">
+                    <h3><i class="fas fa-atom"></i> Квантование энергии</h3>
+                    <p>Задачи на расчет энергии фотонов, уровней энергии в атоме.</p>
+                    <a href="qtest/quantization.html" class="resource-link4">Перейти к задачам</a>
+                    <span class="topic-tag quantumphysics">Квантовая физика</span>
+                </div>
+
+                 <div class="resource-card">
+                    <h3><i class="fas fa-cubes"></i> Состав ядра атома.Ядерные реакции</h3>
+                    <p>Задачи на расчет энергии связи ядра, дефекта масс и закона радиоактивного распада.</p>
+                    <a href="qtest/atomic_nucleus.html" class="resource-link4">Перейти к задачам</a>
+                    <span class="topic-tag quantumphysics">Квантовая физика</span>
+                </div>
+
+                <div class="resource-card">
+                    <h3><i class="fas fa-graduation-cap"></i> Тест по теории</h3>
+                    <p>Проверьте свои знания основных понятий и законов квантовой физики.</p>
+                    <a href="qtest/quantum_test.html" class="resource-link4">Перейти к тесту</a>
+                    <span class="topic-tag quantumphysics">Квантовая физика</span>
+                </div>
+
+                <div class="resource-card">
+                    <h3><i class="fas fa-star"></i> Задачи повышенной сложности (ОГЭ)</h3>
+                    <p>Решите задачи, требующие комплексного применения знаний квантовой физики для успешной сдачи ОГЭ.</p>
+                    <a href="qtest/oge_problems.html" class="resource-link4">Перейти к задачам</a>
+                    <span class="topic-tag quantumphysics">Квантовая физика</span>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

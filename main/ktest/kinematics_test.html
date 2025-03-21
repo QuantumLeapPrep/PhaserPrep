@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест по кинематике</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Общие стили */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #E8F5E9;
+            color: #333;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            /* Более выраженная тень */
+        }
+
+        h1 {
+            text-align: center;
+            color: #2e7d32;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            /* Преобразование текста в верхний регистр */
+            /* Увеличение интервала между буквами */
+        }
+
+        /* Стили для теста */
+        .question {
+            background-color: #fff;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .question h3 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+
+        .answer {
+            margin-bottom: 10px;
+        }
+
+        .answer label {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px;
+            background-color: #fff;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            border: 1px solid #E0E0E0;
+        }
+
+        .answer label:hover {
+            background-color: #F0F4C3;
+        }
+
+        .answer input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        .correct {
+            color: green;
+            font-weight: bold;
+        }
+
+        .incorrect {
+            color: red;
+            font-weight: bold;
+        }
+
+        .submit-button {
+            background-color: #2e7d32;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 1rem;
+            display: block;
+            margin: 20px auto;
+        }
+
+        .submit-button:hover {
+            background-color: #2e7d32;
+        }
+
+        .result {
+            text-align: center;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        /* Футер */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+            margin-top: auto;
+        }
+
+        /* Скрываем радиокнопки после проверки */
+        input[type="radio"]:disabled+label {
+            cursor: default;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Тест по кинематике</h1>
+
+        <div id="test-container">
+            <!-- Вопросы теста будут добавлены здесь -->
+        </div>
+
+        <button class="submit-button" onclick="checkAnswers()">Завершить тест</button>
+
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        // Массив всех вопросов
+        const allQuestions = [
+            {
+                question: "Что изучает кинематика?",
+                answers: [
+                    "Причины движения тел",
+                    "Движение тел без учета причин",
+                    "Взаимодействие тел",
+                    "Свойства веществ"
+                ],
+                correctAnswer: 1
+            },
+            {
+                question: "Какое движение называется равномерным?",
+                answers: [
+                    "Движение с постоянной скоростью",
+                    "Движение с изменяющейся скоростью",
+                    "Движение по кривой траектории",
+                    "Движение, при котором скорость увеличивается"
+                ],
+                correctAnswer: 0
+            },
+            {
+                question: "Что такое траектория?",
+                answers: [
+                    "Расстояние, пройденное телом",
+                    "Линия, по которой движется тело",
+                    "Скорость тела",
+                    "Ускорение тела"
+                ],
+                correctAnswer: 1
+            },
+            {
+                question: "Какая физическая величина измеряется в м/с?",
+                answers: [
+                    "Ускорение",
+                    "Перемещение",
+                    "Скорость",
+                    "Время"
+                ],
+                correctAnswer: 2
+            },
+            {
+                question: "Что характеризует ускорение?",
+                answers: [
+                    "Быстроту изменения скорости",
+                    "Расстояние, пройденное телом",
+                    "Массу тела",
+                    "Время движения"
+                ],
+                correctAnswer: 0
+            },
+            {
+                question: "Какое движение называется равноускоренным?",
+                answers: [
+                    "Движение с постоянной скоростью",
+                    "Движение с постоянным ускорением",
+                    "Движение по окружности",
+                    "Движение, при котором ускорение меняется"
+                ],
+                correctAnswer: 1
+            },
+            {
+                question: "Какая формула выражает перемещение при равномерном движении?",
+                answers: [
+                    "s = v * t",
+                    "v = s / t",
+                    "a = (v - v₀) / t",
+                    "s = v₀ * t + (a * t²) / 2"
+                ],
+                correctAnswer: 0
+            },
+            {
+                question: "Какая формула выражает скорость при равноускоренном движении?",
+                answers: [
+                    "s = v * t",
+                    "v = s / t",
+                    "v = v₀ + a * t",
+                    "s = v₀ * t + (a * t²) / 2"
+                ],
+                correctAnswer: 2
+            },
+            {
+                question: "Какие единицы измерения ускорения в СИ?",
+                answers: [
+                    "м/с",
+                    "м/с²",
+                    "км/ч",
+                    "км/ч²"
+                ],
+                correctAnswer: 1
+            },
+            {
+                question: "Как найти среднюю скорость при неравномерном движении?",
+                answers: [
+                    "Сложить начальную и конечную скорости и разделить на 2",
+                    "Разделить путь на время",
+                    "Умножить путь на время",
+                    "Найти производную от пути по времени"
+                ],
+                correctAnswer: 1
+            },
+             {
+                question: "Тело движется равномерно прямолинейно. Что можно сказать о его ускорении?",
+                answers: [
+                    "Ускорение постоянно и отлично от нуля",
+                    "Ускорение равно нулю",
+                    "Ускорение увеличивается со временем",
+                    "Ускорение уменьшается со временем"
+                ],
+                correctAnswer: 1
+            },
+            {
+                question: "Какой график соответствует равномерному движению?",
+                answers: [
+                    "Прямая линия, направленная вверх",
+                    "Горизонтальная прямая линия",
+                    "Парабола",
+                    "Гипербола"
+                ],
+                correctAnswer: 1
+            },
+            {
+                question: "Что такое перемещение тела?",
+                answers: [
+                    "Длина траектории",
+                    "Вектор, соединяющий начальную и конечную точки",
+                    "Скорость тела",
+                    "Время движения"
+                ],
+                correctAnswer: 1
+            },
+            {
+                question: "Если тело брошено вертикально вверх, что происходит с его скоростью во время подъема?",
+                answers: [
+                    "Скорость увеличивается",
+                    "Скорость уменьшается",
+                    "Скорость не меняется",
+                    "Скорость сначала увеличивается, затем уменьшается"
+                ],
+                correctAnswer: 1
+            },
+            {
+                question: "Что такое свободное падение?",
+                answers: [
+                    "Движение тела под действием только силы тяжести",
+                    "Движение тела без сопротивления воздуха",
+                    "Равномерное движение тела",
+                    "Движение тела по горизонтальной поверхности"
+                ],
+                correctAnswer: 0
+            },
+            {
+                question: "Как направлено ускорение при свободном падении?",
+                answers: [
+                    "Вверх",
+                    "Вниз",
+                    "Влево",
+                    "Вправо"
+                ],
+                correctAnswer: 1
+            },
+            {
+                question: "Что происходит с телом, брошенным горизонтально, в направлении оси X (горизонтально)?",
+                answers: [
+                    "Движется равномерно",
+                    "Движется равноускоренно",
+                    "Движется с уменьшающимся ускорением",
+                    "Остается неподвижным"
+                ],
+                correctAnswer: 0
+            },
+             {
+                question: "Тело брошено под углом к горизонту. Как изменяется вертикальная составляющая скорости во время подъема?",
+                answers: [
+                    "Увеличивается",
+                    "Уменьшается",
+                    "Не изменяется",
+                    "Сначала увеличивается, потом уменьшается"
+                ],
+                correctAnswer: 1
+            },
+            {
+                question: "Какая траектория у тела, брошенного под углом к горизонту?",
+                answers: [
+                    "Прямая",
+                    "Окружность",
+                    "Парабола",
+                    "Гипербола"
+                ],
+                correctAnswer: 2
+            },
+            {
+                question: "Формула для дальности полета тела, брошенного под углом к горизонту?",
+                answers: [
+                    "v₀² * sin(α) / g",
+                    "v₀ * cos(α) / g",
+                    "v₀² * sin(2α) / g",
+                    "v₀ * sin(2α) / g"
+                ],
+                correctAnswer: 2
+            },
+              {
+                question: "Тело движется по окружности с постоянной скоростью. Что можно сказать о его ускорении?",
+                answers: [
+                    "Равно нулю",
+                    "Постоянно по модулю и направлено к центру",
+                    "Постоянно по модулю и направлено от центра",
+                    "Меняется по модулю"
+                ],
+                correctAnswer: 1
+            },
+            {
+                question: "Как называется ускорение при движении по окружности?",
+                answers: [
+                    "Тангенциальное",
+                    "Центростремительное",
+                    "Нормальное",
+                    "Касательное"
+                ],
+                correctAnswer: 1
+            },
+            {
+                question: "Что характеризует период обращения?",
+                answers: [
+                    "Время одного полного оборота",
+                    "Частоту вращения",
+                    "Угловую скорость",
+                    "Радиус окружности"
+                ],
+                correctAnswer: 0
+            },
+            {
+                question: "Как связана линейная скорость с угловой скоростью при движении по окружности?",
+                answers: [
+                    "v = ω * r",
+                    "v = ω / r",
+                    "v = ω * r²",
+                    "v = ω² * r"
+                ],
+                correctAnswer: 0
+            },
+            {
+                question: "Что такое частота вращения?",
+                answers: [
+                    "Число оборотов в единицу времени",
+                    "Время одного оборота",
+                    "Угловая скорость",
+                    "Радиус вращения"
+                ],
+                correctAnswer: 0
+            }
+        ];
+
+        let currentQuestions = [];
+        const numberOfQuestions = 10; // Количество вопросов в тесте
+
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+        function generateTest() {
+            // Создаем копию массива всех вопросов
+            let availableQuestions = [...allQuestions];
+            currentQuestions = [];
+
+            // Выбираем случайные вопросы
+            for (let i = 0; i < numberOfQuestions; i++) {
+                if (availableQuestions.length > 0) {
+                    const randomIndex = Math.floor(Math.random() * availableQuestions.length);
+                    currentQuestions.push(availableQuestions[randomIndex]);
+                    availableQuestions.splice(randomIndex, 1); // Удаляем выбранный вопрос из доступных
+                } else {
+                    break; // Если доступных вопросов больше нет, заканчиваем
+                }
+            }
+
+            shuffleArray(currentQuestions); // Перемешиваем выбранные вопросы
+
+            const testContainer = document.getElementById('test-container');
+            testContainer.innerHTML = '';
+
+            currentQuestions.forEach((question, index) => {
+                const questionDiv = document.createElement('div');
+                questionDiv.classList.add('question');
+
+                const questionHeading = document.createElement('h3');
+                questionHeading.textContent = `Вопрос ${index + 1}: ${question.question}`;
+                questionDiv.appendChild(questionHeading);
+
+                question.answers.forEach((answer, answerIndex) => {
+                    const answerDiv = document.createElement('div');
+                    answerDiv.classList.add('answer');
+
+                    const radioInput = document.createElement('input');
+                    radioInput.type = 'radio';
+                    radioInput.id = `question${index}-answer${answerIndex}`;
+                    radioInput.name = `question${index}`;
+                    radioInput.value = answerIndex;
+
+                    const label = document.createElement('label');
+                    label.htmlFor = `question${index}-answer${answerIndex}`;
+                    label.innerHTML = `${answer} <span></span>`; // Добавляем span для иконки
+
+                    answerDiv.appendChild(radioInput);
+                    answerDiv.appendChild(label);
+                    questionDiv.appendChild(answerDiv);
+                });
+
+                testContainer.appendChild(questionDiv);
+            });
+        }
+
+        function checkAnswers() {
+            const testContainer = document.getElementById('test-container');
+            const resultDiv = document.getElementById('result');
+            let score = 0;
+
+            // Отключаем радиокнопки, чтобы нельзя было изменить ответы
+            const radioButtons = testContainer.querySelectorAll('input[type="radio"]');
+            radioButtons.forEach(radio => {
+                radio.disabled = true;
+            });
+
+            currentQuestions.forEach((question, index) => {
+                const selectedAnswer = document.querySelector(`input[name="question${index}"]:checked`);
+                const answersDiv = testContainer.querySelectorAll(`.question:nth-child(${index + 1}) .answer`);
+
+                if (selectedAnswer) {
+                    const selectedAnswerIndex = parseInt(selectedAnswer.value);
+
+                    answersDiv.forEach((answerDiv, i) => {
+                        const label = answerDiv.querySelector('label');
+                        const iconSpan = label.querySelector('span');
+
+                        if (i === question.correctAnswer) {
+                            iconSpan.innerHTML = '<i class="fas fa-check correct"></i>';
+                        } else if (i === selectedAnswerIndex && selectedAnswerIndex !== question.correctAnswer) {
+                            iconSpan.innerHTML = '<i class="fas fa-times incorrect"></i>';
+                        }
+                    });
+
+                    if (selectedAnswerIndex === question.correctAnswer) {
+                        score++;
+                    }
+                } else {
+                    answersDiv.forEach((answerDiv, i) => {
+                        if (i === question.correctAnswer) {
+                            const label = answerDiv.querySelector('label');
+                            const iconSpan = label.querySelector('span');
+                            iconSpan.innerHTML = '<i class="fas fa-check correct"></i>';
+                        }
+                    });
+                }
+            });
+
+            const resultText = `Вы ответили правильно на ${score} из ${currentQuestions.length} вопросов.`;
+            let motivationText = "";
+
+            if (score === currentQuestions.length) {
+                motivationText = "Отлично! Вы превосходно разбираетесь в кинематике!";
+            } else if (score >= currentQuestions.length * 0.75) {
+                motivationText = "Очень хорошо! Продолжайте в том же духе!";
+            } else if (score >= currentQuestions.length * 0.5) {
+                motivationText = "Неплохо! Есть над чем поработать.";
+            } else {
+                motivationText = "Попробуйте еще раз! У вас обязательно получится.";
+            }
+
+            resultDiv.textContent = `${resultText} ${motivationText}`;
+        }
+
+        document.addEventListener('DOMContentLoaded', generateTest);
+    </script>
+
+</body>
+
+</html>

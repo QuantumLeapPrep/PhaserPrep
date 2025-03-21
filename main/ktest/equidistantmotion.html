@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задачи по физике: Равноускоренное движение</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Общие стили */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            color: #333;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2e7d32;
+            margin-bottom: 30px;
+        }
+
+        /* Стили для задач */
+        .task {
+            background-color: #fff;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .task:hover {
+            transform: translateY(-5px);
+        }
+
+        .task h3 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+
+        .task p {
+            margin-bottom: 20px;
+        }
+
+        /* Стили для решения */
+        .solution {
+            margin-top: 15px;
+            padding: 15px;
+            border-left: 4px solid #2e7d32;
+            background-color: #f9f9f9;
+            border-radius: 6px;
+        }
+
+        .solution p {
+            margin: 8px 0;
+            color: #555;
+        }
+
+        .solution ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .solution li {
+            margin-bottom: 5px;
+        }
+
+        /* Стили для кнопки решения */
+        .solution-button {
+            background-color: #2e7d32;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .solution-button:hover {
+            background-color: #216b25;
+        }
+
+        /* Скрытый элемент */
+        .hidden {
+            display: none;
+        }
+
+        /* Футер */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+            margin-top: auto;
+        }
+
+        /* MathJax стили */
+        .math {
+            font-family: 'Times New Roman', serif;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Задачи по физике: Равноускоренное движение (ОГЭ)</h1>
+
+        <div class="task">
+            <h3>Задача 1</h3>
+            <p>Автомобиль, трогаясь с места, движется равноускоренно с ускорением 2 м/с². Какой путь он проедет за 5 секунд? Ответ дать в метрах.</p>
+            <button class="solution-button" onclick="toggleSolution('solution1')">
+                <i class="fas fa-lightbulb"></i>
+                Показать решение
+            </button>
+            <div class="solution hidden" id="solution1">
+                <ul>
+                    <li><span class="math">Дано:</span>
+                        <ul>
+                            <li><span class="math">a = 2 м/с²</span></li>
+                            <li><span class="math">t = 5 с</span></li>
+                            <li><span class="math">v₀ = 0 м/с</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Найти: s</span></li>
+                    <li><span class="math">Решение:</span>
+                        <ul>
+                            <li>Путь при равноускоренном движении: <span class="math">s = v₀ * t + (a * t²) / 2</span></li>
+                            <li>Вычислим путь: <span class="math">s = 0 * 5 + (2 * 5²) / 2 = 25 м</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Ответ:</span> 25 м</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="task">
+            <h3>Задача 2</h3>
+            <p>Тело движется равноускоренно с начальной скоростью 3 м/с и ускорением 1 м/с². Какую скорость будет иметь тело через 4 секунды? Ответ дать в м/с.</p>
+            <button class="solution-button" onclick="toggleSolution('solution2')">
+                <i class="fas fa-lightbulb"></i>
+                Показать решение
+            </button>
+            <div class="solution hidden" id="solution2">
+                <ul>
+                    <li><span class="math">Дано:</span>
+                        <ul>
+                            <li><span class="math">v₀ = 3 м/с</span></li>
+                            <li><span class="math">a = 1 м/с²</span></li>
+                            <li><span class="math">t = 4 с</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Найти: v</span></li>
+                    <li><span class="math">Решение:</span>
+                        <ul>
+                            <li>Скорость при равноускоренном движении: <span class="math">v = v₀ + a * t</span></li>
+                            <li>Вычислим скорость: <span class="math">v = 3 м/с + 1 м/с² * 4 с = 7 м/с</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Ответ:</span> 7 м/с</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="task">
+            <h3>Задача 3</h3>
+            <p>Тормозящий автомобиль движется равнозамедленно с ускорением -3 м/с², имея начальную скорость 27 м/с. Через какое время его скорость уменьшится до 9 м/с? Ответ дать в секундах.</p>
+            <button class="solution-button" onclick="toggleSolution('solution3')">
+                <i class="fas fa-lightbulb"></i>
+                Показать решение
+            </button>
+            <div class="solution hidden" id="solution3">
+                <ul>
+                    <li><span class="math">Дано:</span>
+                        <ul>
+                            <li><span class="math">a = -3 м/с²</span></li>
+                            <li><span class="math">v₀ = 27 м/с</span></li>
+                            <li><span class="math">v = 9 м/с</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Найти: t</span></li>
+                    <li><span class="math">Решение:</span>
+                        <ul>
+                            <li>Время при равноускоренном движении: <span class="math">t = (v - v₀) / a</span></li>
+                            <li>Вычислим время: <span class="math">t = (9 м/с - 27 м/с) / (-3 м/с²) = 6 с</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Ответ:</span> 6 с</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="task">
+            <h3>Задача 4</h3>
+            <p>Поезд, двигаясь равноускоренно, за 10 с увеличил свою скорость с 5 м/с до 15 м/с. Определите ускорение поезда. Ответ дать в м/с².</p>
+            <button class="solution-button" onclick="toggleSolution('solution4')">
+                <i class="fas fa-lightbulb"></i>
+                Показать решение
+            </button>
+            <div class="solution hidden" id="solution4">
+                <ul>
+                    <li><span class="math">Дано:</span>
+                        <ul>
+                            <li><span class="math">v₀ = 5 м/с</span></li>
+                            <li><span class="math">v = 15 м/с</span></li>
+                            <li><span class="math">t = 10 с</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Найти: a</span></li>
+                    <li><span class="math">Решение:</span>
+                        <ul>
+                            <li>Ускорение при равноускоренном движении: <span class="math">a = (v - v₀) / t</span></li>
+                            <li>Вычислим ускорение: <span class="math">a = (15 м/с - 5 м/с) / 10 с = 1 м/с²</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Ответ:</span> 1 м/с²</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="task">
+            <h3>Задача 5</h3>
+            <p>Автомобиль начинает двигаться с ускорением 0,5 м/с². Какой путь он проедет за 20 секунд? Ответ дать в метрах.</p>
+            <button class="solution-button" onclick="toggleSolution('solution5')">
+                <i class="fas fa-lightbulb"></i>
+                Показать решение
+            </button>
+            <div class="solution hidden" id="solution5">
+                <ul>
+                    <li><span class="math">Дано:</span>
+                        <ul>
+                            <li><span class="math">a = 0,5 м/с²</span></li>
+                            <li><span class="math">t = 20 с</span></li>
+                            <li><span class="math">v₀ = 0 м/с</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Найти: s</span></li>
+                    <li><span class="math">Решение:</span>
+                        <ul>
+                            <li>Путь при равноускоренном движении: <span class="math">s = v₀ * t + (a * t²) / 2</span></li>
+                            <li>Вычислим путь: <span class="math">s = 0 * 20 + (0,5 * 20²) / 2 = 100 м</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Ответ:</span> 100 м</li>
+                </ul>
+            </div>
+        </div>
+
+         <div class="task">
+            <h3>Задача 6</h3>
+            <p>Ракета, двигаясь равноускоренно из состояния покоя, достигает скорости 500 м/с за 50 секунд. Определите ускорение ракеты в м/с².</p>
+            <button class="solution-button" onclick="toggleSolution('solution6')">
+                <i class="fas fa-lightbulb"></i>
+                Показать решение
+            </button>
+            <div class="solution hidden" id="solution6">
+                <ul>
+                    <li><span class="math">Дано:</span>
+                        <ul>
+                            <li><span class="math">v = 500 м/с</span></li>
+                            <li><span class="math">t = 50 с</span></li>
+                            <li><span class="math">v₀ = 0 м/с</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Найти: a</span></li>
+                    <li><span class="math">Решение:</span>
+                        <ul>
+                            <li>Ускорение при равноускоренном движении: <span class="math">a = (v - v₀) / t</span></li>
+                            <li>Вычислим ускорение: <span class="math">a = (500 м/с - 0 м/с) / 50 с = 10 м/с²</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Ответ:</span> 10 м/с²</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="task">
+            <h3>Задача 7</h3>
+            <p>Лыжник начинает спускаться с горы с ускорением 0,4 м/с². Какую скорость он приобретет через 15 секунд? Ответ дать в м/с.</p>
+            <button class="solution-button" onclick="toggleSolution('solution7')">
+                <i class="fas fa-lightbulb"></i>
+                Показать решение
+            </button>
+            <div class="solution hidden" id="solution7">
+                <ul>
+                    <li><span class="math">Дано:</span>
+                        <ul>
+                            <li><span class="math">a = 0,4 м/с²</span></li>
+                            <li><span class="math">t = 15 с</span></li>
+                            <li><span class="math">v₀ = 0 м/с</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Найти: v</span></li>
+                    <li><span class="math">Решение:</span>
+                        <ul>
+                            <li>Скорость при равноускоренном движении: <span class="math">v = v₀ + a * t</span></li>
+                            <li>Вычислим скорость: <span class="math">v = 0 м/с + 0,4 м/с² * 15 с = 6 м/с</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Ответ:</span> 6 м/с</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="task">
+            <h3>Задача 8</h3>
+            <p>Автобус, двигаясь равноускоренно, прошел 125 м за 10 с, увеличив свою скорость до 15 м/с. Определите начальную скорость автобуса. Ответ дать в м/с.</p>
+            <button class="solution-button" onclick="toggleSolution('solution8')">
+                <i class="fas fa-lightbulb"></i>
+                Показать решение
+            </button>
+            <div class="solution hidden" id="solution8">
+                <ul>
+                    <li><span class="math">Дано:</span>
+                        <ul>
+                            <li><span class="math">s = 125 м</span></li>
+                            <li><span class="math">t = 10 с</span></li>
+                            <li><span class="math">v = 15 м/с</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Найти: v₀</span></li>
+                    <li><span class="math">Решение:</span>
+                        <ul>
+                            <li>Средняя скорость: <span class="math">v_ср = s / t = 125 м / 10 с = 12,5 м/с</span></li>
+                            <li>Средняя скорость при равноускоренном движении: <span class="math">v_ср = (v + v₀) / 2</span></li>
+                            <li>Выразим начальную скорость: <span class="math">v₀ = 2 * v_ср - v</span></li>
+                            <li>Вычислим начальную скорость: <span class="math">v₀ = 2 * 12,5 м/с - 15 м/с = 10 м/с</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Ответ:</span> 10 м/с</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="task">
+            <h3>Задача 9</h3>
+            <p>С каким ускорением должен двигаться автомобиль, чтобы, имея начальную скорость 10 м/с, за 5 с пройти путь 75 м? Ответ дать в м/с².</p>
+            <button class="solution-button" onclick="toggleSolution('solution9')">
+                <i class="fas fa-lightbulb"></i>
+                Показать решение
+            </button>
+            <div class="solution hidden" id="solution9">
+                <ul>
+                    <li><span class="math">Дано:</span>
+                        <ul>
+                            <li><span class="math">v₀ = 10 м/с</span></li>
+                            <li><span class="math">t = 5 с</span></li>
+                            <li><span class="math">s = 75 м</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Найти: a</span></li>
+                    <li><span class="math">Решение:</span>
+                        <ul>
+                            <li>Путь при равноускоренном движении: <span class="math">s = v₀ * t + (a * t²) / 2</span></li>
+                            <li>Выразим ускорение: <span class="math">a = 2 * (s - v₀ * t) / t²</span></li>
+                            <li>Вычислим ускорение: <span class="math">a = 2 * (75 м - 10 м/с * 5 с) / (5 с)² = 2 м/с²</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Ответ:</span> 2 м/с²</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="task">
+            <h3>Задача 10</h3>
+            <p>Трамвай, двигаясь с ускорением 0,5 м/с², прошел 225 м. Сколько времени он двигался, если его начальная скорость была 10 м/с? Ответ дать в секундах.</p>
+            <button class="solution-button" onclick="toggleSolution('solution10')">
+                <i class="fas fa-lightbulb"></i>
+                Показать решение
+            </button>
+            <div class="solution hidden" id="solution10">
+                <ul>
+                    <li><span class="math">Дано:</span>
+                        <ul>
+                            <li><span class="math">a = 0,5 м/с²</span></li>
+                            <li><span class="math">s = 225 м</span></li>
+                            <li><span class="math">v₀ = 10 м/с</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Найти: t</span></li>
+                    <li><span class="math">Решение:</span>
+                        <ul>
+                            <li>Путь при равноускоренном движении: <span class="math">s = v₀ * t + (a * t²) / 2</span></li>
+                             <li>Подставим значения и получим квадратное уравнение относительно t:
+                             <span class="math">0.25t^2 + 10t - 225 = 0</span></li>
+                            <li>Решим квадратное уравнение: <span class="math">t = (-b ± √(b² - 4ac)) / 2a</span></li>
+                            <li><span class="math">t = (-10 ± √(10² - 4 * 0.25 * (-225))) / (2 * 0.25)</span></li>
+                             <li><span class="math">t = (-10 ± √(100 + 225)) / 0.5</span></li>
+                              <li><span class="math">t = (-10 ± √325) / 0.5</span></li>
+                             <li><span class="math">t ≈ (-10 ± 18.03) / 0.5</span>
+                            <li>Берем положительный корень:  <span class="math">t ≈  (-10 + 18.03) / 0.5 ≈ 16.06 с</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Ответ:</span> ≈ 16.06 с</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+    <script>
+        function toggleSolution(solutionId) {
+            var solution = document.getElementById(solutionId);
+            solution.classList.toggle('hidden');
+        }
+    </script>
+
+</body>
+</html>

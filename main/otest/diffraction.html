@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Дифракция света: Задачи</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Общие стили */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            color: #333;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #512da8;
+            margin-bottom: 30px;
+        }
+
+        /* Стили для задач */
+        .task {
+            background-color: #fff;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .task:hover {
+            transform: translateY(-5px);
+        }
+
+        .task h3 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+
+        .task p {
+            margin-bottom: 10px;
+        }
+
+        /* Стили для решения */
+        .solution {
+            margin-top: 15px;
+            padding: 15px;
+            border-left: 4px solid #512da8;
+            background-color: #f9f9f9;
+            border-radius: 6px;
+            display: none;
+        }
+
+        .solution p {
+            margin: 8px 0;
+            color: #555;
+        }
+
+        .solution ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .solution li {
+            margin-bottom: 5px;
+        }
+
+        /* Стили для схемы */
+        .task-image {
+            max-width: 100%;
+            height: auto;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        /* Стили для кнопки решения */
+        .solution-button {
+            background-color: #512da8;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 15px;
+        }
+
+        .solution-button:hover {
+            background-color: #4527a0;
+        }
+
+        /* Стили для обертки задачи */
+        .task-content {
+            margin-bottom: 10px;
+        }
+
+        /* MathJax стили */
+        .math {
+            font-family: 'Times New Roman', serif;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Задачи на Дифракцию Света</h1>
+        <p>Решите следующие задачи, чтобы закрепить свои знания о дифракции света.</p>
+
+        <!-- Задача 1 -->
+        <div class="task">
+            <h3>Задача 1</h3>
+            <div class="task-content">
+                <p>На щель шириной 0,1 мм падает нормально монохроматический свет с длиной волны 500 нм. Определите угол, под
+                    которым наблюдается первый дифракционный минимум.</p>
+            </div>
+            <button class="solution-button" onclick="toggleSolution('solution1')">
+                <i class="fas fa-lightbulb"></i> Показать решение</button>
+            <div class="solution" id="solution1">
+                <ul>
+                    <li><span class="math">Дано:</span>
+                        <ul>
+                            <li><span class="math">a = 0,1 мм = 0,1 * 10⁻³ м</span> (ширина щели)</li>
+                            <li><span class="math">λ = 500 нм = 500 * 10⁻⁹ м</span> (длина волны)</li>
+                            <li><span class="math">m = 1</span> (первый минимум)</li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Найти: θ</span> (угол дифракции)</li>
+                    <li><span class="math">Решение:</span>
+                        <ul>
+                            <li>Условие минимума: <span class="math">a * sin(θ) = m * λ</span></li>
+                            <li>Выразим <span class="math">sin(θ): sin(θ) = (m * λ) / a</span></li>
+                            <li>Вычислим: <span class="math">sin(θ) = (1 * 500 * 10⁻⁹ м) / (0,1 * 10⁻³ м) = 0,005</span></li>
+                            <li>Найдем <span class="math">θ: θ = arcsin(0.005) ≈ 0,29°</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Ответ:</span> ≈ 0,29°</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Задача 2 -->
+        <div class="task">
+            <h3>Задача 2</h3>
+            <div class="task-content">
+                <p>Дифракционная решетка содержит 100 штрихов на 1 мм. На решетку нормально падает свет с длиной волны 600
+                    нм. Определите угол, под которым наблюдается максимум второго порядка.</p>
+            </div>
+            <button class="solution-button" onclick="toggleSolution('solution2')">
+                <i class="fas fa-lightbulb"></i> Показать решение</button>
+            <div class="solution" id="solution2">
+                <ul>
+                    <li><span class="math">Дано:</span>
+                        <ul>
+                            <li><span class="math">N = 100 штрихов/мм = 10⁵ штрихов/м</span> (плотность штрихов)</li>
+                            <li><span class="math">λ = 600 нм = 600 * 10⁻⁹ м</span> (длина волны)</li>
+                            <li><span class="math">m = 2</span> (порядок максимума)</li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Найти: θ</span> (угол дифракции)</li>
+                    <li><span class="math">Решение:</span>
+                        <ul>
+                            <li>Период решетки: <span class="math">d = 1 / N = 1 / 10⁵ м = 10⁻⁵ м</span></li>
+                            <li>Условие максимума: <span class="math">d * sin(θ) = m * λ</span></li>
+                            <li>Выразим <span class="math">sin(θ): sin(θ) = (m * λ) / d</span></li>
+                            <li>Вычислим: <span class="math">sin(θ) = (2 * 600 * 10⁻⁹ м) / 10⁻⁵ м = 0,12</span></li>
+                            <li>Найдем <span class="math">θ: θ = arcsin(0.12) ≈ 6,89°</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Ответ:</span> ≈ 6,89°</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Задача 3 -->
+        <div class="task">
+            <h3>Задача 3</h3>
+            <div class="task-content">
+                <p>На дифракционную решетку с периодом 2 мкм падает нормально монохроматический свет. Угол между первым и
+                    вторым максимумами равен 19,6°. Определите длину волны света.</p>
+            </div>
+            <button class="solution-button" onclick="toggleSolution('solution3')">
+                <i class="fas fa-lightbulb"></i> Показать решение</button>
+            <div class="solution" id="solution3">
+                <ul>
+                    <li><span class="math">Дано:</span>
+                        <ul>
+                            <li><span class="math">d = 2 мкм = 2 * 10⁻⁶ м</span> (период решетки)</li>
+                            <li><span class="math">θ₂ - θ₁ = 19,6°</span> (разность углов)</li>
+                            <li><span class="math">m₁ = 1</span> (первый максимум)</li>
+                            <li><span class="math">m₂ = 2</span> (второй максимум)</li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Найти: λ</span> (длина волны)</li>
+                    <li><span class="math">Решение:</span>
+                        <ul>
+                            <li>Для первого максимума: <span class="math">d * sin(θ₁) = m₁ * λ = λ</span></li>
+                            <li>Для второго максимума: <span class="math">d * sin(θ₂) = m₂ * λ = 2λ</span></li>
+                            <li>Так как <span class="math">θ₂ - θ₁ = 19.6°</span>, то <span class="math">θ₂ = θ₁ + 19.6°</span></li>
+                            <li>Выразим <span class="math">λ</span> из первого уравнения и подставим во второе: <span class="math">d * sin(θ₂)= 2 * (d * sin(θ₁))</span></li>
+                            <li>или <span class="math">sin(θ₂) = 2 * sin(θ₁)</span></li>
+                            <li>Подставим <span class="math">θ₂ = θ₁ + 19.6°</span>: <span class="math">sin(θ₁ + 19.6°) = 2 * sin(θ₁)</span></li>
+                            <li>Решая уравнение (численно, так как аналитическое решение сложное), получим <span class="math">θ₁ ≈ 28.3°</span></li>
+                            <li>Тогда <span class="math">λ = d * sin(θ₁) = 2 * 10⁻⁶ м * sin(28.3°) ≈ 9,44 * 10⁻⁷ м = 944 нм</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Ответ:</span> ≈ 944 нм</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Задача 4 -->
+        <div class="task">
+            <h3>Задача 4</h3>
+            <div class="task-content">
+                <p>На щель падает монохроматический свет. Ширина щели равна 0,2 мм. Определите длину волны света, если
+                    первый дифракционный минимум наблюдается под углом 0,3°. </p>
+            </div>
+            <button class="solution-button" onclick="toggleSolution('solution4')">
+                <i class="fas fa-lightbulb"></i> Показать решение</button>
+            <div class="solution" id="solution4">
+                <ul>
+                    <li><span class="math">Дано:</span>
+                        <ul>
+                            <li><span class="math">a = 0,2 мм = 0,2 * 10⁻³ м</span> (ширина щели)</li>
+                            <li><span class="math">θ = 0,3°</span> (угол первого минимума)</li>
+                            <li><span class="math">m = 1</span> (первый минимум)</li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Найти: λ</span> (длина волны)</li>
+                    <li><span class="math">Решение:</span>
+                        <ul>
+                            <li>Условие минимума: <span class="math">a * sin(θ) = m * λ</span></li>
+                            <li>Выразим <span class="math">λ: λ = (a * sin(θ)) / m</span></li>
+                            <li>Вычислим: <span class="math">λ = (0,2 * 10⁻³ м * sin(0,3°)) / 1 ≈ 1,05 * 10⁻⁶ м = 1050 нм</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Ответ:</span> ≈ 1050 нм</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Задача 5 -->
+        <div class="task">
+            <h3>Задача 5</h3>
+            <div class="task-content">
+                <p>Определите наибольший порядок дифракционного максимума для дифракционной решетки, содержащей 500
+                    штрихов на 1 мм, если длина волны света равна 700 нм.</p>
+            </div>
+            <button class="solution-button" onclick="toggleSolution('solution5')">
+                <i class="fas fa-lightbulb"></i> Показать решение</button>
+            <div class="solution" id="solution5">
+                <ul>
+                    <li><span class="math">Дано:</span>
+                        <ul>
+                            <li><span class="math">N = 500 штрихов/мм = 5 * 10⁵ штрихов/м</span> (плотность штрихов)</li>
+                            <li><span class="math">λ = 700 нм = 700 * 10⁻⁹ м</span> (длина волны)</li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Найти: m<sub>max</sub></span> (наибольший порядок максимума)</li>
+                    <li><span class="math">Решение:</span>
+                        <ul>
+                            <li>Период решетки: <span class="math">d = 1 / N = 1 / (5 * 10⁵) м = 2 * 10⁻⁶ м</span></li>
+                            <li>Условие максимума: <span class="math">d * sin(θ) = m * λ</span></li>
+                            <li>Максимальный порядок соответствует <span class="math">sin(θ) = 1</span> (т.е., <span class="math">θ = 90°</span>):
+                                <span class="math">d = m<sub>max</sub> * λ</span></li>
+                            <li>Выразим <span class="math">m<sub>max</sub>: m<sub>max</sub> = d / λ</span></li>
+                            <li>Вычислим: <span class="math">m<sub>max</sub> = (2 * 10⁻⁶ м) / (700 * 10⁻⁹ м) ≈ 2,86</span></li>
+                            <li>Так как <span class="math">m</span> должно быть целым, <span class="math">m<sub>max</sub> = 2</span>.</li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Ответ:</span> 2</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Задача 6 -->
+        <div class="task">
+            <h3>Задача 6</h3>
+            <div class="task-content">
+                <p>На дифракционную решетку нормально падает свет с длиной волны 500 нм. Под каким углом наблюдается
+                    максимум третьего порядка, если период решетки равен 1,5 мкм?</p>
+            </div>
+            <button class="solution-button" onclick="toggleSolution('solution6')">
+                <i class="fas fa-lightbulb"></i> Показать решение</button>
+            <div class="solution" id="solution6">
+                <ul>
+                    <li><span class="math">Дано:</span>
+                        <ul>
+                            <li><span class="math">λ = 500 нм = 500 * 10⁻⁹ м</span> (длина волны)</li>
+                            <li><span class="math">d = 1,5 мкм = 1,5 * 10⁻⁶ м</span> (период решетки)</li>
+                            <li><span class="math">m = 3</span> (порядок максимума)</li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Найти: θ</span> (угол дифракции)</li>
+                    <li><span class="math">Решение:</span>
+                        <ul>
+                            <li>Условие максимума: <span class="math">d * sin(θ) = m * λ</span></li>
+                            <li>Выразим <span class="math">sin(θ): sin(θ) = (m * λ) / d</span></li>
+                            <li>Вычислим: <span class="math">sin(θ) = (3 * 500 * 10⁻⁹ м) / (1,5 * 10⁻⁶ м) = 1</span></li>
+                            <li>Найдем <span class="math">θ: θ = arcsin(1) = 90°</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Ответ:</span> 90°</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Задача 7 -->
+        <div class="task">
+            <h3>Задача 7</h3>
+            <div class="task-content">
+                <p>Определите ширину щели, если при дифракции на ней свет с длиной волны 600 нм дает первый минимум под
+                    углом 0,25°. </p>
+            </div>
+            <button class="solution-button" onclick="toggleSolution('solution7')">
+                <i class="fas fa-lightbulb"></i> Показать решение</button>
+            <div class="solution" id="solution7">
+                <ul>
+                    <li><span class="math">Дано:</span>
+                        <ul>
+                            <li><span class="math">λ = 600 нм = 600 * 10⁻⁹ м</span></li>
+                            <li><span class="math">θ = 0,25°</span></li>
+                            <li><span class="math">m = 1</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Найти: a</span></li>
+                    <li><span class="math">Решение:</span>
+                        <ul>
+                            <li><span class="math">a * sin(θ) = mλ</span></li>
+                            <li><span class="math">a = mλ / sin(θ)</span></li>
+                            <li><span class="math">a = (1 * 600 * 10⁻⁹ м) / sin(0.25°) = 0.000137 м = 0.137 мм</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Ответ:</span> ≈ 0.137 мм</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Задача 8 -->
+        <div class="task">
+            <h3>Задача 8</h3>
+            <div class="task-content">
+                <p>На дифракционную решетку с периодом 3 мкм падает свет. Угол между первым и вторым максимумами равен 10°.
+                    Определите длину волны света.</p>
+            </div>
+            <button class="solution-button" onclick="toggleSolution('solution8')">
+                <i class="fas fa-lightbulb"></i> Показать решение</button>
+            <div class="solution" id="solution8">
+                <ul>
+                    <li><span class="math">Дано:</span>
+                        <ul>
+                            <li><span class="math">d = 3 мкм = 3 * 10⁻⁶ м</span></li>
+                            <li><span class="math">θ₂ - θ₁ = 10°</span></li>
+                            <li><span class="math">m₁ = 1</span></li>
+                            <li><span class="math">m₂ = 2</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Найти: λ</span></li>
+                    <li><span class="math">Решение:</span>
+                        <ul>
+                            <li><span class="math">d sin θ₁ = m₁λ = λ</span></li>
+                            <li><span class="math">d sin θ₂ = m₂λ = 2λ</span></li>
+                            <li><span class="math">θ₂ = θ₁ + 10°</span></li>
+                            <li><span class="math">d sin (θ₁ + 10°) = 2λ = 2d sin θ₁</span></li>
+                            <li><span class="math">sin (θ₁ + 10°) = 2 sin θ₁</span></li>
+                            <li>Решим численно для θ₁, получим θ₁ ≈ 28.5°</li>
+                            <li><span class="math">λ = d sin θ₁ = 3 * 10⁻⁶ м * sin (28.5°) = 1.43 * 10⁻⁶ м</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Ответ:</span> ≈ 1430 нм</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Задача 9 -->
+        <div class="task">
+            <h3>Задача 9</h3>
+            <div class="task-content">
+                <p>Определите расстояние между штрихами дифракционной решетки, если при освещении ее светом с длиной волны
+                    500 нм наблюдается дифракционный максимум первого порядка под углом 10°.</p>
+            </div>
+            <button class="solution-button" onclick="toggleSolution('solution9')">
+                <i class="fas fa-lightbulb"></i> Показать решение</button>
+            <div class="solution" id="solution9">
+                <ul>
+                    <li><span class="math">Дано:</span>
+                        <ul>
+                            <li><span class="math">λ = 500 нм = 500 * 10⁻⁹ м</span></li>
+                            <li><span class="math">θ = 10°</span></li>
+                            <li><span class="math">m = 1</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Найти: d</span></li>
+                    <li><span class="math">Решение:</span>
+                        <ul>
+                            <li><span class="math">d * sin(θ) = m * λ</span></li>
+                            <li><span class="math">d = m * λ / sin(θ)</span></li>
+                            <li><span class="math">d = (1 * 500 * 10⁻⁹ м) / sin(10°) = 2.88 * 10⁻⁶ м = 2.88 мкм</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Ответ:</span> ≈ 2.88 мкм</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Задача 10 -->
+        <div class="task">
+            <h3>Задача 10</h3>
+            <div class="task-content">
+                <p>Во сколько раз изменится расстояние между дифракционными полосами на экране, если дифракционную решетку
+                    заменить другой, имеющей в два раза больше штрихов на миллиметр?</p>
+            </div>
+            <button class="solution-button" onclick="toggleSolution('solution10')">
+                <i class="fas fa-lightbulb"></i> Показать решение</button>
+            <div class="solution" id="solution10">
+                <ul>
+                    <li><span class="math">Решение:</span>
+                        <ul>
+                            <li><span class="math">d = 1/N</span> (где N — число штрихов на мм)</li>
+                            <li><span class="math">d₁ = 1/N₁</span></li>
+                            <li><span class="math">d₂ = 1/N₂</span></li>
+                            <li><span class="math">N₂ = 2N₁</span></li>
+                            <li><span class="math">d₂ = 1/(2N₁) = d₁/2</span></li>
+                            <li>Расстояние между полосами обратно пропорционально периоду решетки.</li>
+                            <li>Таким образом, расстояние уменьшится в 2 раза.</li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Ответ:</span> В 2 раза уменьшится.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleSolution(solutionId) {
+            const solution = document.getElementById(solutionId);
+            solution.style.display = (solution.style.display === 'none' || solution.style.display === '') ? 'block' : 'none';
+        }
+    </script>
+</body>
+
+</html>

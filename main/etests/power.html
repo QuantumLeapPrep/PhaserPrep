@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задачи на Работу и мощность тока</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Общие стили */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            color: #333;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #0277bd;
+            margin-bottom: 30px;
+        }
+
+        /* Стили для задач */
+        .task {
+            background-color: #fff;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .task:hover {
+            transform: translateY(-5px);
+        }
+
+        .task h3 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+
+        .task p {
+            margin-bottom: 10px;
+        }
+
+        /* Стили для решения */
+        .solution {
+            margin-top: 15px;
+            padding: 15px;
+            border-left: 4px solid #0277bd;
+            background-color: #f9f9f9;
+            border-radius: 6px;
+            display: none; /* Изначально скрываем решения */
+        }
+
+        .solution p {
+            margin: 8px 0;
+            color: #555;
+        }
+
+        .solution ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .solution li {
+            margin-bottom: 5px;
+        }
+
+        /* Стили для схемы */
+        .task-image {
+            max-width: 100%;
+            height: auto;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        /* Стили для кнопки решения */
+        .solution-button {
+            background-color: #0277bd;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 15px;
+        }
+
+        .solution-button:hover {
+            background-color: #0277bd;
+        }
+
+        /* Стили для обертки задачи */
+        .task-content {
+            margin-bottom: 10px;
+        }
+
+        /* MathJax стили */
+        .math {
+            font-family: 'Times New Roman', serif;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Задачи на Работу и мощность тока</h1>
+        <p>Решите следующие задачи, чтобы закрепить свои знания о работе и мощности тока.</p>
+
+        <!-- Задача 1 -->
+        <div class="task">
+            <h3>Задача 1</h3>
+            <div class="task-content">
+                <p>Электрическая лампочка, рассчитанная на напряжение 220 В, потребляет ток 0,4 А.  Определите мощность, потребляемую лампочкой.</p>
+            </div>
+            <button class="solution-button" onclick="toggleSolution('solution1')">
+                <i class="fas fa-lightbulb"></i> Показать решение</button>
+            <div class="solution" id="solution1">
+                <ul>
+                    <li><span class="math">Дано:</span>
+                        <ul>
+                            <li><span class="math">U = 220 В</span></li>
+                            <li><span class="math">I = 0.4 А</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Найти: P</span></li>
+                    <li><span class="math">Решение:</span>
+                        <ul>
+                            <li>Мощность: <span class="math">P = U * I</span></li>
+                            <li>Вычислим: <span class="math">P = 220 В * 0.4 А = 88 Вт</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Ответ:</span> 88 Вт</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Задача 2 -->
+        <div class="task">
+            <h3>Задача 2</h3>
+            <div class="task-content">
+                <p>Электрический чайник потребляет мощность 2 кВт при напряжении 220 В.  Определите силу тока, протекающего через нагревательный элемент чайника.</p>
+            </div>
+            <button class="solution-button" onclick="toggleSolution('solution2')">
+                <i class="fas fa-lightbulb"></i> Показать решение</button>
+            <div class="solution" id="solution2">
+                <ul>
+                    <li><span class="math">Дано:</span>
+                        <ul>
+                            <li><span class="math">P = 2 кВт = 2000 Вт</span></li>
+                            <li><span class="math">U = 220 В</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Найти: I</span></li>
+                    <li><span class="math">Решение:</span>
+                        <ul>
+                            <li>Мощность: <span class="math">P = U * I</span></li>
+                            <li>Выразим ток: <span class="math">I = P / U</span></li>
+                            <li>Вычислим: <span class="math">I = 2000 Вт / 220 В ≈ 9.09 А</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Ответ:</span> ≈ 9.09 А</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Задача 3 -->
+        <div class="task">
+            <h3>Задача 3</h3>
+            <div class="task-content">
+                <p>Определите работу, совершаемую электрическим током в лампочке за 10 минут, если напряжение на ней 12 В, а сила тока 0,5 А.</p>
+            </div>
+            <button class="solution-button" onclick="toggleSolution('solution3')">
+                <i class="fas fa-lightbulb"></i> Показать решение</button>
+            <div class="solution" id="solution3">
+                <ul>
+                    <li><span class="math">Дано:</span>
+                        <ul>
+                            <li><span class="math">U = 12 В</span></li>
+                            <li><span class="math">I = 0.5 А</span></li>
+                            <li><span class="math">t = 10 мин = 600 с</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Найти: A</span></li>
+                    <li><span class="math">Решение:</span>
+                        <ul>
+                            <li>Работа: <span class="math">A = U * I * t</span></li>
+                            <li>Вычислим: <span class="math">A = 12 В * 0.5 А * 600 с = 3600 Дж</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Ответ:</span> 3600 Дж</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Задача 4 -->
+        <div class="task">
+            <h3>Задача 4</h3>
+            <div class="task-content">
+                <p>Электродвигатель за 2 часа совершает работу 720 кДж. Сила тока в цепи 5 А, напряжение на двигателе 220 В.  Определите КПД двигателя.</p>
+            </div>
+            <button class="solution-button" onclick="toggleSolution('solution4')">
+                <i class="fas fa-lightbulb"></i> Показать решение</button>
+            <div class="solution" id="solution4">
+                <ul>
+                    <li><span class="math">Дано:</span>
+                        <ul>
+                            <li><span class="math">A_п = 720 кДж = 720000 Дж</span> (полезная работа)</li>
+                            <li><span class="math">t = 2 ч = 7200 с</span></li>
+                            <li><span class="math">I = 5 А</span></li>
+                            <li><span class="math">U = 220 В</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Найти: η</span> (КПД)</li>
+                    <li><span class="math">Решение:</span>
+                        <ul>
+                            <li>Затраченная работа: <span class="math">A_з = U * I * t</span></li>
+                            <li>КПД: <span class="math">η = (A_п / A_з) * 100%</span></li>
+                            <li>Вычислим: <span class="math">A_з = 220 В * 5 А * 7200 с = 7920000 Дж</span></li>
+                            <li><span class="math">η = (720000 Дж / 7920000 Дж) * 100% ≈ 9.09%</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Ответ:</span> ≈ 9.09%</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Задача 5 -->
+        <div class="task">
+            <h3>Задача 5</h3>
+            <div class="task-content">
+                <p>Электрический нагреватель, включенный в сеть с напряжением 220 В, потребляет ток 2 А. Сколько времени потребуется, чтобы нагреть 1 литр воды от 20°C до кипения (100°C)? Считайте, что вся энергия идет на нагрев воды.</p>
+            </div>
+            <button class="solution-button" onclick="toggleSolution('solution5')">
+                <i class="fas fa-lightbulb"></i> Показать решение</button>
+            <div class="solution" id="solution5">
+                <ul>
+                    <li><span class="math">Дано:</span>
+                        <ul>
+                            <li><span class="math">U = 220 В</span></li>
+                            <li><span class="math">I = 2 А</span></li>
+                            <li><span class="math">V = 1 л</span></li>
+                            <li><span class="math">t₁ = 20 °C</span></li>
+                            <li><span class="math">t₂ = 100 °C</span></li>
+                            <li><span class="math">c = 4200 Дж/(кг*°C)</span> (удельная теплоемкость воды)</li>
+                            <li><span class="math">ρ = 1 кг/л</span> (плотность воды)</li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Найти: τ</span> (время)</li>
+                    <li><span class="math">Решение:</span>
+                        <ul>
+                            <li>Масса воды: <span class="math">m = ρ * V = 1 кг/л * 1 л = 1 кг</span></li>
+                            <li>Количество теплоты: <span class="math">Q = c * m * (t₂ - t₁) = 4200 Дж/(кг*°C) * 1 кг * (100 °C - 20 °C) = 336000 Дж</span></li>
+                            <li>Работа тока равна количеству теплоты: <span class="math">A = Q</span></li>
+                            <li>Работа тока: <span class="math">A = U * I * τ</span></li>
+                            <li>Выразим время: <span class="math">τ = Q / (U * I)</span></li>
+                            <li>Вычислим: <span class="math">τ = 336000 Дж / (220 В * 2 А) ≈ 763.6 с</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Ответ:</span> ≈ 763.6 с</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Задача 6 -->
+        <div class="task">
+            <h3>Задача 6</h3>
+            <div class="task-content">
+                <p>Определите сопротивление нагревательного элемента электрического утюга, если при напряжении 220 В он потребляет мощность 1 кВт.</p>
+            </div>
+            <button class="solution-button" onclick="toggleSolution('solution6')">
+                <i class="fas fa-lightbulb"></i> Показать решение</button>
+            <div class="solution" id="solution6">
+                <ul>
+                    <li><span class="math">Дано:</span>
+                        <ul>
+                            <li><span class="math">U = 220 В</span></li>
+                            <li><span class="math">P = 1 кВт = 1000 Вт</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Найти: R</span></li>
+                    <li><span class="math">Решение:</span>
+                        <ul>
+                            <li><span class="math">P = U²/R</span></li>
+                            <li><span class="math">R = U²/P</span></li>
+                            <li><span class="math">R = (220 В)² / 1000 Вт = 48,4 Ом</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Ответ:</span> 48,4 Ом</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Задача 7 -->
+        <div class="task">
+            <h3>Задача 7</h3>
+            <div class="task-content">
+                <p>Лампа накаливания потребляет мощность 60 Вт при напряжении 220 В. Определите силу тока, проходящего через лампу.</p>
+            </div>
+            <button class="solution-button" onclick="toggleSolution('solution7')">
+                <i class="fas fa-lightbulb"></i> Показать решение</button>
+            <div class="solution" id="solution7">
+                <ul>
+                    <li><span class="math">Дано:</span>
+                        <ul>
+                            <li><span class="math">P = 60 Вт</span></li>
+                            <li><span class="math">U = 220 В</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Найти: I</span></li>
+                    <li><span class="math">Решение:</span>
+                        <ul>
+                            <li><span class="math">P = U * I</span></li>
+                            <li><span class="math">I = P / U</span></li>
+                            <li><span class="math">I = 60 Вт / 220 В ≈ 0,27 A</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Ответ:</span> ≈ 0,27 A</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Задача 8 -->
+        <div class="task">
+            <h3>Задача 8</h3>
+            <div class="task-content">
+                <p>Электрический двигатель имеет мощность 500 Вт и КПД 80%. Какую полезную работу он совершит за 1 минуту?</p>
+            </div>
+            <button class="solution-button" onclick="toggleSolution('solution8')">
+                <i class="fas fa-lightbulb"></i> Показать решение</button>
+            <div class="solution" id="solution8">
+                <ul>
+                    <li><span class="math">Дано:</span>
+                        <ul>
+                            <li><span class="math">P = 500 Вт</span> (потребляемая мощность)</li>
+                            <li><span class="math">η = 80% = 0,8</span></li>
+                            <li><span class="math">t = 1 мин = 60 с</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Найти: A_п</span> (полезная работа)</li>
+                    <li><span class="math">Решение:</span>
+                        <ul>
+                            <li>Полезная мощность: <span class="math">P_п = η * P = 0,8 * 500 Вт = 400 Вт</span></li>
+                            <li>Полезная работа: <span class="math">A_п = P_п * t = 400 Вт * 60 с = 24000 Дж</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Ответ:</span> 24000 Дж</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Задача 9 -->
+        <div class="task">
+            <h3>Задача 9</h3>
+            <div class="task-content">
+                <p>Два резистора сопротивлением 10 Ом и 20 Ом подключены последовательно к источнику напряжения 12 В. Определите мощность, выделяющуюся на втором резисторе.</p>
+            </div>
+            <button class="solution-button" onclick="toggleSolution('solution9')">
+                <i class="fas fa-lightbulb"></i> Показать решение</button>
+            <div class="solution" id="solution9">
+                <ul>
+                    <li><span class="math">Дано:</span>
+                        <ul>
+                            <li><span class="math">R₁ = 10 Ом</span></li>
+                            <li><span class="math">R₂ = 20 Ом</span></li>
+                            <li><span class="math">U = 12 В</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Найти: P₂</span></li>
+                    <li><span class="math">Решение:</span>
+                        <ul>
+                            <li>Общее сопротивление: <span class="math">R = R₁ + R₂ = 10 Ом + 20 Ом = 30 Ом</span></li>
+                            <li>Ток в цепи: <span class="math">I = U / R = 12 В / 30 Ом = 0,4 A</span></li>
+                            <li>Мощность на втором резисторе: <span class="math">P₂ = I² * R₂ = (0,4 A)² * 20 Ом = 3,2 Вт</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Ответ:</span> 3,2 Вт</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Задача 10 -->
+        <div class="task">
+            <h3>Задача 10</h3>
+            <div class="task-content">
+                <p>Лампа рассчитана на напряжение 120 В и мощность 60 Вт. Какой предохранитель нужно установить для защиты лампы, если имеются предохранители на 0.2А, 0.5А и 1А?</p>
+            </div>
+            <button class="solution-button" onclick="toggleSolution('solution10')">
+                <i class="fas fa-lightbulb"></i> Показать решение</button>
+            <div class="solution" id="solution10">
+                <ul>
+                    <li><span class="math">Дано:</span>
+                        <ul>
+                            <li><span class="math">U = 120 В</span></li>
+                            <li><span class="math">P = 60 Вт</span></li>
+                        </ul>
+                    </li>
+                     <li><span class="math">Решение:</span>
+                        <ul>
+                            <li>Рабочий ток лампы: <span class="math">I = P/U = 60Вт / 120В = 0,5 А</span></li>
+                            <li>Необходимо выбрать предохранитель с ближайшим номиналом, превышающим рабочий ток.</li>
+                            <li>Предохранитель на 0.2А не подойдет, так как сразу перегорит. Предохранитель на 0.5А в теории подойдет, но будет работать на пределе.</li>
+                            
+                        </ul>
+                    </li>
+                    <li><span class="math">Ответ:</span> 1А</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleSolution(solutionId) {
+            const solution = document.getElementById(solutionId);
+            solution.style.display = (solution.style.display === 'none' || solution.style.display === '') ? 'block' : 'none';
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задачи по термодинамике (ОГЭ - повышенная сложность)</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 2em auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #e67e22;
+            text-align: center;
+            margin-bottom: 1em;
+        }
+
+        .task {
+            margin-bottom: 2em;
+            padding: 1.2em;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            border: 1px solid #eee;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            /* Плавное приподнимание */
+        }
+
+        .task:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+            /* Тень при наведении */
+        }
+
+        .task h2,
+        .task h3 {
+            font-size: 1.2em;
+            margin-bottom: 0.5em;
+        }
+
+        .task p {
+            margin-bottom: 1em;
+        }
+
+        .solution-button {
+            padding: 0.6em 1.2em;
+            background-color: #e67e22;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: block;
+            margin: 0.5em 0;
+        }
+
+        .solution-button:hover {
+            background-color: #d35400;
+        }
+
+        .solution {
+            display: none;
+            padding: 1em;
+            background-color: #e8f0fe;
+            border-radius: 5px;
+            margin-top: 1em;
+            border-left: 5px solid #e67e22;
+        }
+
+        .solution ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .solution ul li {
+            margin-bottom: 0.5em;
+        }
+
+        .solution.show {
+            display: block;
+        }
+
+        /* Стили для отображения математических формул */
+        .math {
+            font-style: italic;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .fraction {
+            display: inline-block;
+            text-align: center;
+        }
+
+        .fraction sup {
+            display: block;
+            border-bottom: 1px solid black;
+            padding-bottom: 0.1em;
+        }
+
+        .fraction sub {
+            display: block;
+            padding-top: 0.1em;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Задачи по термодинамике (ОГЭ - повышенная сложность)</h1>
+        <div class="task">
+            <h2>Задача 1</h2>
+            <p>В калориметр, содержащий 200 г воды при температуре 20°C, поместили кусок льда массой 50 г при температуре
+                -10°C. Какая температура установится в калориметре после установления теплового равновесия? Удельная
+                теплоемкость воды 4200 Дж/(кг·К), удельная теплоемкость льда 2100 Дж/(кг·К), удельная теплота плавления
+                льда 3,3⋅10<sup>5</sup> Дж/кг.</p>
+            <button class="solution-button" onclick="toggleSolution('solution1')">
+                <i class="fas fa-lightbulb"></i>
+                Показать решение
+            </button>
+            <div class="solution hidden" id="solution1">
+                <p><b>Решение:</b></p>
+                <p>Сначала лед нагревается до 0°C: Q1 = m<sub>л</sub> * c<sub>л</sub> * ΔT = 0.05 кг * 2100 Дж/(кг·К) *
+                    10 К = 1050 Дж.</p>
+                <p>Затем лед плавится: Q2 = m<sub>л</sub> * λ = 0.05 кг * 3.3⋅10<sup>5</sup> Дж/кг = 16500 Дж.</p>
+                <p>Теперь посмотрим, сколько теплоты может отдать вода, охладившись до 0°C: Q3 = m<sub>в</sub> * c<sub>в</sub> *
+                    ΔT = 0.2 кг * 4200 Дж/(кг·К) * 20 К = 16800 Дж.</p>
+                <p>Так как Q3 > Q1 + Q2, то лед полностью растает. Найдем установившуюся температуру. Теплота, отданная
+                    водой: Q4 = m<sub>в</sub> * c<sub>в</sub> * (20 - T), а теплота, полученная растаявшим льдом для нагрева: Q5
+                    = m<sub>л</sub> * c<sub>в</sub> * (T - 0).</p>
+                <p>Составляем уравнение теплового баланса: Q4 = Q1 + Q2 + Q5, или m<sub>в</sub> * c<sub>в</sub> * (20 - T) =
+                    1050 + 16500 + m<sub>л</sub> * c<sub>в</sub> * T.</p>
+                <p>0.2 * 4200 * (20 - T) = 1050 + 16500 + 0.05 * 4200 * T.</p>
+                <p>16800 - 840T = 17550 + 210T.</p>
+                <p>1050T = -750.</p>
+                <p>T ≈ -0.71 °C.</p>
+                <p>Поскольку температура не может быть ниже 0°C (иначе бы замерзла вода), то в системе будет
+                    тепловое равновесие при 0°C, и часть воды замерзнет.</p>
+                <p><b>Ответ:</b> 0°C.</p>
+            </div>
+        </div>
+
+        <div class="task">
+            <h2>Задача 2</h2>
+            <p>Сколько дров нужно сжечь, чтобы обратить в пар 2 кг воды, взятой при температуре 20°C, если КПД нагревателя
+                25%? Удельная теплоемкость воды 4200 Дж/(кг·К), удельная теплота парообразования воды 2,3⋅10<sup>6</sup>
+                Дж/кг, удельная теплота сгорания дров 10<sup>7</sup> Дж/кг.</p>
+            <button class="solution-button" onclick="toggleSolution('solution2')">
+                <i class="fas fa-lightbulb"></i>
+                Показать решение
+            </button>
+            <div class="solution hidden" id="solution2">
+                <p><b>Решение:</b></p>
+                <p>Сначала нагреваем воду от 20°C до 100°C: Q1 = m<sub>в</sub> * c<sub>в</sub> * ΔT = 2 кг * 4200 Дж/(кг·К) *
+                    80 К = 672000 Дж.</p>
+                <p>Затем обращаем воду в пар при 100°C: Q2 = m<sub>в</sub> * L = 2 кг * 2.3⋅10<sup>6</sup> Дж/кг = 4600000
+                    Дж.</p>
+                <p>Общее количество теплоты, необходимое для процесса: Q = Q1 + Q2 = 672000 + 4600000 = 5272000 Дж.</p>
+                <p>Так как КПД нагревателя 25%, то сжигаем дрова: η = Q / Q<sub>сгор</sub>, где Q<sub>сгор</sub> - количество
+                    теплоты, выделившееся при сгорании дров.</p>
+                <p>Q<sub>сгор</sub> = Q / η = 5272000 Дж / 0.25 = 21088000 Дж.</p>
+                <p>Теперь найдем массу дров: Q<sub>сгор</sub> = m<sub>д</sub> * q, где q - удельная теплота сгорания дров.</p>
+                <p>m<sub>д</sub> = Q<sub>сгор</sub> / q = 21088000 Дж / 10<sup>7</sup> Дж/кг = 2.1088 кг.</p>
+                <p><b>Ответ:</b> Нужно сжечь примерно 2.11 кг дров.</p>
+            </div>
+        </div>
+
+        <div class="task">
+            <h2>Задача 3</h2>
+            <p>В алюминиевом чайнике массой 0.5 кг нужно вскипятить 2 л воды, начальная температура которой 20°C. Какое
+                количество теплоты потребуется для этого? Удельная теплоемкость алюминия 920 Дж/(кг·К), удельная
+                теплоемкость воды 4200 Дж/(кг·К).</p>
+            <button class="solution-button" onclick="toggleSolution('solution3')">
+                <i class="fas fa-lightbulb"></i>
+                Показать решение
+            </button>
+            <div class="solution hidden" id="solution3">
+                <p><b>Решение:</b></p>
+                <p>Сначала нагреваем чайник: Q1 = m<sub>ч</sub> * c<sub>ч</sub> * ΔT = 0.5 кг * 920 Дж/(кг·К) * 80 К = 36800
+                    Дж.</p>
+                <p>Затем нагреваем воду: Q2 = m<sub>в</sub> * c<sub>в</sub> * ΔT = 2 кг * 4200 Дж/(кг·К) * 80 К = 672000 Дж.</p>
+                <p>Общее количество теплоты: Q = Q1 + Q2 = 36800 + 672000 = 708800 Дж = 708.8 кДж.</p>
+                <p><b>Ответ:</b> Потребуется 708.8 кДж теплоты.</p>
+            </div>
+        </div>
+
+        <div class="task">
+            <h2>Задача 4</h2>
+            <p>В железный сосуд массой 100 г налили 200 г воды при температуре 15°C. После того как в сосуд опустили кусок
+                меди массой 50 г, нагретый до 100°C, температура воды повысилась до 18°C. Определите удельную теплоемкость
+                меди. Удельная теплоемкость воды 4200 Дж/(кг·К), удельная теплоемкость железа 460 Дж/(кг·К).</p>
+            <button class="solution-button" onclick="toggleSolution('solution4')">
+                <i class="fas fa-lightbulb"></i>
+                Показать решение
+            </button>
+            <div class="solution hidden" id="solution4">
+                <p><b>Решение:</b></p>
+                <p>Теплота, отданная медью: Q1 = m<sub>м</sub> * c<sub>м</sub> * (100 - 18) = 0.05 * c<sub>м</sub> * 82 =
+                    4.1c<sub>м</sub>.</p>
+                <p>Теплота, полученная водой: Q2 = m<sub>в</sub> * c<sub>в</sub> * ΔT = 0.2 кг * 4200 Дж/(кг·К) * 3 К = 2520
+                    Дж.</p>
+                <p>Теплота, полученная железом: Q3 = m<sub>ж</sub> * c<sub>ж</sub> * ΔT = 0.1 кг * 460 Дж/(кг·К) * 3 К = 138
+                    Дж.</p>
+                <p>Уравнение теплового баланса: Q1 = Q2 + Q3, или 4.1c<sub>м</sub> = 2520 + 138 = 2658.</p>
+                <p>c<sub>м</sub> = 2658 / 4.1 ≈ 648.3 Дж/(кг·К).</p>
+                <p><b>Ответ:</b> Удельная теплоемкость меди примерно 648.3 Дж/(кг·К).</p>
+            </div>
+        </div>
+        <div class="task">
+            <h2>Задача 5</h2>
+            <p>В воду массой 1 кг при температуре 20°С бросили кусок стали массой 200 г, нагретый до 400°С. Температура воды
+                поднялась до 24°С. Определите удельную теплоемкость стали. Удельная теплоемкость воды 4200 Дж/(кг·К).</p>
+            <button class="solution-button" onclick="toggleSolution('solution5')">
+                <i class="fas fa-lightbulb"></i>
+                Показать решение
+            </button>
+            <div class="solution hidden" id="solution5">
+                <p><b>Решение:</b></p>
+                <p>Теплота, отданная сталью: Q1 = m<sub>ст</sub> * c<sub>ст</sub> * (400 - 24) = 0.2 * c<sub>ст</sub> * 376 =
+                    75.2c<sub>ст</sub>.</p>
+                <p>Теплота, полученная водой: Q2 = m<sub>в</sub> * c<sub>в</sub> * ΔT = 1 кг * 4200 Дж/(кг·К) * 4 К = 16800
+                    Дж.</p>
+                <p>Уравнение теплового баланса: Q1 = Q2, или 75.2c<sub>ст</sub> = 16800.</p>
+                <p>c<sub>ст</sub> = 16800 / 75.2 ≈ 223.4 Дж/(кг·К).</p>
+                <p><b>Ответ:</b> Удельная теплоемкость стали примерно 223.4 Дж/(кг·К).</p>
+            </div>
+        </div>
+    <script>
+        function toggleSolution(solutionId) {
+            var solution = document.getElementById(solutionId);
+            solution.classList.toggle('show');
+        }
+    </script>
+</body>
+</html>

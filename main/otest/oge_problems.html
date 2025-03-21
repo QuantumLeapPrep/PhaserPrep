@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Волновая оптика: Задачи повышенной сложности (ОГЭ)</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Общие стили */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            color: #333;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #512da8;
+            margin-bottom: 30px;
+        }
+
+        /* Стили для задач */
+        .task {
+            background-color: #fff;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .task:hover {
+            transform: translateY(-5px);
+        }
+
+        .task h3 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+
+        .task p {
+            margin-bottom: 10px;
+        }
+
+        /* Стили для решения */
+        .solution {
+            margin-top: 15px;
+            padding: 15px;
+            border-left: 4px solid #512da8;
+            background-color: #f9f9f9;
+            border-radius: 6px;
+            display: none;
+            /* Изначально скрываем решения */
+        }
+
+        .solution p {
+            margin: 8px 0;
+            color: #555;
+        }
+
+        .solution ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .solution li {
+            margin-bottom: 5px;
+        }
+
+        /* Стили для схемы */
+        .task-image {
+            max-width: 100%;
+            height: auto;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        /* Стили для кнопки решения */
+        .solution-button {
+            background-color: #512da8;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 15px;
+        }
+
+        .solution-button:hover {
+            background-color: #512da8;
+        }
+
+        /* Стили для обертки задачи */
+        .task-content {
+            margin-bottom: 10px;
+        }
+
+        /* MathJax стили */
+        .math {
+            font-family: 'Times New Roman', serif;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Задачи повышенной сложности (ОГЭ) по волновой оптике</h1>
+        <p>Решите следующие задачи, чтобы проверить свои знания.</p>
+
+        <!-- Задача 1 -->
+        <div class="task">
+            <h3>Задача 1: Интерференция</h3>
+            <div class="task-content">
+                <p>На экране наблюдается интерференционная картина от двух когерентных источников света. Расстояние между источниками 0.5 мм, расстояние до экрана 1 м. Определите длину волны, если расстояние между соседними
+                    интерференционными полосами (максимумами) равно 1 мм.</p>
+            </div>
+            <button class="solution-button" onclick="toggleSolution('solution1')">
+                <i class="fas fa-lightbulb"></i> Показать решение</button>
+            <div class="solution" id="solution1">
+                <ul>
+                    <li><span class="math">Дано:</span>
+                        <ul>
+                            <li><span class="math">d = 0.5 мм = 0.5 * 10⁻³ м</span></li>
+                            <li><span class="math">L = 1 м</span></li>
+                            <li><span class="math">x = 1 мм = 1 * 10⁻³ м</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Найти: λ</span></li>
+                    <li><span class="math">Решение:</span>
+                        <ul>
+                            <li>Формула для расстояния между полосами: <span class="math">x = λL / d</span></li>
+                            <li>Выражаем длину волны: <span class="math">λ = xd / L</span></li>
+                            <li><span class="math">λ = (1 * 10⁻³ м * 0.5 * 10⁻³ м) / 1 м = 0.5 * 10⁻⁶ м</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Ответ:</span> 0.5 мкм</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Задача 2 -->
+        <div class="task">
+            <h3>Задача 2: Дифракция на щели</h3>
+            <div class="task-content">
+                <p>На щель шириной 0.2 мм падает нормально монохроматический свет. Угол между направлениями на первый дифракционный минимум и максимум интенсивности равен 15°. Определите длину волны света.</p>
+            </div>
+            <button class="solution-button" onclick="toggleSolution('solution2')">
+                <i class="fas fa-lightbulb"></i> Показать решение</button>
+            <div class="solution" id="solution2">
+                <ul>
+                    <li><span class="math">Дано:</span>
+                        <ul>
+                            <li><span class="math">a = 0.2 мм = 0.2 * 10⁻³ м</span></li>
+                            <li><span class="math">φ = 15°</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Найти: λ</span></li>
+                    <li><span class="math">Решение:</span>
+                        <ul>
+                            <li>Условие минимума: <span class="math">a * sin(θ) = kλ</span>, где k=1 для первого минимума</li>
+                            <li>Условие максимума (приближенно): угол между первым максимумом и минимумом это половина угла между двумя первым минимумами, <span class="math">θ ≈ φ</span></li>
+                            <li>Поэтому угол минимума примерно равен <span class="math">2*15/2 = 15 градусов, значит sin(θ) = sin(15°)</span></li>
+                            <li><span class="math">λ = a * sin(θ)</span></li>
+                            <li><span class="math">λ = 0.2 * 10⁻³ м * sin(15°) ≈ 0.2 * 10⁻³ м * 0.2588 ≈ 5.18 * 10⁻⁵ м</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Ответ:</span> Примерно 51.8 мкм</li>
+                </ul>
+            </div>
+        </div>
+        <!-- Задача 3: Дифракционная решетка  -->
+        <div class="task">
+            <h3>Задача 3: Дифракционная решетка</h3>
+            <div class="task-content">
+                <p>На дифракционную решетку, имеющую 500 штрихов на миллиметр, падает нормально монохроматический свет с длиной волны 500 нм. Определите общее число дифракционных максимумов, которые можно наблюдать с помощью этой решетки.</p>
+            </div>
+            <button class="solution-button" onclick="toggleSolution('solution3')">
+                <i class="fas fa-lightbulb"></i> Показать решение</button>
+            <div class="solution" id="solution3">
+                <ul>
+                    <li><span class="math">Дано:</span>
+                        <ul>
+                            <li><span class="math">N = 500 штрихов/мм = 5 * 10⁵ штрихов/м</span> (плотность штрихов)</li>
+                            <li><span class="math">λ = 500 нм = 500 * 10⁻⁹ м</span> (длина волны)</li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Найти:</span> Общее число максимумов</li>
+                    <li><span class="math">Решение:</span>
+                        <ul>
+                            <li>Период решетки: <span class="math">d = 1 / N = 1 / (5 * 10⁵ м⁻¹) = 2 * 10⁻⁶ м</span></li>
+                            <li>Условие максимума: <span class="math">d * sin(θ) = m * λ</span></li>
+                            <li>Максимальный порядок дифракции: <span class="math">sin(θ) = 1</span></li>
+                            <li>Максимальный порядок: <span class="math">m_max = d / λ = (2 * 10⁻⁶ м) / (500 * 10⁻⁹ м) = 4</span></li>
+                            <li>Поскольку максимумы наблюдаются с обеих сторон от центрального максимума (m = 0), общее число максимумов: 2 * m_max + 1</li>
+                            <li>Общее число максимумов: 2 * 4 + 1 = 9</li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Ответ:</span> 9</li>
+                </ul>
+            </div>
+        </div>
+        <!-- Задача 4: Интерференция в тонких пленках  -->
+        <div class="task">
+            <h3>Задача 4: Интерференция в тонких пленках</h3>
+            <div class="task-content">
+                <p>На тонкую пленку с показателем преломления 1.33 падает нормально белый свет. При какой минимальной толщине пленки в отраженном свете будет наиболее усилен зеленый свет с длиной волны 520 нм?</p>
+            </div>
+            <button class="solution-button" onclick="toggleSolution('solution4')">
+                <i class="fas fa-lightbulb"></i> Показать решение</button>
+            <div class="solution" id="solution4">
+                <ul>
+                    <li><span class="math">Дано:</span>
+                        <ul>
+                            <li><span class="math">n = 1.33</span> (показатель преломления пленки)</li>
+                            <li><span class="math">λ = 520 нм = 520 * 10⁻⁹ м</span> (длина волны зеленого света)</li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Найти: d_min</span> (минимальная толщина пленки)</li>
+                    <li><span class="math">Решение:</span>
+                        <ul>
+                            <li>Интерференция в тонких пленках:  учитывается сдвиг фазы на π при отражении от среды с бОльшим показателем преломления.</li>
+                            <li>Условие усиления в отраженном свете:  2 * n * d + λ/2 = m * λ, где m - целое число.  Минимальной толщине соответствует m = 1.</li>
+                            <li>Выразим толщину пленки: 2 * n * d = λ/2 <span class="math">d =  λ/ (4 * n)</span></li>
+                            <li><span class="math">d =  (520 * 10⁻⁹ м)/ (4 * 1.33) ≈ 97.7 нм</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Ответ:</span> ≈ 97.7 нм</li>
+                </ul>
+            </div>
+        </div>
+        <!-- Задача 5 -->
+        <div class="task">
+            <h3>Задача 5: Просветление оптики</h3>
+            <div class="task-content">
+                <p>На линзу с показателем преломления 1.6 наносят тонкую пленку с показателем преломления 1.3. При какой минимальной толщине этой пленки отражение света с длиной волны 550 нм будет минимальным (просветление оптики)?</p>
+            </div>
+            <button class="solution-button" onclick="toggleSolution('solution5')">
+                <i class="fas fa-lightbulb"></i> Показать решение</button>
+            <div class="solution" id="solution5">
+                <ul>
+                    <li><span class="math">Дано:</span>
+                        <ul>
+                            <li><span class="math">n_л = 1.6</span> (показатель преломления линзы)</li>
+                            <li><span class="math">n_п = 1.3</span> (показатель преломления пленки)</li>
+                            <li><span class="math">λ = 550 нм = 550 * 10⁻⁹ м</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Найти: d</span></li>
+                    <li><span class="math">Решение:</span>
+                        <ul>
+                            <li>Для минимального отражения (деструктивная интерференция) с учетом изменения фазы на π при отражении от среды с бОльшим показателем преломления: <span class="math">2n_п * d = (m + 0.5)λ</span>, где m = 0 для минимальной толщины</li>
+                            <li>Выражаем толщину пленки: <span class="math">d = (λ / 4n_п)</span></li>
+                            <li><span class="math">d = (550 * 10⁻⁹ м) / (4 * 1.3) ≈ 105.77 * 10⁻⁹ м</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Ответ:</span> Примерно 106 нм</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function toggleSolution(solutionId) {
+            const solution = document.getElementById(solutionId);
+            solution.style.display = (solution.style.display === 'none' || solution.style.display === '') ? 'block' : 'none';
+        }
+    </script>
+</body>
+
+</html>

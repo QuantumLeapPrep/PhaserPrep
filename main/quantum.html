@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Основы квантовой физики: теория, формулы, ОГЭ</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            color: #333;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 2em auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #3498db;
+            text-align: center;
+        }
+
+        h2 {
+            color: #3498db;
+            margin-top: 1.5em;
+        }
+
+        h3 {
+            color: #2ecc71;
+            margin-bottom: 0.5em;
+        }
+
+        p {
+            margin-bottom: 1em;
+        }
+
+        ul,
+        ol {
+            margin-bottom: 1em;
+        }
+
+        li {
+            margin-bottom: 0.5em;
+        }
+
+        strong {
+            font-weight: bold;
+        }
+
+        .example-problem {
+            background-color: #f9f9f9;
+            padding: 1.2em;
+            border-radius: 8px;
+            margin-bottom: 1.5em;
+            border: 1px solid #eee;
+        }
+
+        .formula {
+            font-style: italic;
+            color: #e74c3c;
+            font-size: 1.1em;
+        }
+
+        .solution {
+            margin-left: 2em;
+        }
+
+        .graph-container {
+            text-align: center;
+            margin-bottom: 1em;
+        }
+
+        .graph-container img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 3em;
+            padding: 1em 0;
+            background-color: #f0f0f0;
+            border-top: 1px solid #ddd;
+        }
+
+        /* Стили для кнопки "Задачи и тесты" */
+        .resource-button {
+            display: inline-flex;
+            /* Выравнивание иконки и текста */
+            align-items: center;
+            /* Центрирование по вертикали */
+            padding: 12px 24px;
+            background-color: #27ae60;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background-color 0.3s ease, transform 0.2s ease-in-out;
+            /* Плавные анимации */
+            font-weight: 500;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+            /* Тень */
+        }
+
+        .resource-button:hover {
+            background-color: #219653;
+            transform: translateY(-2px);
+            /* Небольшое приподнимание при наведении */
+        }
+
+        .resource-button i {
+            margin-right: 0.7em;
+            /* Отступ между иконкой и текстом */
+            font-size: 1.2em;
+            /* Размер иконки */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Теория: Квантовые явления (ОГЭ)</h2>
+        <p>Основные сведения о квантовых явлениях, необходимые для подготовки к ОГЭ по физике.</p>
+
+        <h2>1. Радиоактивность, альфа-, бета-, гамма-излучения</h2>
+        <p>Радиоактивность - самопроизвольный распад ядер некоторых атомов, сопровождающийся испусканием частиц и/или энергии.</p>
+        <ul>
+            <li><strong>Альфа-излучение (α):</strong> поток ядер гелия (⁴₂He).</li>
+            <li><strong>Бета-излучение (β):</strong> поток электронов (β⁻) или позитронов (β⁺).</li>
+            <li><strong>Гамма-излучение (γ):</strong> электромагнитное излучение высокой энергии.</li>
+        </ul>
+
+        <h2>2. Опыты Резерфорда, планетарная модель атома</h2>
+        <p>Опыты Резерфорда по рассеянию альфа-частиц позволили создать планетарную модель атома.</p>
+        <ul>
+            <li><strong>Опыт Резерфорда:</strong> бомбардировка золотой фольги альфа-частицами.</li>
+            <li><strong>Планетарная модель:</strong> атом состоит из положительно заряженного ядра и вращающихся вокруг него электронов.
+            </li>
+        </ul>
+
+        <h2>3. Состав атомного ядра, изотопы</h2>
+        <p>Ядро атома состоит из протонов и нейтронов.</p>
+        <ul>
+            <li><strong>Протон:</strong> положительно заряженная частица в ядре.</li>
+            <li><strong>Нейтрон:</strong> нейтральная частица в ядре.</li>
+            <li><strong>Изотопы:</strong> атомы одного элемента с разным количеством нейтронов в ядре.</li>
+        </ul>
+
+        <h2>4. Период полураспада атомных ядер</h2>
+        <p>Период полураспада - время, за которое распадается половина исходного количества радиоактивных ядер.</p>
+        <ul>
+            <li><strong>Период полураспада (T₁/₂):</strong> время, за которое распадается половина радиоактивных ядер.</li>
+            <li><strong>Закон радиоактивного распада:</strong> N(t) = N₀ * (1/2)^(t/T₁/₂).</li>
+        </ul>
+
+        <h2>5. Ядерные реакции, законы сохранения</h2>
+        <p>Ядерные реакции - процессы взаимодействия ядер с другими ядрами или частицами.</p>
+        <ul>
+            <li><strong>Законы сохранения:</strong>
+                <ul>
+                    <li>Заряд: <span class="formula">Z₁ + Z₂ + ... = Z'₁ + Z'₂ + ...</span></li>
+                    <li>Массовое число: <span class="formula">A₁ + A₂ + ... = A'₁ + A'₂ + ...</span></li>
+                </ul>
+            </li>
+        </ul>
+
+        <h2>Квантовая физика в ОГЭ по физике</h2>
+
+        <p>В ОГЭ проверяются знания об электромагнитных волнах и квантах света.</p>
+
+        <h3>Примеры тем из ФИПИ:</h3>
+        <ul>
+            <li>Электромагнитные волны и их свойства.</li>
+            <li>Кванты света.</li>
+            <li>Применение знаний о квантах света.</li>
+        </ul>
+
+        <h2>Рекомендации по подготовке</h2>
+        <ol>
+            <li>Понимать основные понятия квантовой физики.</li>
+            <li>Знать основные формулы.</li>
+            <li>Решать задачи на применение этих формул.</li>
+        </ol>
+
+        <h2>Больше примеров задач</h2>
+        <ul>
+            <a href="main.test.html#section5" class="resource-button">
+                </i> Задачи и тесты
+            </a>
+        </ul>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

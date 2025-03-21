@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задачи повышенной сложности (ОГЭ) по электричеству и магнетизму</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Общие стили */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            color: #333;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #0277bd;
+            margin-bottom: 30px;
+        }
+
+        /* Стили для задач */
+        .task {
+            background-color: #fff;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .task:hover {
+            transform: translateY(-5px);
+        }
+
+        .task h3 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+
+        .task p {
+            margin-bottom: 10px;
+        }
+
+        /* Стили для решения */
+        .solution {
+            margin-top: 15px;
+            padding: 15px;
+            border-left: 4px solid #0277bd;
+            background-color: #f9f9f9;
+            border-radius: 6px;
+            display: none; /* Изначально скрываем решения */
+        }
+
+        .solution p {
+            margin: 8px 0;
+            color: #555;
+        }
+
+        .solution ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .solution li {
+            margin-bottom: 5px;
+        }
+
+        /* Стили для схемы */
+        .task-image {
+            max-width: 100%;
+            height: auto;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        /* Стили для кнопки решения */
+        .solution-button {
+            background-color: #0277bd;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 15px;
+        }
+
+        .solution-button:hover {
+            background-color: #0277bd;
+        }
+
+        /* Стили для обертки задачи */
+        .task-content {
+            margin-bottom: 10px;
+        }
+
+        /* MathJax стили */
+        .math {
+            font-family: 'Times New Roman', serif;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Задачи повышенной сложности (ОГЭ) по электричеству и магнетизму</h1>
+        <p>Решите следующие задачи, чтобы проверить свои знания.</p>
+
+        <!-- Задача 1 -->
+        <div class="task">
+            <h3>Задача 1</h3>
+            <div class="task-content">
+                <p>Два проводника расположены параллельно друг другу на расстоянии 5 см. По ним в одном направлении текут токи 2 А и 4 А. Определите силу взаимодействия, приходящуюся на 1 м длины проводников. Магнитная постоянная <span class="math">μ₀ = 4π * 10⁻⁷ Гн/м</span>.</p>
+            </div>
+            <button class="solution-button" onclick="toggleSolution('solution1')">
+                <i class="fas fa-lightbulb"></i> Показать решение</button>
+            <div class="solution" id="solution1">
+                <ul>
+                    <li><span class="math">Дано:</span>
+                        <ul>
+                            <li><span class="math">r = 5 см = 0.05 м</span></li>
+                            <li><span class="math">I₁ = 2 А</span></li>
+                            <li><span class="math">I₂ = 4 А</span></li>
+                            <li><span class="math">μ₀ = 4π * 10⁻⁷ Гн/м</span></li>
+                            <li><span class="math">l = 1 м</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Найти: F/l</span></li>
+                    <li><span class="math">Решение:</span>
+                        <ul>
+                            <li>Сила взаимодействия: <span class="math">F = (μ₀ * I₁ * I₂ * l) / (2π * r)</span></li>
+                            <li>Сила на единицу длины: <span class="math">F/l = (μ₀ * I₁ * I₂) / (2π * r)</span></li>
+                            <li><span class="math">F/l = (4π * 10⁻⁷ Гн/м * 2 А * 4 А) / (2π * 0.05 м)</span></li>
+                            <li><span class="math">F/l = 3.2 * 10⁻⁵ Н/м</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Ответ:</span> 3.2 * 10⁻⁵ Н/м</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Задача 2 -->
+        <div class="task">
+            <h3>Задача 2</h3>
+            <div class="task-content">
+                <p>По двум параллельным проводникам, находящимся на расстоянии 10 см, текут токи в противоположных направлениях. Сила взаимодействия между проводниками на 1 м длины равна 1,6 мкН. Определите силу тока в проводниках, если токи одинаковы по модулю.</p>
+            </div>
+            <button class="solution-button" onclick="toggleSolution('solution2')">
+                <i class="fas fa-lightbulb"></i> Показать решение</button>
+            <div class="solution" id="solution2">
+                <ul>
+                    <li><span class="math">Дано:</span>
+                        <ul>
+                            <li><span class="math">r = 10 см = 0.1 м</span></li>
+                            <li><span class="math">F/l = 1.6 мкН/м = 1.6 * 10⁻⁶ Н/м</span></li>
+                            <li><span class="math">I₁ = -I₂ = I</span></li>
+                            <li><span class="math">μ₀ = 4π * 10⁻⁷ Гн/м</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Найти: I</span></li>
+                    <li><span class="math">Решение:</span>
+                        <ul>
+                            <li><span class="math">F/l = (μ₀ * I₁ * I₂) / (2π * r) = (μ₀ * I²) / (2π * r)</span></li>
+                            <li><span class="math">I = √( (F/l) * 2π * r / μ₀)</span></li>
+                            <li><span class="math">I = √(1.6 * 10⁻⁶ Н/м * 2π * 0.1 м / (4π * 10⁻⁷ Гн/м) )</span></li>
+                            <li><span class="math">I = √(0.8 А²) ≈ 0.89 А</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Ответ:</span> ≈ 0.89 А</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Задача 3 -->
+        <div class="task">
+            <h3>Задача 3</h3>
+            <div class="task-content">
+                <p>Электрон движется в однородном магнитном поле с индукцией 0,2 Тл со скоростью 10⁷ м/с под углом 30° к линиям индукции. Определите силу, действующую на электрон.</p>
+            </div>
+            <button class="solution-button" onclick="toggleSolution('solution3')">
+                <i class="fas fa-lightbulb"></i> Показать решение</button>
+            <div class="solution" id="solution3">
+                <ul>
+                    <li><span class="math">Дано:</span>
+                        <ul>
+                            <li><span class="math">B = 0.2 Тл</span></li>
+                            <li><span class="math">v = 10⁷ м/с</span></li>
+                            <li><span class="math">α = 30°</span></li>
+                            <li><span class="math">e = 1.6 * 10⁻¹⁹ Кл</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Найти: F_Л</span></li>
+                    <li><span class="math">Решение:</span>
+                        <ul>
+                            <li>Сила Лоренца: <span class="math">F_Л = |q| * v * B * sin(α)</span></li>
+                            <li><span class="math">F_Л = 1.6 * 10⁻¹⁹ Кл * 10⁷ м/с * 0.2 Тл * sin(30°)</span></li>
+                            <li><span class="math">F_Л = 1.6 * 10⁻¹³ Н</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Ответ:</span> 1.6 * 10⁻¹³ Н</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Задача 4 -->
+        <div class="task">
+            <h3>Задача 4</h3>
+            <div class="task-content">
+                <p>Проводник длиной 2 м движется в однородном магнитном поле с индукцией 0,5 Тл перпендикулярно линиям магнитной индукции. Скорость проводника 10 м/с. Чему равна ЭДС индукции, возникающая в проводнике?</p>
+            </div>
+            <button class="solution-button" onclick="toggleSolution('solution4')">
+                <i class="fas fa-lightbulb"></i> Показать решение</button>
+            <div class="solution" id="solution4">
+                <ul>
+                    <li><span class="math">Дано:</span>
+                        <ul>
+                            <li><span class="math">l = 2 м</span></li>
+                            <li><span class="math">B = 0.5 Тл</span></li>
+                            <li><span class="math">v = 10 м/с</span></li>
+                            <li><span class="math">α = 90°</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Найти: ε</span></li>
+                    <li><span class="math">Решение:</span>
+                        <ul>
+                            <li>ЭДС индукции: <span class="math">ε = B * l * v * sin(α)</span></li>
+                            <li><span class="math">ε = 0.5 Тл * 2 м * 10 м/с * sin(90°)</span></li>
+                            <li><span class="math">ε = 10 В</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Ответ:</span> 10 В</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Задача 5 -->
+        <div class="task">
+            <h3>Задача 5</h3>
+            <div class="task-content">
+                <p>Протон влетает в однородное магнитное поле со скоростью 2 * 10^6 м/с перпендикулярно линиям индукции. Индукция магнитного поля 0,1 Тл. Определите радиус траектории протона. Масса протона 1.67 * 10^-27 кг, заряд протона 1.6 * 10^-19 Кл.</p>
+            </div>
+            <button class="solution-button" onclick="toggleSolution('solution5')">
+                <i class="fas fa-lightbulb"></i> Показать решение</button>
+            <div class="solution" id="solution5">
+                <ul>
+                    <li><span class="math">Дано:</span>
+                        <ul>
+                            <li><span class="math">v = 2 * 10^6 м/с</span></li>
+                            <li><span class="math">B = 0.1 Тл</span></li>
+                            <li><span class="math">m = 1.67 * 10⁻²⁷ кг</span></li>
+                            <li><span class="math">q = 1.6 * 10⁻¹⁹ Кл</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Найти: r</span></li>
+                    <li><span class="math">Решение:</span>
+                        <ul>
+                            <li>Сила Лоренца: <span class="math">F_Л = q * v * B</span> (Сила Лоренца, она же центростремительная)</li>
+                            <li>Центростремительная сила: <span class="math">F_ц = m * v² / r</span></li>
+                            <li><span class="math">q * v * B = m * v² / r</span></li>
+                            <li><span class="math">r = (m * v) / (q * B)</span></li>
+                            <li><span class="math">r = (1.67 * 10⁻²⁷ кг * 2 * 10⁶ м/с) / (1.6 * 10⁻¹⁹ Кл * 0.1 Тл) = 0.20875 м ≈ 20.9 см</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Ответ:</span> ≈ 20.9 см</li>
+                </ul>
+            </div>
+        </div>
+
+    <script>
+        function toggleSolution(solutionId) {
+            const solution = document.getElementById(solutionId);
+            solution.style.display = (solution.style.display === 'none' || solution.style.display === '') ? 'block' : 'none';
+        }
+    </script>
+</body>
+
+</html>

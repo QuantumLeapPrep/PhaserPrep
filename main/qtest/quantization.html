@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Квантование энергии: Теория и задачи</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Общие стили */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            color: #333;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #ffd519;
+            margin-bottom: 30px;
+        }
+
+        /* Стили для задач */
+        .task {
+            background-color: #fff;
+            padding: 25px;
+            margin-bottom: 40px; 
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .task:hover {
+            transform: translateY(-5px);
+        }
+
+        .task h3 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+
+        .task p {
+            margin-bottom: 15px;
+            /* Добавлен отступ снизу */
+        }
+
+        /* Стили для решения */
+        .solution {
+            margin-top: 15px;
+            padding: 15px;
+            border-left: 4px solid #ffd519;
+            background-color: #f9f9f9;
+            border-radius: 6px;
+            display: none;
+            /* Изначально скрываем решения */
+        }
+
+        .solution p {
+            margin: 8px 0;
+            color: #555;
+        }
+
+        .solution ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .solution li {
+            margin-bottom: 5px;
+        }
+
+        /* Стили для схемы */
+        .task-image {
+            max-width: 100%;
+            height: auto;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        /* Стили для кнопки решения */
+        .solution-button {
+            background-color: #ffd519;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 25px;
+        }
+
+        .solution-button:hover {
+            background-color: #ffd519;
+        }
+
+        /* Стили для обертки задачи */
+        .task-content {
+            margin-bottom: 10px;
+        }
+
+        /* MathJax стили */
+        .math {
+            font-family: 'Times New Roman', serif;
+        }
+
+        /* Стили для скрытых блоков */
+        .hidden-block {
+            display: none;
+            margin-top: 40px;
+            padding: 25px;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+        }
+
+        .hidden-block h2,
+        .hidden-block h3,
+        .hidden-block p,
+        .hidden-block ul {
+            margin-bottom: 15px;
+        }
+
+        /* Стили для кнопки показа */
+        .theory-button {
+            background-color: #ffd519;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 1rem;
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+
+        .theory-button:hover {
+            background-color: #ffd519;
+        }
+
+        /* Стиль для первой задачи */
+        #task1 {
+            margin-top: 40px; /* Отступ от раздела с формулами */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Квантование энергии: Теория и задачи</h1>
+        <p>Решите следующие задачи, чтобы закрепить свои знания о квантовании энергии.</p>
+
+        <button class="theory-button" onclick="toggleTheory('theory')">Показать теорию</button>
+        <div id="theory" class="hidden-block">
+            <h2>Теория: Квантование энергии</h2>
+            <p>В классической физике энергия может изменяться непрерывно. Однако, в микромире энергия часто изменяется
+                дискретно, то есть принимает только определенные значения, кратные некоторой минимальной порции - кванту
+                энергии.</p>
+
+            <h3>Основные понятия:</h3>
+
+            <ul>
+                <li><strong>Квант энергии (E):</strong> Минимальное количество энергии, которое может быть излучено или поглощено
+                    системой.</li>
+                <li><strong>Постоянная Планка (h):</strong> Фундаментальная физическая постоянная, связывающая энергию кванта с
+                    его
+                    частотой. Приближенное значение: <span class="math">h ≈ 6.626 * 10⁻³⁴ Дж * с</span>.</li>
+                <li><strong>Фотон:</strong> Квант электромагнитного излучения, частица света.</li>
+                <li><strong>Электронвольт (эВ):</strong> Единица измерения энергии, используемая в атомной и ядерной физике. 1 эВ =
+                    1.602 *
+                    10⁻¹⁹ Дж</li>
+                <li><strong>Уровни энергии:</strong> Дискретные значения энергии, которые может принимать атом или молекула.</li>
+                <li><strong>Переходы между уровнями:</strong> Излучение или поглощение фотона при переходе электрона с одного
+                    уровня энергии
+                    на другой.</li>
+            </ul>
+        </div>
+
+        <button class="theory-button" onclick="toggleTheory('formulas')">Показать формулы</button>
+        <div id="formulas" class="hidden-block">
+            <h2>Основные формулы</h2>
+
+            <ul>
+                <li><b>Энергия фотона:</b> <span class="formula">E = h * ν = h * c / λ</span>, где:
+                    <ul>
+                        <li>E - энергия фотона (Дж или эВ)</li>
+                        <li>h - постоянная Планка (Дж * с)</li>
+                        <li>ν - частота света (Гц)</li>
+                        <li>c - скорость света (м/с)</li>
+                        <li>λ - длина волны света (м)</li>
+                    </ul>
+                </li>
+
+                <li><b>Разность энергий при переходе:</b> <span class="formula">ΔE = E₂ - E₁ = hν</span>, где:
+                    <ul>
+                        <li>ΔE - изменение энергии (Дж или эВ)</li>
+                        <li>E₂ - энергия конечного уровня (Дж или эВ)</li>
+                        <li>E₁ - энергия начального уровня (Дж или эВ)</li>
+                        <li>hν - энергия испущенного или поглощенного фотона (Дж или эВ)</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Задача 1 -->
+        <div class="task" id="task1">
+            <h3>Задача 1</h3>
+            <div class="task-content">
+                <p>Определите энергию фотона с длиной волны 500 нм. Ответ выразите в электронвольтах (эВ).</p>
+            </div>
+            <button class="solution-button" onclick="toggleSolution('solution1')">
+                <i class="fas fa-lightbulb"></i> Показать решение</button>
+            <div class="solution" id="solution1">
+                <ul>
+                    <li><span class="math">Дано:</span>
+                        <ul>
+                            <li><span class="math">λ = 500 нм = 5 * 10⁻⁷ м</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Найти: E</span></li>
+                    <li><span class="math">Решение:</span>
+                        <ul>
+                            <li><span class="math">E = h * c / λ</span></li>
+                            <li><span class="math">E = (6.626 * 10⁻³⁴ Дж * с * 3 * 10⁸ м/с) / (5 * 10⁻⁷ м) = 3.9756 * 10⁻¹⁹ Дж</span>
+                            </li>
+                            <li>Переведем в эВ: <span class="math">E = (3.9756 * 10⁻¹⁹ Дж) / (1.602 * 10⁻¹⁹ Дж/эВ) ≈ 2.48 эВ</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Ответ:</span> ≈ 2.48 эВ</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Задача 2 -->
+        <div class="task">
+            <h3>Задача 2</h3>
+            <div class="task-content">
+                <p>При переходе электрона в атоме водорода с уровня с энергией -1.5 эВ на уровень с энергией -3.4 эВ, какой фотон будет
+                    излучен? Определите частоту этого фотона.</p>
+            </div>
+            <button class="solution-button" onclick="toggleSolution('solution2')">
+                <i class="fas fa-lightbulb"></i> Показать решение</button>
+            <div class="solution" id="solution2">
+                <ul>
+                    <li><span class="math">Дано:</span>
+                        <ul>
+                            <li><span class="math">E₂ = -1.5 эВ</span></li>
+                            <li><span class="math">E₁ = -3.4 эВ</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Найти: ν</span></li>
+                    <li><span class="math">Решение:</span>
+                        <ul>
+                            <li><span class="math">ΔE = E₂ - E₁ = -1.5 эВ - (-3.4 эВ) = 1.9 эВ</span></li>
+                            <li>Переведем в Дж: <span class="math">ΔE = 1.9 эВ * 1.602 * 10⁻¹⁹ Дж/эВ = 3.0438 * 10⁻¹⁹ Дж</span>
+                            </li>
+                            <li><span class="math">ΔE = hν</span>  =>  <span class="math">ν = ΔE / h</span></li>
+                            <li><span class="math">ν = (3.0438 * 10⁻¹⁹ Дж) / (6.626 * 10⁻³⁴ Дж * с) ≈ 4.59 * 10¹⁴ Гц</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Ответ:</span> ≈ 4.59 * 10¹⁴ Гц</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Задача 3 -->
+        <div class="task">
+            <h3>Задача 3</h3>
+            <div class="task-content">
+                <p>Атом поглотил фотон с энергией 2 эВ. На сколько увеличилась энергия атома?</p>
+            </div>
+            <button class="solution-button" onclick="toggleSolution('solution3')">
+                <i class="fas fa-lightbulb"></i> Показать решение</button>
+            <div class="solution" id="solution3">
+                <ul>
+                    <li><span class="math">Дано:</span>
+                        <ul>
+                            <li><span class="math">E = 2 эВ</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Найти: ΔE</span></li>
+                    <li><span class="math">Решение:</span>
+                        <ul>
+                            <li>По закону сохранения энергии, энергия атома увеличится на величину энергии поглощенного фотона.</li>
+                            <li><span class="math">ΔE = E = 2 эВ</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Ответ:</span> 2 эВ</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Задача 4 -->
+        <div class="task">
+            <h3>Задача 4</h3>
+            <div class="task-content">
+                <p>При переходе электрона в атоме с одного энергетического уровня на другой излучается фотон с длиной волны 600 нм.
+                    Какова разность энергий между этими уровнями?</p>
+            </div>
+            <button class="solution-button" onclick="toggleSolution('solution4')">
+                <i class="fas fa-lightbulb"></i> Показать решение</button>
+            <div class="solution" id="solution4">
+                <ul>
+                    <li><span class="math">Дано:</span>
+                        <ul>
+                            <li><span class="math">λ = 600 нм = 6 * 10⁻⁷ м</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Найти: ΔE</span></li>
+                    <li><span class="math">Решение:</span>
+                        <ul>
+                            <li><span class="math">ΔE = h * c / λ</span></li>
+                            <li><span class="math">ΔE = (6.626 * 10⁻³⁴ Дж * с * 3 * 10⁸ м/с) / (6 * 10⁻⁷ м) ≈ 3.313 * 10⁻¹⁹ Дж</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Ответ:</span> ≈ 3.313 * 10⁻¹⁹ Дж</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Задача 5 -->
+        <div class="task">
+            <h3>Задача 5</h3>
+            <div class="task-content">
+                <p>Какой энергией обладает фотон, если длина волны равна 3*10^-7 м.</p>
+            </div>
+            <button class="solution-button" onclick="toggleSolution('solution5')">
+                <i class="fas fa-lightbulb"></i> Показать решение</button>
+            <div class="solution" id="solution5">
+                <ul>
+                    <li><span class="math">Дано:</span>
+                        <ul>
+                            <li><span class="math">λ = 3 * 10⁻⁷ м</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Найти: E</span></li>
+                    <li><span class="math">Решение:</span>
+                        <ul>
+                            <li><span class="math">E = h * c / λ</span></li>
+                            <li><span class="math">E = (6,62 * 10^-34 * 3 * 10^8)/(3*10^-7) = 6,62 * 10^-19 Дж</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Ответ:</span>6,62 * 10^-19 Дж</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Задача 6 -->
+        <div class="task">
+            <h3>Задача 6</h3>
+            <div class="task-content">
+                <p>Электрон в атоме переходит с уровня с энергией -4 эВ на уровень с энергией -2 эВ. Определите энергию испущенного
+                    фотона.</p>
+            </div>
+            <button class="solution-button" onclick="toggleSolution('solution6')">
+                <i class="fas fa-lightbulb"></i> Показать решение</button>
+            <div class="solution" id="solution6">
+                <ul>
+                    <li><span class="math">Дано:</span>
+                        <ul>
+                            <li><span class="math">E₁ = -4 эВ</span></li>
+                            <li><span class="math">E₂ = -2 эВ</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Найти: E</span></li>
+                    <li><span class="math">Решение:</span>
+                        <ul>
+                            <li><span class="math">E = E₂ - E₁ = -2 эВ - (-4 эВ) = 2 эВ</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Ответ:</span> 2 эВ</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Задача 7 -->
+        <div class="task">
+            <h3>Задача 7</h3>
+            <div class="task-content">
+                <p>Электрон переходит с более высокого энергетического уровня на более низкий, излучая фотон с длиной волны 400 нм.
+                    Определите энергию излученного фотона.</p>
+            </div>
+            <button class="solution-button" onclick="toggleSolution('solution7')">
+                <i class="fas fa-lightbulb"></i> Показать решение</button>
+            <div class="solution" id="solution7">
+                <ul>
+                    <li><span class="math">Дано:</span>
+                        <ul>
+                            <li><span class="math">λ = 400 нм = 4 * 10⁻⁷ м</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Найти: E</span></li>
+                    <li><span class="math">Решение:</span>
+                        <ul>
+                            <li><span class="math">E = h * c / λ</span></li>
+                            <li><span class="math">E = (6,626 * 10⁻³⁴ Дж * с * 3 * 10⁸ м/с) / (4 * 10⁻⁷ м) ≈ 4,97 * 10⁻¹⁹ Дж</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Ответ:</span> ≈ 4,97 * 10⁻¹⁹ Дж</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Задача 8 -->
+        <div class="task">
+            <h3>Задача 8</h3>
+            <div class="task-content">
+                <p>Фотон обладает энергией 3 эВ. Найдите длину волны этого фотона (в нанометрах).</p>
+            </div>
+            <button class="solution-button" onclick="toggleSolution('solution8')">
+                <i class="fas fa-lightbulb"></i> Показать решение</button>
+            <div class="solution" id="solution8">
+                <ul>
+                    <li><span class="math">Дано:</span>
+                        <ul>
+                            <li><span class="math">E = 3 эВ = 3 * 1,602 * 10⁻¹⁹ Дж = 4,806 * 10⁻¹⁹ Дж</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Найти: λ</span></li>
+                    <li><span class="math">Решение:</span>
+                        <ul>
+                            <li><span class="math">λ = h * c / E</span></li>
+                            <li><span class="math">λ = (6,626 * 10⁻³⁴ Дж * с * 3 * 10⁸ м/с) / (4,806 * 10⁻¹⁹ Дж) ≈ 4,14 * 10⁻⁷ м</span>
+                            </li>
+                            <li><span class="math">λ = 4,14 * 10⁻⁷ м = 414 нм</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Ответ:</span> 414 нм</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Задача 9 -->
+        <div class="task">
+            <h3>Задача 9</h3>
+            <div class="task-content">
+                <p>Во сколько раз изменится энергия фотона, если его частота увеличится в 3 раза?</p>
+            </div>
+            <button class="solution-button" onclick="toggleSolution('solution9')">
+                <i class="fas fa-lightbulb"></i> Показать решение</button>
+            <div class="solution" id="solution9">
+                <ul>
+                    <li><span class="math">Решение:</span>
+                        <ul>
+                            <li><span class="math">E = h * ν</span>, следовательно, энергия фотона прямо пропорциональна частоте.</li>
+                            <li>Если частота увеличится в 3 раза, то и энергия увеличится в 3 раза.</li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Ответ:</span> Увеличится в 3 раза.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Задача 10 -->
+        <div class="task">
+            <h3>Задача 10</h3>
+            <div class="task-content">
+                <p>Какую частоту имеет фотон, энергия которого равна 3,3 * 10^-19 Дж?</p>
+            </div>
+            <button class="solution-button" onclick="toggleSolution('solution10')">
+                <i class="fas fa-lightbulb"></i> Показать решение</button>
+            <div class="solution" id="solution10">
+                <ul>
+                    <li><span class="math">Дано:</span>
+                        <ul>
+                            <li><span class="math">E = 3,3 * 10^-19 Дж</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Найти: ν</span></li>
+                    <li><span class="math">Решение:</span>
+                        <ul>
+                            <li><span class="math">E = h * ν</span></li>
+                            <li><span class="math">ν = E / h</span></li>
+                            <li><span class="math">ν = (3,3 * 10^-19 Дж)/(6.62 * 10^-34 Дж*с) = 0,5 * 10^15 = 5 * 10^14 Гц</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Ответ:</span>5 * 10^14 Гц</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleSolution(solutionId) {
+            const solution = document.getElementById(solutionId);
+            solution.style.display = (solution.style.display === 'none' || solution.style.display === '') ? 'block' : 'none';
+        }
+
+        function toggleTheory(theoryId) {
+            const theory = document.getElementById(theoryId);
+            theory.style.display = (theory.style.display === 'none' || theory.style.display === '') ? 'block' : 'none';
+        }
+    </script>
+</body>
+
+</html>

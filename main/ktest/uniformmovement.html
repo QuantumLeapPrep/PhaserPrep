@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задачи по физике: Равномерное движение</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+       /* Общие стили */
+       body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            color: #333;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2e7d32;
+            margin-bottom: 30px;
+        }
+
+        /* Стили для задач */
+        .task {
+            background-color: #fff;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .task:hover {
+            transform: translateY(-5px);
+        }
+
+        .task h3 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+
+        .task p {
+            margin-bottom: 20px;
+        }
+
+        /* Стили для решения */
+        .solution {
+            margin-top: 15px;
+            padding: 15px;
+            border-left: 4px solid #2e7d32;
+            background-color: #f9f9f9;
+            border-radius: 6px;
+        }
+
+        .solution p {
+            margin: 8px 0;
+            color: #555;
+        }
+
+        .solution ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .solution li {
+            margin-bottom: 5px;
+        }
+
+        /* Стили для кнопки решения */
+        .solution-button {
+            background-color: #2e7d32;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .solution-button:hover {
+            background-color: #216b25;
+        }
+
+        /* Скрытый элемент */
+        .hidden {
+            display: none;
+        }
+
+        /* Футер */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+            margin-top: auto;
+        }
+
+        /* MathJax стили */
+        .math {
+            font-family: 'Times New Roman', serif;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Задачи по физике: Равномерное движение (ОГЭ)</h1>
+
+        <div class="task">
+            <h3>Задача 1</h3>
+            <p>Автомобиль движется равномерно со скоростью 72 км/ч в течение 10 минут. Какой путь проедет автомобиль? Ответ дать в метрах.</p>
+            <button class="solution-button" onclick="toggleSolution('solution1')">
+                <i class="fas fa-lightbulb"></i>
+                Показать решение
+            </button>
+            <div class="solution hidden" id="solution1">
+                <ul>
+                    <li><span class="math">Дано:</span>
+                        <ul>
+                            <li><span class="math">v = 72 км/ч = 20 м/с</span></li>
+                            <li><span class="math">t = 10 мин = 600 с</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Найти: s</span></li>
+                    <li><span class="math">Решение:</span>
+                        <ul>
+                            <li>Путь при равномерном движении: <span class="math">s = v * t</span></li>
+                            <li>Вычислим путь: <span class="math">s = 20 м/с * 600 с = 12000 м</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Ответ:</span> 12000 м</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="task">
+            <h3>Задача 2</h3>
+            <p>Лыжник спускается с горы длиной 60 м за 12 с, двигаясь равномерно. Определите скорость лыжника. Ответ дать в м/с.</p>
+            <button class="solution-button" onclick="toggleSolution('solution2')">
+                <i class="fas fa-lightbulb"></i>
+                Показать решение
+            </button>
+            <div class="solution hidden" id="solution2">
+                <ul>
+                    <li><span class="math">Дано:</span>
+                        <ul>
+                            <li><span class="math">s = 60 м</span></li>
+                            <li><span class="math">t = 12 с</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Найти: v</span></li>
+                    <li><span class="math">Решение:</span>
+                        <ul>
+                            <li>Скорость при равномерном движении: <span class="math">v = s / t</span></li>
+                            <li>Вычислим скорость: <span class="math">v = 60 м / 12 с = 5 м/с</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Ответ:</span> 5 м/с</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="task">
+            <h3>Задача 3</h3>
+            <p>Велосипедист движется равномерно со скоростью 18 км/ч. За какое время он проедет 250 метров? Ответ дать в секундах.</p>
+            <button class="solution-button" onclick="toggleSolution('solution3')">
+                <i class="fas fa-lightbulb"></i>
+                Показать решение
+            </button>
+            <div class="solution hidden" id="solution3">
+                <ul>
+                    <li><span class="math">Дано:</span>
+                        <ul>
+                            <li><span class="math">v = 18 км/ч = 5 м/с</span></li>
+                            <li><span class="math">s = 250 м</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Найти: t</span></li>
+                    <li><span class="math">Решение:</span>
+                        <ul>
+                            <li>Время при равномерном движении: <span class="math">t = s / v</span></li>
+                            <li>Вычислим время: <span class="math">t = 250 м / 5 м/с = 50 с</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Ответ:</span> 50 с</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="task">
+            <h3>Задача 4</h3>
+            <p>Поезд движется равномерно со скоростью 90 км/ч. Сколько километров он проедет за 20 минут? Ответ дать в километрах.</p>
+            <button class="solution-button" onclick="toggleSolution('solution4')">
+                <i class="fas fa-lightbulb"></i>
+                Показать решение
+            </button>
+            <div class="solution hidden" id="solution4">
+                 <ul>
+                    <li><span class="math">Дано:</span>
+                        <ul>
+                            <li><span class="math">v = 90 км/ч</span></li>
+                            <li><span class="math">t = 20 мин = 1/3 ч</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Найти: s</span></li>
+                    <li><span class="math">Решение:</span>
+                        <ul>
+                            <li>Путь при равномерном движении: <span class="math">s = v * t</span></li>
+                            <li>Вычислим путь: <span class="math">s = 90 км/ч * (1/3) ч = 30 км</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Ответ:</span> 30 км</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="task">
+            <h3>Задача 5</h3>
+            <p>Мотоциклист проехал 15 км, двигаясь равномерно со скоростью 54 км/ч. За какое время он проехал это расстояние? Ответ дать в секундах.</p>
+            <button class="solution-button" onclick="toggleSolution('solution5')">
+                <i class="fas fa-lightbulb"></i>
+                Показать решение
+            </button>
+            <div class="solution hidden" id="solution5">
+                <ul>
+                    <li><span class="math">Дано:</span>
+                        <ul>
+                            <li><span class="math">s = 15 км = 15000 м</span></li>
+                            <li><span class="math">v = 54 км/ч = 15 м/с</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Найти: t</span></li>
+                    <li><span class="math">Решение:</span>
+                        <ul>
+                            <li>Время при равномерном движении: <span class="math">t = s / v</span></li>
+                            <li>Вычислим время: <span class="math">t = 15000 м / 15 м/с = 1000 с</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Ответ:</span> 1000 с</li>
+                </ul>
+            </div>
+        </div>
+
+         <div class="task">
+            <h3>Задача 6</h3>
+            <p>Автобус движется со скоростью 36 км/ч. Какой путь в метрах он пройдет за 5 минут?</p>
+            <button class="solution-button" onclick="toggleSolution('solution6')">
+                <i class="fas fa-lightbulb"></i>
+                Показать решение
+            </button>
+            <div class="solution hidden" id="solution6">
+                <ul>
+                    <li><span class="math">Дано:</span>
+                        <ul>
+                            <li><span class="math">v = 36 км/ч = 10 м/с</span></li>
+                            <li><span class="math">t = 5 мин = 300 с</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Найти: s</span></li>
+                    <li><span class="math">Решение:</span>
+                        <ul>
+                            <li>Путь при равномерном движении: <span class="math">s = v * t</span></li>
+                            <li>Вычислим путь: <span class="math">s = 10 м/с * 300 с = 3000 м</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Ответ:</span> 3000 м</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="task">
+            <h3>Задача 7</h3>
+            <p>Катер проходит 45 км за 1,5 часа, двигаясь равномерно. Определите скорость катера в м/с.</p>
+            <button class="solution-button" onclick="toggleSolution('solution7')">
+                <i class="fas fa-lightbulb"></i>
+                Показать решение
+            </button>
+            <div class="solution hidden" id="solution7">
+                <ul>
+                    <li><span class="math">Дано:</span>
+                        <ul>
+                            <li><span class="math">s = 45 км = 45000 м</span></li>
+                            <li><span class="math">t = 1,5 ч = 5400 с</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Найти: v</span></li>
+                    <li><span class="math">Решение:</span>
+                        <ul>
+                            <li>Скорость при равномерном движении: <span class="math">v = s / t</span></li>
+                            <li>Вычислим скорость: <span class="math">v = 45000 м / 5400 с = 8,33 м/с (округленно)</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Ответ:</span> ≈ 8,33 м/с</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="task">
+            <h3>Задача 8</h3>
+            <p>Эскалатор метро длиной 75 м поднимает пассажира за 2,5 минуты. Определите скорость эскалатора в м/с.</p>
+            <button class="solution-button" onclick="toggleSolution('solution8')">
+                <i class="fas fa-lightbulb"></i>
+                Показать решение
+            </button>
+            <div class="solution hidden" id="solution8">
+                <ul>
+                    <li><span class="math">Дано:</span>
+                        <ul>
+                            <li><span class="math">s = 75 м</span></li>
+                            <li><span class="math">t = 2,5 мин = 150 с</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Найти: v</span></li>
+                    <li><span class="math">Решение:</span>
+                        <ul>
+                            <li>Скорость при равномерном движении: <span class="math">v = s / t</span></li>
+                            <li>Вычислим скорость: <span class="math">v = 75 м / 150 с = 0,5 м/с</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Ответ:</span> 0,5 м/с</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="task">
+            <h3>Задача 9</h3>
+            <p>Трактор едет со скоростью 5 м/с.  За какое время в минутах он проедет 3,6 км?</p>
+            <button class="solution-button" onclick="toggleSolution('solution9')">
+                <i class="fas fa-lightbulb"></i>
+                Показать решение
+            </button>
+            <div class="solution hidden" id="solution9">
+                <ul>
+                    <li><span class="math">Дано:</span>
+                        <ul>
+                            <li><span class="math">v = 5 м/с</span></li>
+                            <li><span class="math">s = 3,6 км = 3600 м</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Найти: t</span></li>
+                    <li><span class="math">Решение:</span>
+                        <ul>
+                            <li>Время при равномерном движении: <span class="math">t = s / v</span></li>
+                            <li>Вычислим время: <span class="math">t = 3600 м / 5 м/с = 720 с</span></li>
+                            <li>Переведем в минуты: <span class="math">t = 720 с / 60 с/мин = 12 мин</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Ответ:</span> 12 мин</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="task">
+            <h3>Задача 10</h3>
+            <p>Самолет летит со скоростью 800 км/ч.  Какое расстояние в километрах он пролетит за 45 минут?</p>
+            <button class="solution-button" onclick="toggleSolution('solution10')">
+                <i class="fas fa-lightbulb"></i>
+                Показать решение
+            </button>
+            <div class="solution hidden" id="solution10">
+                <ul>
+                    <li><span class="math">Дано:</span>
+                        <ul>
+                            <li><span class="math">v = 800 км/ч</span></li>
+                            <li><span class="math">t = 45 мин = 0.75 ч</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Найти: s</span></li>
+                    <li><span class="math">Решение:</span>
+                        <ul>
+                            <li>Путь при равномерном движении: <span class="math">s = v * t</span></li>
+                            <li>Вычислим путь: <span class="math">s = 800 км/ч * 0.75 ч = 600 км</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Ответ:</span> 600 км</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+    <script>
+        function toggleSolution(solutionId) {
+            var solution = document.getElementById(solutionId);
+            solution.classList.toggle('hidden');
+        }
+    </script>
+
+</body>
+</html>

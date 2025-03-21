@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задачи повышенной сложности по кинематике (ОГЭ)</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Общие стили */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            color: #333;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2e7d32;
+            margin-bottom: 30px;
+        }
+
+        /* Стили для задач */
+        .task {
+            background-color: #fff;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .task:hover {
+            transform: translateY(-5px);
+        }
+
+        .task h3 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+
+        .task p {
+            margin-bottom: 20px;
+        }
+
+        /* Стили для решения */
+        .solution {
+            margin-top: 15px;
+            padding: 15px;
+            border-left: 4px solid #2e7d32;
+            background-color: #f9f9f9;
+            border-radius: 6px;
+        }
+
+        .solution p {
+            margin: 8px 0;
+            color: #555;
+        }
+
+        .solution ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .solution li {
+            margin-bottom: 5px;
+        }
+
+        /* Стили для кнопки решения */
+        .solution-button {
+            background-color: #2e7d32;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .solution-button:hover {
+            background-color: #216b25;
+        }
+
+        /* Скрытый элемент */
+        .hidden {
+            display: none;
+        }
+
+        /* Футер */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+            margin-top: auto;
+        }
+
+        /* MathJax стили */
+        .math {
+            font-family: 'Times New Roman', serif;
+        }
+
+        .solution-image {
+            max-width: 50%; /* Максимальная ширина 50% от контейнера */
+            height: auto; /* Автоматическая высота для сохранения пропорций */
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Задачи повышенной сложности по кинематике (ОГЭ)</h1>
+
+        <div class="task">
+            <h3>Задача 1</h3>
+            <p>Тело брошено вертикально вверх со скоростью <span class="math">v₀ = 20 м/с</span>. Пренебрегая сопротивлением воздуха, определите, на какой высоте его скорость уменьшится вдвое. Ускорение свободного падения <span class="math">g = 10 м/с²</span>. Ответ дайте в метрах.</p>
+            <button class="solution-button" onclick="toggleSolution('solution1')">
+                <i class="fas fa-lightbulb"></i> Показать решение</button>
+            <div class="solution hidden" id="solution1">
+                <p><b>Дано:</b></p>
+                <p><span class="math">v₀ = 20 м/с</span></p>
+                <p><span class="math">g = 10 м/с²</span></p>
+                <p><span class="math">v = v₀ / 2 = 10 м/с</span></p>
+                <p><b>Найти:</b> <span class="math">h</span></p>
+                <p><b>Решение:</b></p>
+                <p>1. Используем формулу, связывающую скорость, ускорение и перемещение при равноускоренном движении: <span class="math">v² = v₀² + 2 * a * s</span>.</p>
+                <p>2. В нашем случае <span class="math">a = -g</span> (так как ускорение направлено против движения), и <span class="math">s = h</span> (высота).</p>
+                <p>3. Подставляем значения: <span class="math">(v₀/2)² = v₀² - 2 * g * h</span></p>
+                <p>4. Выражаем высоту: <span class="math">h = (v₀² - (v₀/2)²) / (2 * g) = (3 * v₀²) / (8 * g)</span></p>
+                <p>5. Вычисляем: <span class="math">h = (3 * (20 м/с)²) / (8 * 10 м/с²) = 15 м</span></p>
+                <img src="picture/trinket_plot (9).png" alt="Схема к задаче 1" class="solution-image">
+                <p><b>Ответ:</b> 15 м</p>
+            </div>
+        </div>
+
+        <div class="task">
+            <h3>Задача 2</h3>
+            <p>С какой высоты упало тело, если последние 20 м оно пролетело за 1 с? Ускорение свободного падения <span class="math">g = 10 м/с²</span>. Ответ дайте в метрах.</p>
+            <button class="solution-button" onclick="toggleSolution('solution2')">
+                <i class="fas fa-lightbulb"></i> Показать решение</button>
+            <div class="solution hidden" id="solution2">
+                <p><b>Решение:</b></p>
+                <p>1. Пусть <span class="math">t</span> - время падения тела до начала последних 20 м. Тогда полное время падения <span class="math">t + 1</span> с.</p>
+                <p>2. Полная высота падения: <span class="math">h = (g * (t + 1)²) / 2</span></p>
+                <p>3. Высота, пройденная за время <span class="math">t</span>: <span class="math">h - 20 = (g * t²) / 2</span></p>
+                <p>4. Вычитаем второе уравнение из первого: <span class="math">20 = (g * (t + 1)²) / 2 - (g * t²) / 2 = g * (2 * t + 1) / 2</span></p>
+                <p>5. Решаем уравнение относительно <span class="math">t</span>: <span class="math">t = (40 / g - 1) / 2 = (40 / 10 - 1) / 2 = 1.5 с</span></p>
+                <p>6. Находим полную высоту падения: <span class="math">h = (10 м/с² * (1.5 с + 1 с)²) / 2 = 31.25 м</span></p>
+                <img src="picture/trinket_plot (10).png" alt="Схема к задаче 2" class="solution-image">
+                <p><b>Ответ:</b> 31.25 м</p>
+            </div>
+        </div>
+
+        <div class="task">
+            <h3>Задача 3</h3>
+            <p>Тело, брошенное горизонтально с некоторой высоты со скоростью <span class="math">v₀ = 15 м/с</span>, упало на землю на расстоянии <span class="math">s = 45 м</span> от точки бросания. С какой высоты было брошено тело? Ускорение свободного падения <span class="math">g = 10 м/с²</span>. Ответ дайте в метрах.</p>
+            <button class="solution-button" onclick="toggleSolution('solution3')">
+                <i class="fas fa-lightbulb"></i> Показать решение</button>
+            <div class="solution hidden" id="solution3">
+                <p><b>Дано:</b></p>
+                <p><span class="math">v₀ = 15 м/с</span></p>
+                <p><span class="math">s = 45 м</span></p>
+                <p><span class="math">g = 10 м/с²</span></p>
+                <p><b>Найти:</b> <span class="math">h</span></p>
+                <p><b>Решение:</b></p>
+                <p>1. Время падения зависит только от высоты: <span class="math">t = √(2 * h / g)</span></p>
+                <p>2. Расстояние по горизонтали при равномерном движении: <span class="math">s = v₀ * t</span></p>
+                <p>3. Подставляем время из первого уравнения во второе: <span class="math">s = v₀ * √(2 * h / g)</span></p>
+                <p>4. Выражаем высоту: <span class="math">h = (g * s²) / (2 * v₀²)</span></p>
+                <p>5. Вычисляем: <span class="math">h = (10 м/с² * (45 м)²) / (2 * (15 м/с)²) = 45 м</span></p>
+                <img src="picture/trinket_plot (11).png" alt="Схема к задаче 3" class="solution-image">
+                <p><b>Ответ:</b> 45 м</p>
+            </div>
+        </div>
+
+        <div class="task">
+            <h3>Задача 4</h3>
+            <p>Два тела начали одновременно двигаться навстречу друг другу из двух точек, находящихся на расстоянии <span class="math">S = 210 м</span>. Первое тело движется равномерно со скоростью <span class="math">v₁ = 15 м/с</span>, а второе – равноускоренно без начальной скорости с ускорением <span class="math">a₂ = 2 м/с²</span>. Через какое время тела встретятся? Ответ дайте в секундах.</p>
+            <button class="solution-button" onclick="toggleSolution('solution4')">
+                <i class="fas fa-lightbulb"></i> Показать решение</button>
+            <div class="solution hidden" id="solution4">
+                <p><b>Дано:</b></p>
+                <p><span class="math">S = 210 м</span></p>
+                <p><span class="math">v₁ = 15 м/с</span></p>
+                <p><span class="math">a₂ = 2 м/с²</span></p>
+                <p><b>Найти:</b> <span class="math">t</span></p>
+                <p><b>Решение:</b></p>
+                <p>1. Путь, пройденный первым телом: <span class="math">s₁ = v₁ * t</span></p>
+                <p>2. Путь, пройденный вторым телом: <span class="math">s₂ = (a₂ * t²) / 2</span></p>
+                <p>3. Сумма путей равна расстоянию между точками: <span class="math">s₁ + s₂ = S</span></p>
+                <p>4. Подставляем: <span class="math">v₁ * t + (a₂ * t²) / 2 = S</span></p>
+                <p>5. Получаем квадратное уравнение: <span class="math">(a₂/2) * t² + v₁ * t - S = 0</span> или <span class="math">t² + (2v₁/a₂) * t - (2S/a₂) = 0</span></p>
+                 <img src="picture/trinket_plot (12).png" alt="Схема к задаче 4" class="solution-image">
+                <p>6. Решаем квадратное уравнение: <span class="math">t = (-b ± √(b² - 4ac)) / (2a)</span>, где <span class="math">a = 1</span>, <span class="math">b = 2v₁/a₂ = 15</span>, <span class="math">c = -2S/a₂ = -210</span></p>
+                <p>7. Вычисляем дискриминант: <span class="math">D = b² - 4ac = 15^2 - 4 * (-210) = 225 + 840 = 1065</span></p>
+                <p>8. Вычисляем корни: <span class="math">t = (-15 ± √(1065)) / 2 ≈ (-15 ± 32.63) / 2</span></p>
+                <p>9. Берем положительный корень: <span class="math">t ≈ (-15 + 32.63) / 2 ≈ 8.82 с</span></p>
+                <p><b>Ответ:</b> ≈ 8.82 с</p>
+            </div>
+        </div>
+
+        <div class="task">
+            <h3>Задача 5</h3>
+            <p>Снаряд выпущен из пушки под углом <span class="math">α = 30°</span> к горизонту с начальной скоростью <span class="math">v₀ = 200 м/с</span>. Пренебрегая сопротивлением воздуха, определите дальность полета снаряда. Ускорение свободного падения <span class="math">g = 10 м/с²</span>. Ответ дайте в метрах.</p>
+            <button class="solution-button" onclick="toggleSolution('solution5')">
+                <i class="fas fa-lightbulb"></i> Показать решение</button>
+            <div class="solution hidden" id="solution5">
+                <p><b>Дано:</b></p>
+                <p><span class="math">α = 30°</span></p>
+                <p><span class="math">v₀ = 200 м/с</span></p>
+                <p><span class="math">g = 10 м/с²</span></p>
+                <p><b>Найти:</b> <span class="math">s</span></p>
+                <p><b>Решение:</b></p>
+                <p>1. Дальность полета снаряда: <span class="math">s = (v₀² * sin(2α)) / g</span></p>
+                <p>2. Вычисляем: <span class="math">s = ((200 м/с)² * sin(2 * 30°)) / (10 м/с²) = (40000 м²/с² * sin(60°)) / (10 м/с²)</span></p>
+                <p>3. Поскольку <span class="math">sin(60°) = √3 / 2</span>: <span class="math">s = (40000 м²/с² * (√3 / 2)) / (10 м/с²) = 2000√3 м ≈ 3464 м</span></p>
+                 <img src="picture/trinket_plot (13).png" alt="Схема к задаче 5" class="solution-image">
+                <p><b>Ответ:</b> ≈ 3464 м</p>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function toggleSolution(solutionId) {
+            var solution = document.getElementById(solutionId);
+            solution.classList.toggle('hidden');
+        }
+    </script>
+       <script>
+      MathJax = {
+        tex: {inlineMath: [['$', '$'], ['\\(', '\\)']]},
+        svg: {fontCache: 'global'}
+      };
+    </script>
+    <script type="text/javascript" id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+    </script>
+</body>
+
+</html>

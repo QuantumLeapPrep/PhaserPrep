@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Дисперсия света: Задачи</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Общие стили */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            color: #333;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #512da8;
+            margin-bottom: 30px;
+        }
+
+        /* Стили для задач */
+        .task {
+            background-color: #fff;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .task:hover {
+            transform: translateY(-5px);
+        }
+
+        .task h3 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+
+        .task p {
+            margin-bottom: 10px;
+        }
+
+        /* Стили для решения */
+        .solution {
+            margin-top: 15px;
+            padding: 15px;
+            border-left: 4px solid #512da8;
+            background-color: #f9f9f9;
+            border-radius: 6px;
+            display: none;
+        }
+
+        .solution p {
+            margin: 8px 0;
+            color: #555;
+        }
+
+        .solution ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .solution li {
+            margin-bottom: 5px;
+        }
+
+        /* Стили для схемы */
+        .task-image {
+            max-width: 100%;
+            height: auto;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        /* Стили для кнопки решения */
+        .solution-button {
+            background-color: #512da8;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 15px;
+        }
+
+        .solution-button:hover {
+            background-color: #4527a0;
+        }
+
+        /* Стили для обертки задачи */
+        .task-content {
+            margin-bottom: 10px;
+        }
+
+        /* MathJax стили */
+        .math {
+            font-family: 'Times New Roman', serif;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Задачи на Дисперсию Света</h1>
+        <p>Решите следующие задачи, чтобы закрепить свои знания о дисперсии света.</p>
+
+        <!-- Задача 1 -->
+        <div class="task">
+            <h3>Задача 1</h3>
+            <div class="task-content">
+                <p>Белый свет падает на стеклянную призму. Красный свет испытывает угол отклонения 30°, а фиолетовый –
+                    32°. Определите угловую дисперсию призмы.</p>
+            </div>
+            <button class="solution-button" onclick="toggleSolution('solution1')">
+                <i class="fas fa-lightbulb"></i> Показать решение</button>
+            <div class="solution" id="solution1">
+                <ul>
+                    <li><span class="math">Дано:</span>
+                        <ul>
+                            <li><span class="math">δ<sub>кр</sub> = 30°</span> (угол отклонения красного света)</li>
+                            <li><span class="math">δ<sub>ф</sub> = 32°</span> (угол отклонения фиолетового света)</li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Найти: D</span> (угловая дисперсия)</li>
+                    <li><span class="math">Решение:</span>
+                        <ul>
+                            <li>Угловая дисперсия: <span class="math">D = δ<sub>ф</sub> - δ<sub>кр</sub></span></li>
+                            <li>Вычислим: <span class="math">D = 32° - 30° = 2°</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Ответ:</span> 2°</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Задача 2 -->
+        <div class="task">
+            <h3>Задача 2</h3>
+            <div class="task-content">
+                <p>Показатель преломления стекла для красного света равен 1.51, а для фиолетового – 1.53. Угол
+                    преломления призмы равен 5°. Определите угловую дисперсию призмы.</p>
+            </div>
+            <button class="solution-button" onclick="toggleSolution('solution2')">
+                <i class="fas fa-lightbulb"></i> Показать решение</button>
+            <div class="solution" id="solution2">
+                <ul>
+                    <li><span class="math">Дано:</span>
+                        <ul>
+                            <li><span class="math">n<sub>кр</sub> = 1.51</span> (показатель преломления красного света)</li>
+                            <li><span class="math">n<sub>ф</sub> = 1.53</span> (показатель преломления фиолетового света)</li>
+                            <li><span class="math">A = 5°</span> (угол призмы)</li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Найти: D</span> (угловая дисперсия)</li>
+                    <li><span class="math">Решение:</span>
+                        <ul>
+                            <li>Формула для угловой дисперсии при малых углах: <span class="math">D = A * (n<sub>ф</sub> -
+                                    n<sub>кр</sub>)</span></li>
+                            <li>Вычислим: <span class="math">D = 5° * (1.53 - 1.51) = 0.1°</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Ответ:</span> 0.1°</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Задача 3 -->
+        <div class="task">
+            <h3>Задача 3</h3>
+            <div class="task-content">
+                <p>При прохождении белого света через стеклянную призму, фиолетовый свет отклоняется сильнее, чем
+                    красный. Объясните это явление.</p>
+            </div>
+            <button class="solution-button" onclick="toggleSolution('solution3')">
+                <i class="fas fa-lightbulb"></i> Показать решение</button>
+            <div class="solution" id="solution3">
+                <ul>
+                    <li><span имеет меньшую длину волны, поэтому показатель преломления для него выше,
+                                чем для красного света.</li>
+                            <li>Следовательно, фиолетовый свет испытывает большее отклонение при прохождении через призму.
+                            </li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Ответ:</span> Фиолетовый свет отклоняется сильнее из-за большей зависимости
+                        показателя преломления от длины волны.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Задача 4 -->
+        <div class="task">
+            <h3>Задача 4</h3>
+            <div class="task-content">
+                <p>Угол призмы равен 10°. Показатель преломления для красного света 1.5, а для фиолетового 1.52. Найдите
+                    разность углов отклонения красного и фиолетового света.</p>
+            </div>
+            <button class="solution-button" onclick="toggleSolution('solution4')">
+                <i class="fas fa-lightbulb"></i> Показать решение</button>
+            <div class="solution" id="solution4">
+                <ul>
+                    <li><span class="math">Дано:</span>
+                        <ul>
+                            <li><span class="math">A = 10°</span> (угол призмы)</li>
+                            <li><span class="math">n<sub>кр</sub> = 1.5</span></li>
+                            <li><span class="math">n<sub>ф</sub> = 1.52</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Найти: Δδ</span> (разность углов отклонения)</li>
+                    <li><span class="math">Решение:</span>
+                        <ul>
+                            <li>Формула отклонения: <span class="math">δ = A(n - 1)</span></li>
+                            <li><span class="math">δ<sub>кр</sub> = A(n<sub>кр</sub> - 1) = 10°*(1.5 - 1) = 5°</span></li>
+                            <li><span class="math">δ<sub>ф</sub> = A(n<sub>ф</sub> - 1) = 10°*(1.52 - 1) = 5.2°</span></li>
+                            <li><span class="math">Δδ = δ<sub>ф</sub> - δ<sub>кр</sub> = 5.2° - 5° = 0.2°</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Ответ:</span> 0.2°</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Задача 5 -->
+        <div class="task">
+            <h3>Задача 5</h3>
+            <div class="task-content">
+                <p>Объясните, почему при прохождении белого света через призму наблюдается радужная полоса.</p>
+            </div>
+            <button class="solution-button" onclick="toggleSolution('solution5')">
+                <i class="fas fa-lightbulb"></i> Показать решение</button>
+            <div class="solution" id="solution5">
+                <ul>
+                    <li><span class="math">Решение:</span>
+                        <ul>
+                            <li>Белый свет состоит из света разных цветов, каждый из которых имеет свою длину волны.</li>
+                            <li>При прохождении через призму происходит явление дисперсии, т.е. разложение белого света в
+                                спектр.</li>
+                            <li>Показатель преломления призмы зависит от длины волны: чем меньше длина волны, тем больше
+                                показатель преломления.</li>
+                            <li>Поэтому лучи разного цвета отклоняются на разные углы.</li>
+                            <li>В результате на выходе из призмы мы наблюдаем радужную полосу, где фиолетовый свет
+                                отклоняется больше всего, а красный – меньше всего.</li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Ответ:</span> Радужная полоса образуется из-за дисперсии света, то есть
+                        разложения белого света в спектр, когда разные цвета отклоняются на разные углы.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Задача 6 -->
+        <div class="task">
+            <h3>Задача 6</h3>
+            <div class="task-content">
+                <p>Какое из явлений иллюстрирует рисунок: интерференцию, дифракцию или дисперсию?</p>
+                <img src="s944706_1_9.png" alt="Схема дисперсии" class="task-image">
+            </div>
+            <button class="solution-button" onclick="toggleSolution('solution6')">
+                <i class="fas fa-lightbulb"></i> Показать решение</button>
+            <div class="solution" id="solution6">
+                <ul>
+                    <li><span class="math">Решение:</span>
+                        <ul>
+                            <li>На рисунке изображено разложение белого света на составляющие его цвета (красный,
+                                оранжевый, жёлтый, зелёный, голубой, синий, фиолетовый).</li>
+                            <li>Это явление называется дисперсией света.</li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Ответ:</span> Дисперсию.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Задача 7 -->
+        <div class="task">
+            <h3>Задача 7</h3>
+            <div class="task-content">
+                <p>Дисперсия света приводит к появлению радуги. Объясните, почему радугу можно наблюдать после дождя.</p>
+            </div>
+            <button class="solution-button" onclick="toggleSolution('solution7')">
+                <i class="fas fa-lightbulb"></i> Показать решение</button>
+            <div class="solution" id="solution7">
+                <ul>
+                    <li><span class="math">Решение:</span>
+                        <ul>
+                            <li>Капли дождя действуют как маленькие призмы.</li>
+                            <li>Когда солнечный свет попадает на капли дождя, происходит преломление и отражение света.
+                            </li>
+                            <li>Из-за дисперсии света, солнечный свет разлагается в спектр, подобно тому, как это
+                                происходит в призме.</li>
+                            <li>Разные цвета света испытывают разное отклонение, что приводит к образованию дуги
+                                (радуги), которую мы видим на небе.</li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Ответ:</span> Радуга появляется после дождя, потому что капли воды в воздухе
+                        действуют как призмы, разлагая солнечный свет в спектр из-за дисперсии.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Задача 8 -->
+        <div class="task">
+            <h3>Задача 8</h3>
+            <div class="task-content">
+                <p>Угловая дисперсия призмы равна 3°. Если угол призмы равен 6°, определите разность показателей
+                    преломления для крайних лучей спектра.</p>
+            </div>
+            <button class="solution-button" onclick="toggleSolution('solution8')">
+                <i class="fas fa-lightbulb"></i> Показать решение</button>
+            <div class="solution" id="solution8">
+                <ul>
+                    <li><span class="math">Дано:</span>
+                        <ul>
+                            <li><span class="math">D = 3°</span></li>
+                            <li><span class="math">A = 6°</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Найти: Δn</span></li>
+                    <li><span class="math">Решение:</span>
+                        <ul>
+                            <li><span class="math">D = A * (n₂ - n₁)</span></li>
+                            <li><span class="math">Δn = n₂ - n₁</span></li>
+                            <li><span class="math">Δn = D/A = 3°/6° = 0.5</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Ответ:</span> 0.5</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Задача 9 -->
+        <div class="task">
+            <h3>Задача 9</h3>
+            <div class="task-content">
+                <p>На призму с углом 4° падает белый свет. Определите угловое расстояние между красным (n = 1.50) и
+                    фиолетовым (n = 1.52) лучами после прохождения через призму.</p>
+            </div>
+            <button class="solution-button" onclick="toggleSolution('solution9')">
+                <i class="fas fa-lightbulb"></i> Показать решение</button>
+            <div class="solution" id="solution9">
+                <ul>
+                    <li><span class="math">Дано:</span>
+                        <ul>
+                            <li><span class="math">A = 4°</span></li>
+                            <li><span class="math">n<sub>кр</sub> = 1.50</span></li>
+                            <li><span class="math">n<sub>ф</sub> = 1.52</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Найти: D</span> (угловая дисперсия)</li>
+                    <li><span class="math">Решение:</span>
+                        <ul>
+                            <li>D = A * (n<sub>ф</sub> - n<sub>кр</sub>) = 4° * (1.52 - 1.50) = 0.08°</li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Ответ:</span> 0.08°</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Задача 10 -->
+        <div class="task">
+            <h3>Задача 10</h3>
+            <div class="task-content">
+                <p>Что произойдет с радужной полосой при прохождении белого света через призму, если призму поместить в
+                    воду? Укажите, как изменится угловое расстояние между красным и фиолетовым лучами.</p>
+            </div>
+            <button class="solution-button" onclick="toggleSolution('solution10')">
+                <i class="fas fa-lightbulb"></i> Показать решение</button>
+            <div class="solution" id="solution10">
+                <ul>
+                    <li><span class="math"> между красным и фиолетовым лучами уменьшится.</li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Ответ:</span> Угловое расстояние между красным и фиолетовым лучами уменьшится.
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleSolution(solutionId) {
+            const solution = document.getElementById(solutionId);
+            solution.style.display = (solution.style.display === 'none' || solution.style.display === '') ? 'block' : 'none';
+        }
+    </script>
+</body>
+
+</html>

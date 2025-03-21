@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задачи на Магнитное поле и силу Ампера</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Общие стили */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            color: #333;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #0277bd;
+            margin-bottom: 30px;
+        }
+
+        /* Стили для задач */
+        .task {
+            background-color: #fff;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .task:hover {
+            transform: translateY(-5px);
+        }
+
+        .task h3 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+
+        .task p {
+            margin-bottom: 10px;
+        }
+
+        /* Стили для решения */
+        .solution {
+            margin-top: 15px;
+            padding: 15px;
+            border-left: 4px solid #0277bd;
+            background-color: #f9f9f9;
+            border-radius: 6px;
+            display: none; /* Изначально скрываем решения */
+        }
+
+        .solution p {
+            margin: 8px 0;
+            color: #555;
+        }
+
+        .solution ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .solution li {
+            margin-bottom: 5px;
+        }
+
+        /* Стили для схемы */
+        .task-image {
+            max-width: 100%;
+            height: auto;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        /* Стили для кнопки решения */
+        .solution-button {
+            background-color: #0277bd;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 15px;
+        }
+
+        .solution-button:hover {
+            background-color: #0277bd;
+        }
+
+        /* Стили для обертки задачи */
+        .task-content {
+            margin-bottom: 10px;
+        }
+
+        /* MathJax стили */
+        .math {
+            font-family: 'Times New Roman', serif;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Задачи на Магнитное поле и силу Ампера</h1>
+        <p>Решите следующие задачи, чтобы закрепить свои знания о магнитном поле и силе Ампера.</p>
+
+        <!-- Задача 1 -->
+        <div class="task">
+            <h3>Задача 1</h3>
+            <div class="task-content">
+                <p>Прямой проводник длиной 0,2 м находится в однородном магнитном поле с индукцией 0,5 Тл.  Сила тока в проводнике 2 А. Определите силу Ампера, действующую на проводник, если он расположен перпендикулярно линиям магнитной индукции.</p>
+            </div>
+            <button class="solution-button" onclick="toggleSolution('solution1')">
+                <i class="fas fa-lightbulb"></i> Показать решение</button>
+            <div class="solution" id="solution1">
+                <ul>
+                    <li><span class="math">Дано:</span>
+                        <ul>
+                            <li><span class="math">l = 0.2 м</span></li>
+                            <li><span class="math">B = 0.5 Тл</span></li>
+                            <li><span class="math">I = 2 А</span></li>
+                            <li><span class="math">α = 90°</span> (проводник перпендикулярен полю)</li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Найти: F_A</span></li>
+                    <li><span class="math">Решение:</span>
+                        <ul>
+                            <li>Сила Ампера: <span class="math">F_A = B * I * l * sin(α)</span></li>
+                            <li>Вычислим: <span class="math">F_A = 0.5 Тл * 2 А * 0.2 м * sin(90°) = 0.2 Н</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Ответ:</span> 0.2 Н</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Задача 2 -->
+        <div class="task">
+            <h3>Задача 2</h3>
+            <div class="task-content">
+                <p>На проводник длиной 0,1 м, находящийся в магнитном поле с индукцией 0,4 Тл, действует сила Ампера 0,016 Н.  Определите силу тока в проводнике, если он расположен перпендикулярно линиям магнитной индукции.</p>
+            </div>
+            <button class="solution-button" onclick="toggleSolution('solution2')">
+                <i class="fas fa-lightbulb"></i> Показать решение</button>
+            <div class="solution" id="solution2">
+                <ul>
+                    <li><span class="math">Дано:</span>
+                        <ul>
+                            <li><span class="math">l = 0.1 м</span></li>
+                            <li><span class="math">B = 0.4 Тл</span></li>
+                            <li><span class="math">F_A = 0.016 Н</span></li>
+                            <li><span class="math">α = 90°</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Найти: I</span></li>
+                    <li><span class="math">Решение:</span>
+                        <ul>
+                            <li>Сила Ампера: <span class="math">F_A = B * I * l * sin(α)</span></li>
+                            <li>Выразим ток: <span class="math">I = F_A / (B * l * sin(α))</span></li>
+                            <li>Вычислим: <span class="math">I = 0.016 Н / (0.4 Тл * 0.1 м * sin(90°)) = 0.4 А</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Ответ:</span> 0.4 А</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Задача 3 -->
+        <div class="task">
+            <h3>Задача 3</h3>
+            <div class="task-content">
+                <p>Определите длину проводника, если при силе тока 3 А в магнитном поле с индукцией 0,2 Тл, на него действует сила Ампера 0,12 Н. Проводник расположен перпендикулярно линиям магнитной индукции.</p>
+            </div>
+            <button class="solution-button" onclick="toggleSolution('solution3')">
+                <i class="fas fa-lightbulb"></i> Показать решение</button>
+            <div class="solution" id="solution3">
+                <ul>
+                    <li><span class="math">Дано:</span>
+                        <ul>
+                            <li><span class="math">I = 3 А</span></li>
+                            <li><span class="math">B = 0.2 Тл</span></li>
+                            <li><span class="math">F_A = 0.12 Н</span></li>
+                            <li><span class="math">α = 90°</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Найти: l</span></li>
+                    <li><span class="math">Решение:</span>
+                        <ul>
+                            <li>Сила Ампера: <span class="math">F_A = B * I * l * sin(α)</span></li>
+                            <li>Выразим длину: <span class="math">l = F_A / (B * I * sin(α))</span></li>
+                            <li>Вычислим: <span class="math">l = 0.12 Н / (0.2 Тл * 3 А * sin(90°)) = 0.2 м</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Ответ:</span> 0.2 м</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Задача 4 -->
+        <div class="task">
+            <h3>Задача 4</h3>
+            <div class="task-content">
+                <p>Прямой проводник длиной 5 см находится в однородном магнитном поле с индукцией 0,4 Тл под углом 30° к вектору магнитной индукции. Сила тока в проводнике 4 А. Определите силу Ампера, действующую на проводник.</p>
+            </div>
+            <button class="solution-button" onclick="toggleSolution('solution4')">
+                <i class="fas fa-lightbulb"></i> Показать решение</button>
+            <div class="solution" id="solution4">
+                <ul>
+                    <li><span class="math">Дано:</span>
+                        <ul>
+                            <li><span class="math">l = 5 см = 0.05 м</span></li>
+                            <li><span class="math">B = 0.4 Тл</span></li>
+                            <li><span class="math">I = 4 А</span></li>
+                            <li><span class="math">α = 30°</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Найти: F_A</span></li>
+                    <li><span class="math">Решение:</span>
+                        <ul>
+                            <li>Сила Ампера: <span class="math">F_A = B * I * l * sin(α)</span></li>
+                            <li>Вычислим: <span class="math">F_A = 0.4 Тл * 4 А * 0.05 м * sin(30°) = 0.04 Н</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Ответ:</span> 0.04 Н</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Задача 5 -->
+        <div class="task">
+            <h3>Задача 5</h3>
+            <div class="task-content">
+                <p>В однородном магнитном поле на проводник длиной 10 см действует сила Ампера 0,02 Н. Сила тока в проводнике 2 А, а угол между направлением тока и вектором магнитной индукции составляет 90°. Определите индукцию магнитного поля.</p>
+            </div>
+            <button class="solution-button" onclick="toggleSolution('solution5')">
+                <i class="fas fa-lightbulb"></i> Показать решение</button>
+            <div class="solution" id="solution5">
+                <ul>
+                    <li><span class="math">Дано:</span>
+                        <ul>
+                            <li><span class="math">l = 10 см = 0.1 м</span></li>
+                            <li><span class="math">F_A = 0.02 Н</span></li>
+                            <li><span class="math">I = 2 А</span></li>
+                            <li><span class="math">α = 90°</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Найти: B</span></li>
+                    <li><span class="math">Решение:</span>
+                        <ul>
+                            <li>Сила Ампера: <span class="math">F_A = B * I * l * sin(α)</span></li>
+                            <li>Выразим индукцию: <span class="math">B = F_A / (I * l * sin(α))</span></li>
+                            <li>Вычислим: <span class="math">B = 0.02 Н / (2 А * 0.1 м * sin(90°)) = 0.1 Тл</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Ответ:</span> 0.1 Тл</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Задача 6 -->
+        <div class="task">
+            <h3>Задача 6</h3>
+            <div class="task-content">
+                <p>Два параллельных проводника с током взаимодействуют друг с другом.  Если силу тока в каждом проводнике увеличить в 2 раза, как изменится сила взаимодействия между ними?</p>
+            </div>
+            <button class="solution-button" onclick="toggleSolution('solution6')">
+                <i class="fas fa-lightbulb"></i> Показать решение</button>
+            <div class="solution" id="solution6">
+                <ul>
+                    <li><span class="math">Решение:</span>
+                        <ul>
+                            <li>Сила взаимодействия между параллельными проводниками с током пропорциональна произведению сил токов в проводниках.</li>
+                            <li>Если каждый ток увеличить в 2 раза, то сила взаимодействия увеличится в 2 * 2 = 4 раза.</li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Ответ:</span> Увеличится в 4 раза</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Задача 7 -->
+        <div class="task">
+            <h3>Задача 7</h3>
+            <div class="task-content">
+                <p>Прямой проводник с током 5 А находится в однородном магнитном поле с индукцией 0,2 Тл. Длина проводника 0,1 м, угол между направлением тока и вектором магнитной индукции 30°.  Найдите силу Ампера.</p>
+            </div>
+            <button class="solution-button" onclick="toggleSolution('solution7')">
+                <i class="fas fa-lightbulb"></i> Показать решение</button>
+            <div class="solution" id="solution7">
+                <ul>
+                    <li><span class="math">Дано:</span>
+                        <ul>
+                            <li><span class="math">I = 5 А</span></li>
+                            <li><span class="math">B = 0,2 Тл</span></li>
+                            <li><span class="math">l = 0,1 м</span></li>
+                            <li><span class="math">α = 30°</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Найти: F_A</span></li>
+                    <li><span class="math">Решение:</span>
+                        <ul>
+                            <li><span class="math">F_A = B * I * l * sin(α)</span></li>
+                            <li><span class="math">F_A = 0,2 Тл * 5 А * 0,1 м * sin(30°) = 0,05 H</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Ответ:</span> 0,05 H</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Задача 8 -->
+        <div class="task">
+            <h3>Задача 8</h3>
+            <div class="task-content">
+                <p>На проводник длиной 20 см в магнитном поле действует сила 0,04 Н. Индукция поля 0,4 Тл. Определите силу тока в проводнике, если угол между направлением тока и вектором магнитной индукции 90°.</p>
+            </div>
+            <button class="solution-button" onclick="toggleSolution('solution8')">
+                <i class="fas fa-lightbulb"></i> Показать решение</button>
+            <div class="solution" id="solution8">
+                <ul>
+                    <li><span class="math">Дано:</span>
+                        <ul>
+                            <li><span class="math">l = 20 см = 0,2 м</span></li>
+                            <li><span class="math">F_A = 0,04 H</span></li>
+                            <li><span class="math">B = 0,4 Тл</span></li>
+                            <li><span class="math">α = 90°</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Найти: I</span></li>
+                    <li><span class="math">Решение:</span>
+                        <ul>
+                            <li><span class="math">F_A = B * I * l * sin(α)</span></li>
+                            <li><span class="math">I = F_A / (B * l * sin(α))</span></li>
+                            <li><span class="math">I = 0,04 H / (0,4 Тл * 0,2 м * sin(90°)) = 0,5 A</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Ответ:</span> 0,5 A</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Задача 9 -->
+        <div class="task">
+            <h3>Задача 9</h3>
+            <div class="task-content">
+                <p>На проводник с током длиной 10 см действует сила Ампера 0,03 Н. Определите угол между направлением тока и вектором магнитной индукции, если индукция магнитного поля 0,3 Тл, а сила тока в проводнике 2 А.</p>
+            </div>
+            <button class="solution-button" onclick="toggleSolution('solution9')">
+                <i class="fas fa-lightbulb"></i> Показать решение</button>
+            <div class="solution" id="solution9">
+                <ul>
+                    <li><span class="math">Дано:</span>
+                        <ul>
+                            <li><span class="math">l = 10 см = 0,1 м</span></li>
+                            <li><span class="math">F_A = 0,03 H</span></li>
+                            <li><span class="math">B = 0,3 Тл</span></li>
+                            <li><span class="math">I = 2 А</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Найти: α</span></li>
+                    <li><span class="math">Решение:</span>
+                        <ul>
+                            <li><span class="math">F_A = B * I * l * sin(α)</span></li>
+                            <li><span class="math">sin(α) = F_A / (B * I * l)</span></li>
+                            <li><span class="math">sin(α) = 0,03 H / (0,3 Тл * 2 A * 0,1 м) = 0,5</span></li>
+                            <li><span class="math">α = arcsin(0,5) = 30°</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Ответ:</span> 30°</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Задача 10 -->
+        <div class="task">
+            <h3>Задача 10</h3>
+            <div class="task-content">
+                <p>Два параллельных прямых проводника с одинаковыми токами притягиваются друг к другу. Как изменится сила взаимодействия, если силу тока в каждом проводнике уменьшить в 2 раза и увеличить расстояние между проводниками в 2 раза?</p>
+            </div>
+            <button class="solution-button" onclick="toggleSolution('solution10')">
+                <i class="fas fa-lightbulb"></i> Показать решение</button>
+            <div class="solution" id="solution10">
+                <ul>
+                    <li><span class="math">Решение:</span>
+                        <ul>
+                            <li>Сила взаимодействия между параллельными проводниками с током: <span class="math">F ~ (I₁ * I₂) / r</span>, где <span class="math">I₁</span> и <span class="math">I₂</span> — силы токов, а <span class="math">r</span> — расстояние между проводниками.</li>
+                            <li>Если уменьшить токи в 2 раза, то <span class="math">I₁' = I₁/2</span> и <span class="math">I₂' = I₂/2</span>,  а расстояние увеличить в 2 раза, то <span class="math">r' = 2r</span></li>
+                            <li>Новая сила: <span class="math">F' ~ (I₁'/I₂') / r' = (I₁/2 * I₂/2) / (2r) = (1/8) * (I₁ * I₂) / r</span></li>
+                            <li>Таким образом, сила уменьшится в 8 раз.</li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Ответ:</span> Уменьшится в 8 раз</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleSolution(solutionId) {
+            const solution = document.getElementById(solutionId);
+            solution.style.display = (solution.style.display === 'none' || solution.style.display === '') ? 'block' : 'none';
+        }
+    </script>
+</body>
+
+</html>

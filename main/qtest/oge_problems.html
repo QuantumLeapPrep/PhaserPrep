@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Основы ядерной физики: Задачи повышенной сложности (ОГЭ)</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Общие стили */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            color: #333;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #ffd519;
+            margin-bottom: 30px;
+        }
+
+        /* Стили для задач */
+        .task {
+            background-color: #fff;
+            padding: 25px;
+            margin-bottom: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .task:hover {
+            transform: translateY(-5px);
+        }
+
+        .task h3 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+
+        .task p {
+            margin-bottom: 15px;
+        }
+
+        /* Стили для решения */
+        .solution {
+            margin-top: 15px;
+            padding: 15px;
+            border-left: 4px solid #ffd519;
+            background-color: #f9f9f9;
+            border-radius: 6px;
+            display: none;
+        }
+
+        .solution p {
+            margin: 8px 0;
+            color: #555;
+        }
+
+        .solution ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .solution li {
+            margin-bottom: 5px;
+        }
+
+        /* Стили для схемы */
+        .task-image {
+            max-width: 100%;
+            height: auto;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        /* Стили для кнопки решения */
+        .solution-button {
+            background-color: #ffd519;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 25px;
+            /* Увеличили отступ сверху */
+        }
+
+        .solution-button:hover {
+            background-color: #ffd519;
+        }
+
+        /* Стили для обертки задачи */
+        .task-content {
+            margin-bottom: 10px;
+        }
+
+        /* MathJax стили */
+        .math {
+            font-family: 'Times New Roman', serif;
+        }
+
+        /* Стили для скрытых блоков */
+        .hidden-block {
+            display: none;
+            margin-top: 40px;
+            /* Отступ между кнопкой и контентом */
+            padding: 25px;
+            /* Увеличили отступ внутри */
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+        }
+
+        .hidden-block h2,
+        .hidden-block h3,
+        .hidden-block p,
+        .hidden-block ul {
+            margin-bottom: 15px;
+        }
+
+        /* Стили для кнопки показа */
+        .theory-button {
+            background-color: #ffd519;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 1rem;
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+
+        .theory-button:hover {
+            background-color: #ffd519;
+        }
+
+        /* Стиль для первой задачи */
+        #task1 {
+            margin-top: 40px;
+            /* Отступ от раздела с формулами */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Основы ядерной физики: Задачи повышенной сложности (ОГЭ)</h1>
+        <p>Попробуйте свои силы в решении задач, связанных с ядерными явлениями!</p>
+
+        <!-- Задача 1 -->
+        <div class="task">
+            <h3>Задача 1: Альфа- и бета-распад</h3>
+            <div class="task-content">
+                <p>Ядро  <span class="math">²³²₉₀Th</span>  претерпело последовательно альфа-распад и два бета-распада. Определите массовое и зарядовое числа образовавшегося ядра.</p>
+            </div>
+            <button class="solution-button" onclick="toggleSolution('solution1')">
+                <i class="fas fa-lightbulb"></i> Показать решение</button>
+            <div class="solution" id="solution1">
+                <ul>
+                    <li><span class="math">Решение:</span></li>
+                    <li>Альфа-распад: уменьшение массового числа на 4, зарядового - на 2.</li>
+                    <li>Бета-распад: массовое число не меняется, зарядовое - увеличивается на 1.</li>
+                    <li>После альфа-распада:  <span class="math">²²⁸₈₈Ra</span></li>
+                    <li>После двух бета-распадов:  <span class="math">²²⁸₉₀Th</span></li>
+                    <li><span class="math">Ответ:</span> Массовое число 228, зарядовое число 90.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Задача 2 -->
+        <div class="task">
+            <h3>Задача 2: Период полураспада и время</h3>
+            <div class="task-content">
+                <p>Через 30 суток количество радиоактивного изотопа уменьшилось в 8 раз. Определите период полураспада этого изотопа.</p>
+            </div>
+            <button class="solution-button" onclick="toggleSolution('solution2')">
+                <i class="fas fa-lightbulb"></i> Показать решение</button>
+            <div class="solution" id="solution2">
+                <ul>
+                    <li><span class="math">Решение:</span></li>
+                    <li>Уменьшение в 8 раз - это три периода полураспада (2 x 2 x 2 = 8).</li>
+                    <li>3T = 30 суток.</li>
+                    <li>T = 10 суток.</li>
+                    <li><span class="math">Ответ:</span> 10 суток.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Задача 3 -->
+        <div class="task">
+            <h3>Задача 3: Определение возраста археологической находки</h3>
+            <div class="task-content">
+                <p>В образце древнего дерева обнаружено, что содержание радиоактивного изотопа углерода-14 (¹⁴C) составляет 1/4 от его содержания в живом дереве. Период полураспада ¹⁴C равен 5730 лет. Определите возраст образца.</p>
+            </div>
+            <button class="solution-button" onclick="toggleSolution('solution3')">
+                <i class="fas fa-lightbulb"></i> Показать решение</button>
+            <div class="solution" id="solution3">
+                <ul>
+                    <li><span class="math">Решение:</span></li>
+                    <li>Содержание ¹⁴C уменьшилось в 4 раза, значит, прошло два периода полураспада.</li>
+                    <li>Возраст образца равен 2 * 5730 лет.</li>
+                    <li><span class="math">Ответ:</span> 11460 лет.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Задача 4 -->
+        <div class="task">
+            <h3>Задача 4: Закон сохранения энергии и массового числа</h3>
+            <div class="task-content">
+                <p>Определите, какая частица X вылетает в результате ядерной реакции: <span class="math">¹⁴₇N + α → ¹⁷₈O + X</span>, где α - альфа-частица (ядро гелия).</p>
+            </div>
+            <button class="solution-button" onclick="toggleSolution('solution4')">
+                <i class="fas fa-lightbulb"></i> Показать решение</button>
+            <div class="solution" id="solution4">
+                <ul>
+                    <li><span class="math">Решение:</span></li>
+                    <li>Сохранение массового числа: 14 + 4 = 17 + Aₓ → Aₓ = 1</li>
+                    <li>Сохранение заряда: 7 + 2 = 8 + Zₓ → Zₓ = 1</li>
+                    <li>Частица с массовым числом 1 и зарядом 1 - это протон.</li>
+                    <li><span class="math">Ответ:</span> Протон (¹₁H).</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Задача 5 -->
+        <div class="task">
+            <h3>Задача 5: Несколько периодов полураспада</h3>
+            <div class="task-content">
+                <p>Изначально было 8 * 10²⁰ атомов радиоактивного вещества. Сколько атомов распадется через время, равное двум периодам полураспада?</p>
+            </div>
+            <button class="solution-button" onclick="toggleSolution('solution5')">
+                <i class="fas fa-lightbulb"></i> Показать решение</button>
+            <div class="solution" id="solution5">
+                <ul>
+                    <li><span class="math">Решение:</span></li>
+                    <li>После первого периода полураспада останется 8 * 10²⁰ / 2 = 4 * 10²⁰  атомов.</li>
+                    <li>После второго периода полураспада останется 4 * 10²⁰ / 2 = 2 * 10²⁰ атомов.</li>
+                    <li>Распадется 8 * 10²⁰ - 2 * 10²⁰ = 6 * 10²⁰ атомов.</li>
+                    <li><span class="math">Ответ:</span> 6 * 10²⁰  атомов.</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function toggleSolution(solutionId) {
+            const solution = document.getElementById(solutionId);
+            solution.style.display = (solution.style.display === 'none' || solution.style.display === '') ? 'block' : 'none';
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задачи на влажность воздуха - PhaserPrep</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 2em auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #e67e22;
+            text-align: center;
+            margin-bottom: 1em;
+        }
+
+        .task {
+            margin-bottom: 2em;
+            padding: 1.2em;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            border: 1px solid #eee;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            /* Плавное приподнимание */
+        }
+
+        .task:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+            /* Тень при наведении */
+        }
+
+        .task h3 {
+            font-size: 1.2em;
+            margin-bottom: 0.5em;
+        }
+
+        .task p {
+            margin-bottom: 1em;
+        }
+
+        .solution-button {
+            padding: 0.6em 1.2em;
+            background-color: #e67e22;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: block;
+            margin: 0.5em 0;
+        }
+
+        .solution-button:hover {
+            background-color: #d35400;
+        }
+
+        .solution {
+            display: none;
+            padding: 1em;
+            background-color: #e8f0fe;
+            border-radius: 5px;
+            margin-top: 1em;
+            border-left: 5px solid #e67e22;
+        }
+
+        .solution ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .solution ul li {
+            margin-bottom: 0.5em;
+        }
+
+        .solution.show {
+            display: block;
+        }
+
+        /* Стили для отображения математических формул */
+        .math {
+            font-style: italic;
+        }
+
+        .hidden {
+            display: none;
+        }
+        .fraction {
+            display: inline-block;
+            text-align: center;
+        }
+        .fraction sup {
+            display: block;
+            border-bottom: 1px solid black;
+            padding-bottom: 0.1em;
+        }
+        .fraction sub {
+            display: block;
+            padding-top: 0.1em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Задачи на влажность воздуха</h1>
+
+        <!-- Задача 1 -->
+        <div class="task">
+            <h3>Задача 1</h3>
+            <p>В комнате объемом 50 м³ содержится 600 г водяного пара при температуре 20°C. Определите абсолютную
+                влажность воздуха.</p>
+            <button class="solution-button" onclick="toggleSolution('solution1')">
+                <i class="fas fa-lightbulb"></i>
+                Показать решение
+            </button>
+            <div class="solution hidden" id="solution1">
+                <ul>
+                    <li><span class="math">Дано:</span>
+                        <ul>
+                            <li><span class="math">V = 50 м³</span></li>
+                            <li><span class="math">m = 600 г = 0,6 кг</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Найти: ρ</span></li>
+                    <li><span class="math">Решение:</span>
+                        <ul>
+                            <li>Формула для абсолютной влажности: <span class="math">ρ = m/V</span></li>
+                            <li>Вычислим: <span class="math">ρ = 0,6 кг / 50 м³ = 0,012 кг/м³</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Ответ:</span> 0,012 кг/м³ (12 г/м³)</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Задача 2 -->
+        <div class="task">
+            <h3>Задача 2</h3>
+            <p>Относительная влажность воздуха в комнате при 25°C составляет 70%. Определите абсолютную влажность, если
+                давление насыщенного пара при этой температуре составляет 23,8 мм рт. ст.</p>
+            <button class="solution-button" onclick="toggleSolution('solution2')">
+                <i class="fas fa-lightbulb"></i>
+                Показать решение
+            </button>
+            <div class="solution hidden" id="solution2">
+                <ul>
+                    <li><span class="math">Дано:</span>
+                        <ul>
+                            <li><span class="math">&phi; = 70%</span></li>
+                            <li><span class="math">P<sub>нас</sub> = 23,8 мм рт. ст.</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Найти: P</span></li>
+                    <li><span class="math">Решение:</span>
+                        <ul>
+                            <li>Формула для относительной влажности: <span class="math">&phi; = (P / P<sub>нас</sub>) * 100%</span></li>
+                            <li>Выразим P: <span class="math">P = (&phi; / 100) * P<sub>нас</sub></span></li>
+                            <li>Вычислим: <span class="math">P = (70 / 100) * 23,8 = 16,66 мм рт. ст.</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Ответ:</span> 16,66 мм рт. ст.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Задача 3 -->
+        <div class="task">
+            <h3>Задача 3</h3>
+            <p>При температуре 30°C относительная влажность воздуха равна 80%. Давление насыщенного водяного пара при
+                этой температуре составляет 31,8 мм рт. ст., а плотность насыщенного пара 30.04 г/м³. Определите
+                абсолютную влажность воздуха в кг/м³.</p>
+            <button class="solution-button" onclick="toggleSolution('solution3')">
+                <i class="fas fa-lightbulb"></i>
+                Показать решение
+            </button>
+            <div class="solution hidden" id="solution3">
+                <ul>
+                    <li><span class="math">Дано:</span>
+                        <ul>
+                            <li><span class="math">&phi; = 80%</span></li>
+                            <li><span class="math">P<sub>нас</sub> = 31,8 мм рт. ст.</span></li>
+                            <li><span class="math">ρ<sub>нас</sub> = 30.04 г/м³ = 0.03004 кг/м³</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Найти: ρ</span></li>
+                    <li><span class="math">Решение:</span>
+                        <ul>
+                            <li>Формула для относительной влажности: <span class="math">&phi; = (ρ / ρ<sub>нас</sub>) * 100%</span></li>
+                            <li>Выразим ρ: <span class="math">ρ = (&phi; / 100) * ρ<sub>нас</sub></span></li>
+                            <li>Вычислим: <span class="math">ρ = (80 / 100) * 0.03004 кг/м³ = 0.024032 кг/м³</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Ответ:</span> 0.024032 кг/м³</li>
+                </ul>
+            </div>
+        </div>
+        <!-- Задача 4 -->
+        <div class="task">
+            <h3>Задача 4</h3>
+            <p>При температуре 25°C давление водяного пара в воздухе составляет 1.7 кПа, а давление насыщенного водяного
+                пара при этой температуре равно 3.2 кПа. Определите относительную влажность воздуха.</p>
+            <button class="solution-button" onclick="toggleSolution('solution4')">
+                <i class="fas fa-lightbulb"></i>
+                Показать решение
+            </button>
+            <div class="solution hidden" id="solution4">
+                <ul>
+                    <li><span class="math">Дано:</span>
+                        <ul>
+                            <li><span class="math">p = 1.7 кПа</span></li>
+                            <li><span class="math">p<sub>нас</sub> = 3.2 кПа</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Найти: &phi;</span></li>
+                    <li><span class="math">Решение:</span>
+                        <ul>
+                            <li>Формула для относительной влажности: <span class="math">&phi; = (p / p<sub>нас</sub>) * 100%</span></li>
+                            <li>Вычислим: <span class="math">&phi; = (1.7 / 3.2) * 100% = 53.125%</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Ответ:</span> 53.125%</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Задача 5 -->
+        <div class="task">
+            <h3>Задача 5</h3>
+            <p>В 5 м³ воздуха при температуре 293 К находится 87 г водяного пара. Найти относительную влажность.</p>
+            <button class="solution-button" onclick="toggleSolution('solution5')">
+                <i class="fas fa-lightbulb"></i>
+                Показать решение
+            </button>
+            <div class="solution hidden" id="solution5">
+                <ul>
+                    <li><span class="math">Дано:</span>
+                        <ul>
+                            <li><span class="math">V = 5 м³</span></li>
+                            <li><span class="math">m = 87 г = 0,087 кг</span></li>
+                            <li><span class="math">T = 293 К</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Найти: &phi;</span></li>
+                    <li><span class="math">Решение:</span>
+                        <ul>
+                            <li><span class="math">p = (m/V) * (R * T / &mu;)</span></li>
+                            <li><span class="math">p<sub>0</sub>(20°C) = 2330 Па</span></li>
+                            <li><span class="math">&phi; = (p / p<sub>0</sub>) * 100%</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Ответ:</span> &phi;</li>
+                </ul>
+            </div>
+        </div>
+        <!-- Задача 6 -->
+        <div class="task">
+            <h3>Задача 6</h3>
+            <p>Давление водяного пара в воздухе при 25°C составляет 1,4 кПа. Определите относительную влажность
+                воздуха,
+                если давление насыщенного водяного пара при этой температуре равно 3,2 кПа.</p>
+            <button class="solution-button" onclick="toggleSolution('solution6')">
+                <i class="fas fa-lightbulb"></i>
+                Показать решение
+            </button>
+            <div class="solution hidden" id="solution6">
+                <ul>
+                    <li><span class="math">Дано:</span>
+                        <ul>
+                            <li><span class="math">p = 1.4 кПа</span></li>
+                            <li><span class="math">p_0 = 3.2 кПа</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Найти: &phi;</span></li>
+                    <li><span class="math">Решение:</span>
+                        <ul>
+                            <li><span class="math">&phi; = (p / p_0) * 100%</span></li>
+                            <li><span class="math">&phi; = (1.4 / 3.2) * 100% = 43,75%</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Ответ:</span> 43,75%</li>
+                </ul>
+            </div>
+        </div>
+        <!-- Задача 7 -->
+        <div class="task">
+            <h3>Задача 7</h3>
+            <p>Относительная влажность в комнате при 20°C равна 60%. Какова абсолютная влажность, если давление
+                насыщенного
+                водяного пара при этой температуре равно 2,33 кПа?</p>
+            <button class="solution-button" onclick="toggleSolution('solution7')">
+                <i class="fas fa-lightbulb"></i>
+                Показать решение
+            </button>
+            <div class="solution hidden" id="solution7">
+                <ul>
+                    <li><span class="math">Дано:</span>
+                        <ul>
+                            <li><span class="math">&phi; = 60%</span></li>
+                            <li><span class="math">p_0 = 2.33 кПа</span></li>
+                            <li><span class="math">T = 20°C</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Найти: ρ</span></li>
+                    <li><span class="math">Решение:</span>
+                        <ul>
+                            <li><span class="math">p = &phi; * p_0 = 0.6 * 2.33 ≈ 1,4 кПа</span></li>
+                            <li><span class="math">ρ = (p * &mu;) / (R * T)</span></li>
+                            <li><span class="math">&mu; = 0,018 кг/моль</span></li>
+                            <li><span class="math">R = 8,31 Дж/(К * моль)</span></li>
+                            <li><span class="math">T = 293 К</span></li>
+                            <li><span class="math">ρ = 0.01 кг/м³ = 10 г/м³</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Ответ:</span> 10 г/м³</li>
+                </ul>
+            </div>
+        </div>
+        <!-- Задача 8 -->
+        <div class="task">
+            <h3>Задача 8</h3>
+            <p>В закрытом сосуде объемом 2 м3 находится воздух с относительной влажностью 70% при температуре 20°C.
+                Определить массу водяного пара в воздухе.</p>
+            <button class="solution-button" onclick="toggleSolution('solution8')">
+                <i class="fas fa-lightbulb"></i>
+                Показать решение
+            </button>
+            <div class="solution hidden" id="solution8">
+                <ul>
+                    <li><span class="math">Дано:</span>
+                        <ul>
+                            <li><span class="math">V = 2 м³</span></li>
+                            <li><span class="math">&phi; = 70% = 0.7</span></li>
+                            <li><span class="math">T = 20°C = 293 K</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Найти: m</span></li>
+                    <li><span class="math">Решение:</span>
+                        <ul>
+                            <li><span class="math">P_0 = 2,33 кПа</span></li>
+                            <li><span class="math">P = &phi; * P_0 = 0.7 * 2,33 = 1.63 кПа</span></li>
+                            <li><span class="math">m = (PVμ) / (RT) = (1631.3 * 2 * 0.018) / (8.31 * 293) = 0,024 кг</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Ответ:</span> 0.024 кг</li>
+                </ul>
+            </div>
+        </div>
+        <div class="task">
+            <h3>Задача 9</h3>
+            <p>В комнате при температуре 20 °С психрометр показывает разность температур 5 °С. Определите относительную
+                влажность воздуха. (Предположим, что по психрометрической таблице при 20°C и разности 5°C относительная
+                влажность составляет 65%).</p>
+            <button class="solution-button" onclick="toggleSolution('solution9')">
+                <i class="fas fa-lightbulb"></i>
+                Показать решение
+            </button>
+            <div class="solution hidden" id="solution9">
+                <ul>
+                    <li><span class="math">Дано:</span>
+                        <ul>
+                            <li><span class="math">T = 20 °C</span></li>
+                            <li><span class="math">ΔT = 5 °C</span></li>
+                            <li><span class="math">φ (из таблицы) = 65%</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Найти: φ</span></li>
+                    <li><span class="math">Решение:</span>
+                        <ul>
+                            <li>По психрометрической таблице, при температуре 20°C и разности температур 5°C,
+                                относительная влажность составляет 65%.</li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Ответ:</span> 65%</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="task">
+            <h3>Задача 10</h3>
+            <p>Найдите абсолютную и относительную влажность воздуха при температуре 29 °С, если точка росы 17 °С. Давление насыщенного пара при 17 °С составляет 1.94 кПа, а при 29 °С - 4.01 кПа.</p>
+            <button class="solution-button" onclick="toggleSolution('solution10')">
+                <i class="fas fa-lightbulb"></i>
+                Показать решение
+            </button>
+            <div class="solution hidden" id="solution10">
+                <ul>
+                    <li><span class="math">Дано:</span>
+                        <ul>
+                            <li><span class="math">t = 29 °С</span></li>
+                            <li><span class="math">t<sub>р</sub> = 17 °С</span></li>
+                            <li><span class="math">P<sub>нас, 17</sub> = 1.94 кПа</span></li>
+                            <li><span class="math">P<sub>нас, 29</sub> = 4.01 кПа</span></li>
+                        </ul>
+                    </li>
+                    <li><span class="math">Найти: ρ, &phi;</span></li>
+                    <li><span class="math">Решение:</span>
+                         <ul>
+                            <li>Абсолютная влажность: <span class="math">Абсолютная влажность равна парциальному давлению водяного пара, которое равно давлению насыщенного пара при точке росы:  \( p = P_{нас, 17} = 1.94 кПа \)</span></li>
+                            <li>Абсолютная влажность: <span class="math">Воспользуемся уравнением связи парциального давления и плотности: \( \rho = \frac{p \cdot \mu}{R \cdot T} \)</span></li>
+                            <li>Относительная влажность: <span class="math">&phi; = (P<sub>нас, 17</sub> / P<sub>нас, 29</sub>) * 100%</span></li>
+                            <li>Вычислим: <span class="math">&phi; = (1.94 кПа / 4.01 кПа) * 100% = 48.38%</span></li>
+                        </ul>
+                    </li>
+                   <li><span class="math">Ответ:</span> &phi; = 48.38%</li>
+                </ul>
+            </div>
+        </div>
+
+
+    <script>
+        function toggleSolution(solutionId) {
+            var solution = document.getElementById(solutionId);
+            solution.classList.toggle('show');
+        }
+    </script>
+</body>
+</html>
