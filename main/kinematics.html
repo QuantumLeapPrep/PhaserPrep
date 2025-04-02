@@ -1,10 +1,11 @@
-<!DOCTYPE html>
-<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Законы движения: Кинематика - PhaserPrep</title>
+    <title>Основы квантовой физики: теория, формулы, ОГЭ</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -25,17 +26,17 @@
         }
 
         h1 {
-            color: #2e7d32;
+            color: #3498db;
             text-align: center;
         }
 
         h2 {
-            color: #2e7d32;
+            color: #3498db;
             margin-top: 1.5em;
         }
 
         h3 {
-            color: #2ecc71;
+            color: #2ecc71; 
             margin-bottom: 0.5em;
         }
 
@@ -97,7 +98,7 @@
     display: inline-flex; /* Выравнивание иконки и текста */
     align-items: center; /* Центрирование по вертикали */
     padding: 12px 24px;
-    background-color: #27ae60; 
+    background-color: #27ae60; /* Зеленый цвет */
     color: white;
     text-decoration: none;
     border-radius: 8px;
@@ -107,7 +108,7 @@
 }
 
 .resource-button:hover {
-    background-color: #219653; 
+    background-color: #219653; /* Более темный оттенок зеленого */
     transform: translateY(-2px); /* Небольшое приподнимание при наведении */
 }
 
@@ -115,10 +116,39 @@
     margin-right: 0.7em; /* Отступ между иконкой и текстом */
     font-size: 1.2em; /* Размер иконки */
 }
+        .back-button {
+            display: flex; 
+            justify-content: center; 
+            align-items: center;
+            width: 40px;       
+            height: 40px;      
+            background-color: rgba(0, 0, 0, 0.2); 
+            color: white;
+            text-decoration: none;
+            border-radius: 50%;  
+            transition: background-color 0.3s ease;
+            font-size: 20px;   
+        }
+
+        .back-button:hover {
+            background-color: rgba(0, 0, 0, 0.4); 
+        }
+
+        
+        .back-button-container {
+            position: fixed; 
+            top: 10px;      
+            left: 10px;     
+            z-index: 1000;   
+        }
     </style>
 </head>
 <body>
-
+    <div class="back-button-container">
+        <a href="#" class="back-button" onclick="window.history.back(); return false;">
+            <i1 class="fas fa-arrow-left"></i1> 
+        </a>
+    </div>
     <div class="container">
         <h1>Законы движения: Кинематика</h1>
 
