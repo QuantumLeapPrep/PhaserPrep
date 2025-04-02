@@ -4,8 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Волновая оптика: теория, формулы, ОГЭ</title>
+    <title>Основы квантовой физики: теория, формулы, ОГЭ</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -36,7 +39,7 @@
         }
 
         h3 {
-            color: #2ecc71; 
+            color: #2ecc71;
             margin-bottom: 0.5em;
         }
 
@@ -44,7 +47,8 @@
             margin-bottom: 1em;
         }
 
-        ul, ol {
+        ul,
+        ol {
             margin-bottom: 1em;
         }
 
@@ -93,33 +97,70 @@
             background-color: #f0f0f0;
             border-top: 1px solid #ddd;
         }
+
         /* Стили для кнопки "Задачи и тесты" */
-.resource-button {
-    display: inline-flex; /* Выравнивание иконки и текста */
-    align-items: center; /* Центрирование по вертикали */
-    padding: 12px 24px;
-    background-color: #27ae60; 
-    color: white;
-    text-decoration: none;
-    border-radius: 8px;
-    transition: background-color 0.3s ease, transform 0.2s ease-in-out; /* Плавные анимации */
-    font-weight: 500;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); /* Тень */
-}
+        .resource-button {
+            display: inline-flex;
+            /* Выравнивание иконки и текста */
+            align-items: center;
+            /* Центрирование по вертикали */
+            padding: 12px 24px;
+            background-color: #27ae60;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background-color 0.3s ease, transform 0.2s ease-in-out;
+            /* Плавные анимации */
+            font-weight: 500;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+            /* Тень */
+        }
 
-.resource-button:hover {
-    background-color: #219653; 
-    transform: translateY(-2px); /* Небольшое приподнимание при наведении */
-}
+        .resource-button:hover {
+            background-color: #219653;
+            transform: translateY(-2px);
+            /* Небольшое приподнимание при наведении */
+        }
 
-.resource-button i {
-    margin-right: 0.7em; /* Отступ между иконкой и текстом */
-    font-size: 1.2em; /* Размер иконки */
-}
+        .resource-button i {
+            margin-right: 0.7em;
+            /* Отступ между иконкой и текстом */
+            font-size: 1.2em;
+            /* Размер иконки */
+        }
+        .back-button {
+            display: flex; 
+            justify-content: center; 
+            align-items: center;
+            width: 40px;       
+            height: 40px;      
+            background-color: rgba(0, 0, 0, 0.2); 
+            color: white;
+            text-decoration: none;
+            border-radius: 50%;  
+            transition: background-color 0.3s ease;
+            font-size: 20px;   
+        }
+
+        .back-button:hover {
+            background-color: rgba(0, 0, 0, 0.4); 
+        }
+
+        
+        .back-button-container {
+            position: fixed; 
+            top: 10px;      
+            left: 10px;     
+            z-index: 1000;   
+        }
     </style>
 </head>
-
 <body>
+    <div class="back-button-container">
+        <a href="#" class="back-button" onclick="window.history.back(); return false;">
+            <i1 class="fas fa-arrow-left"></i1> 
+        </a>
+    </div>
     <div class="container">
         <h1>Волновая оптика</h1>
         <p>Волновая оптика – раздел оптики, изучающий оптические явления, основанные на волновой природе света.</p>
